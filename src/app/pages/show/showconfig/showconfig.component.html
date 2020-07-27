@@ -1,0 +1,187 @@
+<div class="container-fluid">
+
+  <!-- start page title -->
+  <app-page-title title="Create New List Set" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <!-- end page title -->
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <a class="backButton">
+            <mat-icon>arrow_back_ios</mat-icon><span class="text-primary" routerLink="/show" style="font-size: 14px; padding-top: 1px;">Return to list</span>
+          </a>
+          <!-- <h4 class="card-title">Bootstrap Validation - Normal</h4>
+          <p class="card-title-desc">Provide valuable, actionable feedback to your users with HTML5 form
+            validation–available in all our supported browsers.</p> -->
+          <form class="needs-validation" (ngSubmit)="validSubmit()" [formGroup]="validationform">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="validationCustom01">List set name</label>
+                  <input type="text" class="form-control" id="validationCustom01" formControlName="firstName"
+                    placeholder="Input list name" [ngClass]="{'is-valid': submit && form.firstName.errors}">
+                  <div *ngIf="submit && form.firstName.errors" class="valid-feedback">
+                    <span *ngIf="form.firstName.errors.required">Looks good!</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr style="border-top:1pt solid #69E781;"/>
+            <br />
+            <ngb-alert [dismissible]="false" type="primary">
+              <!-- <h6 class="alert-link text">Browse for movie/program here</h6> -->
+              Browse for movie/program here. Use filter to help!
+            </ngb-alert>
+            <br/>
+            <div class="row">
+              <div class="col-md-6" style="display: block;">
+                <label for="validationCustom01">Filter by category</label>
+                <div class="input-group">
+                  <select class="custom-select" id="inputGroupSelect04">
+                    <option selected>Choose...</option>
+                    <option value="1">Korean Huy</option>
+                    <option value="2">Comedy Huy</option>
+                    <option value="3">Action Huy</option>
+                  </select>
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-primary" type="button">Filter</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-md-6" style="display: block;">
+                <label for="validationCustom01">Filter by tag</label>
+                <div class="input-group">
+                  <select class="custom-select" id="inputGroupSelect04">
+                    <option selected>Choose...</option>
+                    <option value="1">Korean Huy</option>
+                    <option value="2">Comedy Huy</option>
+                    <option value="3">Action Huy</option>
+                  </select>
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-primary" type="button">Filter</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br/>
+            <br/>
+            <!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
+            </div> -->
+            <!-- <br/>
+            <br/> -->
+            <!-- <hr style="border-top:1pt solid #69E781;"/> -->
+            <!-- <h5 class="text-primary" style="text-decoration: underline;">Result:</h5> -->
+            <ngb-alert [dismissible]="false" type="success">
+              Filter result:
+            </ngb-alert>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource">
+            
+
+                <ng-container matColumnDef="programName">
+                  <th mat-header-cell *matHeaderCellDef> Program Name </th>
+                  <td mat-cell *matCellDef="let element"> {{element.programName}} </td>
+                </ng-container>
+            
+
+                <ng-container matColumnDef="playedMinutes">
+                  <th mat-header-cell *matHeaderCellDef> Played Minutes </th>
+                  <td mat-cell *matCellDef="let element"> {{element.playedMinutes}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="viewCount">
+                  <th mat-header-cell *matHeaderCellDef> View Count </th>
+                  <td mat-cell *matCellDef="let element"> {{element.viewCount}} </td>
+                </ng-container>
+            
+
+                <ng-container matColumnDef="category">
+                  <th mat-header-cell *matHeaderCellDef> Category </th>
+                  <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="action">
+                  <th mat-header-cell *matHeaderCellDef> Import to list</th>
+                  <td mat-cell *matCellDef="let element">
+                    <a href="javascript:void(0);"><mat-icon>archive</mat-icon></a>
+                  </td>
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+            
+              <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+            <br/>
+            <hr style="border-top:1pt solid #69E781;"/>
+            <ngb-alert [dismissible]="false" type="info">
+              Movies/shows in list:
+            </ngb-alert>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="programData">
+            
+
+                <ng-container matColumnDef="programName">
+                  <th mat-header-cell *matHeaderCellDef> Program Name </th>
+                  <td mat-cell *matCellDef="let element"> {{element.programName}} </td>
+                </ng-container>
+            
+
+                <ng-container matColumnDef="playedMinutes">
+                  <th mat-header-cell *matHeaderCellDef> Played Minutes </th>
+                  <td mat-cell *matCellDef="let element"> {{element.playedMinutes}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="viewCount">
+                  <th mat-header-cell *matHeaderCellDef> View Count </th>
+                  <td mat-cell *matCellDef="let element"> {{element.viewCount}} </td>
+                </ng-container>
+            
+
+                <ng-container matColumnDef="category">
+                  <th mat-header-cell *matHeaderCellDef> Category </th>
+                  <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="action">
+                  <th mat-header-cell *matHeaderCellDef> Remove </th>
+                  <td mat-cell *matCellDef="let element">
+                    <a href="javascript:void(0)"><mat-icon>close</mat-icon></a>
+                  </td>
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+            
+              <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+            <br />
+            <br />
+            <div class="form-group mb-0">
+              <div>
+                <button type="submit" class="btn btn-primary mr-1">
+                  Submit
+                </button>
+                <button type="reset" class="btn btn-secondary" routerLink="/show">
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </form>
+          <br />
+        </div>
+      </div>
+      <!-- end card -->
+    </div> <!-- end col -->
+
+  </div>
+  <!-- end row -->
+</div>

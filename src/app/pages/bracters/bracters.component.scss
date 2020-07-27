@@ -1,0 +1,14 @@
+// table tr { display: table-cell; padding: 1rem;};
+table { 
+  border-spacing: 20px;
+  border-collapse: separate;
+  display: flex;
+  //background-color: #ffffff; filter: alpha(opacity=40); opacity: 0.95;border:1px red solid !important;
+}
+
+td {
+  padding: 16px;
+  border:1px grey dashed !important;
+}
+
+

@@ -1,0 +1,99 @@
+<div class="container-fluid">
+  <app-page-title title="List Management" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">List set list</h4>
+          <p class="card-sub-title">(Each of the list set here will be contained in a category set).</p>
+
+          <div class="row mb-2">
+            <div class="col-sm-4">
+              <!-- <div class="search-box mr-2 mb-2 d-inline-block">
+                <div class="position-relative">
+                  <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="advancedService.searchTerm">
+                  <i class="bx bx-search-alt search-icon"></i>
+                </div>
+              </div> -->
+              <ng-select [items]="selectValue" [multiple]="true" placeholder="Filter set"></ng-select>
+            </div>
+            <div class="col-sm-8">
+              <div class="text-sm-right">
+                <button type="button" class="btn btn-success btn-rounded mb-2 mr-2" target="_blank" routerLink="config"><i class="mdi mdi-plus mr-1"></i>
+                  Create New </button>
+              </div>
+            </div><!-- end col-->
+          </div>
+          <!-- Table -->
+          <div class="table-responsive">
+            <table id="basic-datatable"
+              class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline">
+              <thead>
+                <tr>
+                  <th sortable="name" (sort)="onSort($event)">List set name</th>
+                  <th sortable="position" (sort)="onSort($event)">List count</th>
+                  <th sortable="office" (sort)="onSort($event)">Airing days in week</th>
+                  <th sortable="age" (sort)="onSort($event)">Start time</th>
+                  <th sortable="date" (sort)="onSort($event)">End time</th>
+                  <th sortable="belong" (sort)="onSort($event)">Belong</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let table of tables$ | async">
+                  <td>
+                    <ngb-highlight [result]="table.name" [term]="advancedService.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.listCount" [term]="advancedService.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.days" [term]="advancedService.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.startTime" [term]="advancedService.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.endTime" [term]="advancedService.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight [result]="table.belong" [term]="advancedService.searchTerm"></ngb-highlight>
+                  </td>
+                  <td>
+                    <div class="button-items">
+                      <button type="button" class="btn btn-primary">Config</button>
+                      <button type="button" class="btn btn-light">Delete</button>
+                      <button type="button" class="btn btn-light">Update</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- End table -->
+          <div class="row justify-content-md-between align-items-md-center mt-2">
+            <div class="col-sm-12 col-md-5">
+              <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">Showing
+                {{advancedService.startIndex}} to
+                {{advancedService.endIndex}} of {{advancedService.totalRecords}}
+                entries
+              </div>
+            </div>
+            <!-- Pagination -->
+            <div class="col-sm-12 col-md-5">
+              <div class="text-md-right float-md-right pagination-rounded">
+                <ngb-pagination [collectionSize]="total$ | async" [(page)]="advancedService.page"
+                  [pageSize]="advancedService.pageSize">
+                </ngb-pagination>
+              </div>
+            </div>
+            <!-- End Pagination -->
+          </div>
+
+          <!-- sdfghgfhjhsdfg -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- container-fluid -->
