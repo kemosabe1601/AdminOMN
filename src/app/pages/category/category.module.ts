@@ -5,8 +5,6 @@ import { CategoryRoutingModule } from './category-routing.module';
 import { CategoryComponent } from './category.component';
 import { CategoryconfigComponent } from './categoryconfig/categoryconfig.component';
 
-
-
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
@@ -21,39 +19,39 @@ import { NgxMaskModule } from 'ngx-mask';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import {
-  NgbPaginationModule,
-  NgbTypeaheadModule,
-  NgbDropdownModule,
-  NgbTooltipModule,
-  NgbNavModule,
-  NgbDatepickerModule
+	NgbPaginationModule,
+	NgbTypeaheadModule,
+	NgbDropdownModule,
+	NgbTooltipModule,
+	NgbNavModule,
+	NgbDatepickerModule,
 } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [CategoryComponent, CategoryconfigComponent],
-  imports: [
-    CommonModule,
-    CategoryRoutingModule,
-    NgSelectModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatTableModule,
-    DragDropModule,
-    MatIconModule,
-    UIModule,
-    UiSwitchModule,
-    PerfectScrollbarModule,
-    CKEditorModule,
-    ArchwizardModule,
-    NgxMaskModule,
-    ColorPickerModule,
-    DropzoneModule,
-    NgbPaginationModule,
-    NgbTypeaheadModule,
-    NgbDropdownModule,
-    NgbTooltipModule,
-    NgbNavModule,
-    NgbDatepickerModule
-  ]
+	declarations: [CategoryComponent, CategoryconfigComponent],
+	imports: [
+		CommonModule,
+		CategoryRoutingModule,
+		NgSelectModule,
+		FormsModule,
+		ReactiveFormsModule,
+		MatTableModule,
+		DragDropModule,
+		MatIconModule,
+		UIModule,
+		UiSwitchModule,
+		PerfectScrollbarModule,
+		CKEditorModule,
+		ArchwizardModule,
+		NgxMaskModule,
+		ColorPickerModule,
+		DropzoneModule,
+		NgbPaginationModule,
+		NgbTypeaheadModule,
+		NgbDropdownModule,
+		NgbTooltipModule,
+		NgbNavModule,
+		NgbDatepickerModule,
+	],
 })
-export class CategoryModule { }
+export class CategoryModule {}

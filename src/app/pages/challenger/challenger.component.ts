@@ -1,21 +1,20 @@
-import { DecimalPipe } from '@angular/common';
-import { AdvancedService } from './advanced.service';
+import { MockApiService } from './../../services/mock-api.service';
+import { SortEvent } from './advanced-sortable.directive';
+import { AdvancedSortableDirective } from './advanced-sortable.directive';
 import { Observable } from 'rxjs';
 import { Table } from './advanced.model';
-import {
-	AdvancedSortableDirective,
-	SortEvent,
-} from './advanced-sortable.directive';
+import { DecimalPipe } from '@angular/common';
+import { AdvancedService } from './advanced.service';
 import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { tableData } from './data';
 
 @Component({
-	selector: 'app-category',
-	templateUrl: './category.component.html',
-	styleUrls: ['./category.component.scss'],
+	selector: 'app-challenger',
+	templateUrl: './challenger.component.html',
+	styleUrls: ['./challenger.component.scss'],
 	providers: [AdvancedService, DecimalPipe],
 })
-export class CategoryComponent implements OnInit {
+export class ChallengerComponent implements OnInit {
 	// bread crum data
 	breadCrumbItems: Array<{}>;
 
@@ -32,15 +31,20 @@ export class CategoryComponent implements OnInit {
 		AdvancedSortableDirective
 	>;
 
-	constructor(public advancedService: AdvancedService) {
+	constructor(
+		public advancedService: AdvancedService,
+		public mockService: MockApiService,
+	) {
 		this.tables$ = advancedService.tables$;
 		this.total$ = advancedService.total$;
 	}
-	ngOnInit() {
+
+	ngOnInit(): void {
 		this.breadCrumbItems = [
-			{ label: 'Category' },
+			{ label: 'Challengers' },
 			{ label: 'List', active: true },
 		];
+
 		this._fetchData();
 
 		// Select dropdown value
@@ -55,7 +59,8 @@ export class CategoryComponent implements OnInit {
 	 * fetches the table value
 	 */
 	_fetchData() {
-		this.tableData = tableData;
+		// this.tableData = tableData;
+		this.mockService.getTableData().subscribe((val) => console.log(val));
 	}
 
 	/**

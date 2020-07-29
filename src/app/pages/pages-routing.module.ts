@@ -4,15 +4,31 @@ import { Routes, RouterModule } from '@angular/router';
 import { DefaultComponent } from './dashboards/default/default.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home' },
-  { path: 'home', component: DefaultComponent },
-  { path: 'category', loadChildren: () => import('./category/category.module').then(m => m.CategoryModule) },
-  { path: 'show', loadChildren: () => import('./show/show.module').then(m => m.ShowModule) },
-  { path: 'bracters', loadChildren: () => import('./bracters/bracters.module').then(m => m.BractersModule) },
+	{ path: '', redirectTo: 'home' },
+	{ path: 'home', component: DefaultComponent },
+	{
+		path: 'category',
+		loadChildren: () =>
+			import('./category/category.module').then((m) => m.CategoryModule),
+	},
+	{
+		path: 'show',
+		loadChildren: () => import('./show/show.module').then((m) => m.ShowModule),
+	},
+	{
+		path: 'bracters',
+		loadChildren: () =>
+			import('./bracters/bracters.module').then((m) => m.BractersModule),
+	},
+	{
+		path: 'challengers',
+		loadChildren: () =>
+			import('./challenger/challenger.module').then((m) => m.ChallengerModule),
+	},
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
 })
-export class PagesRoutingModule { }
+export class PagesRoutingModule {}
