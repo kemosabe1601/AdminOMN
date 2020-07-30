@@ -21,6 +21,8 @@ import { JwtInterceptor } from './core/helpers/jwt.interceptor';
 import { FakeBackendInterceptor } from './core/helpers/fake-backend';
 import { Page404Component } from './extrapages/page404/page404.component';
 
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 if (environment.defaultauth === 'firebase') {
 	initFirebaseBackend(environment.firebaseConfig);
 } else {
@@ -39,6 +41,7 @@ if (environment.defaultauth === 'firebase') {
 		NgbAccordionModule,
 		NgbNavModule,
 		NgbTooltipModule,
+		NgxDatatableModule,
 	],
 	bootstrap: [AppComponent],
 	providers: [

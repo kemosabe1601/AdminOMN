@@ -1,115 +1,162 @@
 <div class="container-fluid">
-
-  <!-- start page title -->
-  <app-page-title title="Create New Category Set" [breadcrumbItems]="breadCrumbItems"></app-page-title>
-  <!-- end page title -->
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="card">
-        <div class="card-body">
-          <a class="backButton" routerLink="/category">
-            <mat-icon>arrow_back_ios</mat-icon><span style="font-size: 14px; padding-top: 1px;">Return to list</span>
-          </a>
-          <!-- <h4 class="card-title">Bootstrap Validation - Normal</h4>
+	<!-- start page title -->
+	<app-page-title
+		title="Create New Category Set"
+		[breadcrumbItems]="breadCrumbItems"
+	></app-page-title>
+	<!-- end page title -->
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="card">
+				<div class="card-body">
+					<a class="backButton" routerLink="/category">
+						<mat-icon>arrow_back_ios</mat-icon
+						><span style="font-size: 14px; padding-top: 1px;"
+							>Return to list</span
+						>
+					</a>
+					<!-- <h4 class="card-title">Bootstrap Validation - Normal</h4>
           <p class="card-title-desc">Provide valuable, actionable feedback to your users with HTML5 form
             validation–available in all our supported browsers.</p> -->
-          <form class="needs-validation" (ngSubmit)="validSubmit()" [formGroup]="validationform">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="validationCustom01">Category set name</label>
-                  <input type="text" class="form-control" id="validationCustom01" formControlName="firstName"
-                    placeholder="Category set name" [ngClass]="{'is-valid': submit && form.firstName.errors}">
-                  <div *ngIf="submit && form.firstName.errors" class="valid-feedback">
-                    <span *ngIf="form.firstName.errors.required">Looks good!</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <br />
-            <div class="row">
-              <div class="col-md-6" style="display: block;">
-                <label for="validationCustom01">Import movie/show list</label>
-                <div class="input-group">
-                  <select class="custom-select" id="inputGroupSelect04">
-                    <option selected>Choose...</option>
-                    <option value="1">Korean Huy</option>
-                    <option value="2">Comedy Huy</option>
-                    <option value="3">Action Huy</option>
-                  </select>
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-success" type="button">Import</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <br />
-            <br />
-            <!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+					<form
+						class="needs-validation"
+						(ngSubmit)="validSubmit()"
+						[formGroup]="validationform"
+					>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="validationCustom01">Category set name</label>
+									<input
+										type="text"
+										class="form-control"
+										id="validationCustom01"
+										formControlName="firstName"
+										placeholder="Category set name"
+										[ngClass]="{ 'is-valid': submit && form.firstName.errors }"
+									/>
+									<div
+										*ngIf="submit && form.firstName.errors"
+										class="valid-feedback"
+									>
+										<span *ngIf="form.firstName.errors.required"
+											>Looks good!</span
+										>
+									</div>
+								</div>
+							</div>
+						</div>
+						<br />
+						<div class="row">
+							<div class="col-md-6" style="display: block;">
+								<label for="validationCustom01">Import movie/show list</label>
+								<div class="input-group">
+									<select class="custom-select" id="inputGroupSelect04">
+										<option selected>Choose...</option>
+										<option value="1">Korean</option>
+										<option value="2">Comedy</option>
+										<option value="3">Action</option>
+									</select>
+									<div class="input-group-append">
+										<button class="btn btn-outline-success" type="button">
+											Import
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<br />
+						<br />
+						<!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
                 <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
             </div> -->
-            <!-- <br/>
+						<!-- <br/>
             <br/> -->
-            <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8" cdkDropList
-              [cdkDropListData]="dataSource" (cdkDropListDropped)="dropTable($event)">
+						<mat-table
+							#table
+							[dataSource]="dataSource"
+							class="mat-elevation-z8"
+							cdkDropList
+							[cdkDropListData]="dataSource"
+							(cdkDropListDropped)="dropTable($event)"
+						>
+							<!-- Position Column -->
+							<ng-container matColumnDef="position">
+								<mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+								<mat-cell *matCellDef="let element">
+									<mat-icon cdkDragHandle>reorder</mat-icon>
+								</mat-cell>
+							</ng-container>
 
-              <!-- Position Column -->
-              <ng-container matColumnDef="position">
-                <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-                <mat-cell *matCellDef="let element">
-                  <mat-icon cdkDragHandle>reorder</mat-icon>
-                </mat-cell>
-              </ng-container>
+							<!-- Name Column -->
+							<ng-container matColumnDef="name">
+								<mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+								<mat-cell *matCellDef="let element">
+									{{ element.name }}
+								</mat-cell>
+							</ng-container>
 
-              <!-- Name Column -->
-              <ng-container matColumnDef="name">
-                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-              </ng-container>
+							<!-- Weight Column -->
+							<ng-container matColumnDef="programcount">
+								<mat-header-cell *matHeaderCellDef>
+									Program Count
+								</mat-header-cell>
+								<mat-cell *matCellDef="let element">
+									{{ element.programcount }}
+								</mat-cell>
+							</ng-container>
 
-              <!-- Weight Column -->
-              <ng-container matColumnDef="programcount">
-                <mat-header-cell *matHeaderCellDef> Program Count </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.programcount}} </mat-cell>
-              </ng-container>
+							<!-- Symbol Column -->
+							<ng-container matColumnDef="createddate">
+								<mat-header-cell *matHeaderCellDef>
+									Created Date
+								</mat-header-cell>
+								<mat-cell *matCellDef="let element">
+									{{ element.createddate }}
+								</mat-cell>
+							</ng-container>
 
-              <!-- Symbol Column -->
-              <ng-container matColumnDef="createddate">
-                <mat-header-cell *matHeaderCellDef> Created Date </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.createddate}} </mat-cell>
-              </ng-container>
+							<!-- Remove Action Column -->
+							<ng-container matColumnDef="remove">
+								<mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+								<mat-cell *matCellDef="let element">
+									<a href="javascript:void(0)"><mat-icon>close</mat-icon></a>
+								</mat-cell>
+							</ng-container>
 
-              <!-- Remove Action Column -->
-              <ng-container matColumnDef="remove">
-                <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
-                <mat-cell *matCellDef="let element">
-                  <a href="javascript:void(0)"><mat-icon>close</mat-icon></a>
-                </mat-cell>
-              </ng-container>
+							<mat-header-row
+								*matHeaderRowDef="displayedColumns"
+							></mat-header-row>
+							<mat-row
+								*matRowDef="let row; columns: displayedColumns"
+								cdkDrag
+								[cdkDragData]="row"
+							></mat-row>
+						</mat-table>
 
-              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-              <mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag [cdkDragData]="row"></mat-row>
-            </mat-table>
-
-            <br />
-            <br />
-            <div class="form-group mb-0">
-              <div>
-                <button type="submit" class="btn btn-primary mr-1">
-                  Submit
-                </button>
-                <button type="reset" class="btn btn-secondary" routerLink="/category">
-                  Cancel
-                </button>
-              </div>
-            </div>
-          </form>
-          <br />
-        </div>
-      </div>
-      <!-- end card -->
-    </div> <!-- end col -->
-
-  </div>
-  <!-- end row -->
+						<br />
+						<br />
+						<div class="form-group mb-0">
+							<div>
+								<button type="submit" class="btn btn-primary mr-1">
+									Submit
+								</button>
+								<button
+									type="reset"
+									class="btn btn-secondary"
+									routerLink="/category"
+								>
+									Cancel
+								</button>
+							</div>
+						</div>
+					</form>
+					<br />
+				</div>
+			</div>
+			<!-- end card -->
+		</div>
+		<!-- end col -->
+	</div>
+	<!-- end row -->
 </div>

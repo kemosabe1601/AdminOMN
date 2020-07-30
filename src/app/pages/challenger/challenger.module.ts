@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { NgxMaskModule } from 'ngx-mask';
@@ -8,6 +9,7 @@ import { UiSwitchModule } from 'ngx-ui-switch';
 import { MatIconModule } from '@angular/material/icon';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatTableModule } from '@angular/material/table';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { UIModule } from './../../shared/ui/ui.module';
@@ -24,6 +26,8 @@ import {
 	NgbNavModule,
 	NgbDatepickerModule,
 } from '@ng-bootstrap/ng-bootstrap';
+
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
 	declarations: [ChallengerComponent],
@@ -50,6 +54,9 @@ import {
 		NgbTooltipModule,
 		NgbNavModule,
 		NgbDatepickerModule,
+		HttpClientModule,
+		NgxDatatableModule,
+		MatProgressBarModule,
 	],
 })
 export class ChallengerModule {}

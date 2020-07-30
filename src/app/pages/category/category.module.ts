@@ -1,3 +1,5 @@
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -52,6 +54,8 @@ import {
 		NgbTooltipModule,
 		NgbNavModule,
 		NgbDatepickerModule,
+		NgxDatatableModule,
+		MatProgressBarModule,
 	],
 })
 export class CategoryModule {}

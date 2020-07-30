@@ -72,7 +72,7 @@ export const MENU: MenuItem[] = [
 	{
 		id: 9,
 		label: 'Challengers',
-		icon: 'dripicons-lightbulb',
+		icon: 'dripicons-warning',
 		link: '/challengers',
 		// badge: {
 		//     variant: 'info',

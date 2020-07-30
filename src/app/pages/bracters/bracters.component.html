@@ -1,81 +1,101 @@
 <div class="container-fluid">
-  <app-page-title title="Bracter Management" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+	<app-page-title
+		title="Bracter Management"
+		[breadcrumbItems]="breadCrumbItems"
+	></app-page-title>
 
-  <div class="row">
-    <div class="col-12">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Bracter set list</h4>
-          <p class="card-sub-title">(Each of the bracter set here will be contained in a category set).</p>
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Bracter set list</h4>
+					<p class="card-sub-title">
+						(Each of the bracter set here will be contained in a category set).
+					</p>
 
-          <div class="row mb-2">
-            <div class="col-sm-4">
-              <ng-select [items]="selectValue" [multiple]="true" placeholder="Filter set"></ng-select>
-            </div>
-            <div class="col-sm-8">
-              <div class="text-sm-right">
-                <button type="button" class="btn btn-success btn-rounded mb-2 mr-2" target="_blank" routerLink="config"><i class="mdi mdi-plus mr-1"></i>
-                  Create New </button>
-              </div>
-            </div><!-- end col-->
-          </div>
-          <!-- Table -->
-          <div class="table-responsive">
-            <table id="basic-datatable"
-              class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline">
-              <thead *ngFor="let table of tables$ | async">
-                <tr style="text-align: center;">
-                    <th colspan="2">
-                      <ngb-highlight [result]="table.category" [term]="advancedService.searchTerm"></ngb-highlight>
-                    </th>
-                </tr>
-                <tr style="text-align: center;">
-                    <td style="width: 50%;">Program</td>
-                    <td style="width: 50%;">Views</td>
-                </tr>
-                <tr style="text-align: center;">
-                  <td>
-                    <ngb-highlight [result]="table.programName" [term]="advancedService.searchTerm"></ngb-highlight>
-                  </td>
-                  <td>
-                    <ngb-highlight [result]="table.viewNumber" [term]="advancedService.searchTerm"></ngb-highlight>
-                  </td>
-                </tr>
-              </thead>
-            <tbody>
-              <!-- <tr *ngFor="let table of tables$ | async">
-                <td>
-                  <ngb-highlight [result]="table.programName" [term]="advancedService.searchTerm"></ngb-highlight>
-                </td>
-                <td>
-                  <ngb-highlight [result]="table.viewNumber" [term]="advancedService.searchTerm"></ngb-highlight>
-                </td>
-              </tr> -->
-            </tbody>
-                
-            </table>
-          </div>
-          <!-- End table -->
-          <div class="row justify-content-md-between align-items-md-center mt-2">
-            <div class="col-sm-12 col-md-5">
-              <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">Showing
-                {{advancedService.startIndex}} to
-                {{advancedService.endIndex}} of {{advancedService.totalRecords}}
-                entries
-              </div>
-            </div>
-            <!-- Pagination -->
-            <div class="col-sm-12 col-md-5">
-              <div class="text-md-right float-md-right pagination-rounded">
-                <ngb-pagination [collectionSize]="total$ | async" [(page)]="advancedService.page"
-                  [pageSize]="advancedService.pageSize">
-                </ngb-pagination>
-              </div>
-            </div>
-            <!-- End Pagination -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> <!-- container-fluid -->
+					<div class="row mb-2">
+						<div class="col-sm-4">
+							<ng-select
+								[items]="selectValue"
+								[multiple]="true"
+								placeholder="Filter set"
+							></ng-select>
+						</div>
+						<div class="col-sm-8">
+							<div class="text-sm-right">
+								<button
+									type="button"
+									class="btn btn-success btn-rounded mb-2 mr-2"
+									target="_blank"
+									routerLink="config"
+								>
+									<i class="mdi mdi-plus mr-1"></i> Create New
+								</button>
+							</div>
+						</div>
+						<!-- end col-->
+					</div>
+					<!-- Table -->
+					<mat-progress-bar mode="query" *ngIf="!rows"></mat-progress-bar>
+					<div class="table-responsive" *ngIf="rows">
+						<ngx-datatable
+							class="material"
+							[rows]="rows"
+							[columnMode]="ColumnMode.force"
+							[headerHeight]="50"
+							[footerHeight]="50"
+							rowHeight="auto"
+							[limit]="10"
+							[sorts]="[{ prop: 'name', dir: 'acs' }]"
+						>
+							<ngx-datatable-column name="Challenger Set Name">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ row.name }}
+								</ng-template>
+							</ngx-datatable-column>
+
+							<ngx-datatable-column name="List Count">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ row.listCount }}
+								</ng-template>
+							</ngx-datatable-column>
+
+							<ngx-datatable-column name="Airing days in week">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ row.days }}
+								</ng-template>
+							</ngx-datatable-column>
+
+							<ngx-datatable-column name="Start Time">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ localeDate(row.startTime) | date: 'shortTime' }}
+								</ng-template>
+							</ngx-datatable-column>
+
+							<ngx-datatable-column name="End Time">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ localeDate(row.endTime) | date: 'shortTime' }}
+								</ng-template>
+							</ngx-datatable-column>
+
+							<ngx-datatable-column name="Action">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									<div class="button-items">
+										<button type="button" class="btn btn-primary">
+											Config
+										</button>
+										<button type="button" class="btn btn-light">
+											Delete
+										</button>
+									</div>
+								</ng-template>
+							</ngx-datatable-column>
+						</ngx-datatable>
+					</div>
+					<!-- End table -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- container-fluid -->

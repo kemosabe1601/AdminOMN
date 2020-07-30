@@ -1,76 +1,95 @@
+import { DatatableComponent, ColumnMode } from '@swimlane/ngx-datatable';
 import { DecimalPipe } from '@angular/common';
-import { AdvancedService } from './advanced.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Table } from './advanced.model';
-import {
-	AdvancedSortableDirective,
-	SortEvent,
-} from './advanced-sortable.directive';
-import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
-import { tableData } from './data';
+
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { MockApiService } from 'src/app/services/mock-api.service';
 
 @Component({
 	selector: 'app-category',
 	templateUrl: './category.component.html',
 	styleUrls: ['./category.component.scss'],
-	providers: [AdvancedService, DecimalPipe],
+	providers: [DecimalPipe],
 })
-export class CategoryComponent implements OnInit {
+export class CategoryComponent implements OnInit, OnDestroy {
 	// bread crum data
 	breadCrumbItems: Array<{}>;
 
+	mockSub: Subscription;
+
 	// Table data
-	tableData: Table[];
-	tables$: Observable<Table[]>;
-	total$: Observable<number>;
+	rows: any[];
+	temp: any[];
 
 	selectValue: string[];
-	hidden: boolean;
-	selected: any;
+	ColumnMode = ColumnMode;
 
-	@ViewChildren(AdvancedSortableDirective) headers: QueryList<
-		AdvancedSortableDirective
-	>;
+	@ViewChild(DatatableComponent) table: DatatableComponent;
 
-	constructor(public advancedService: AdvancedService) {
-		this.tables$ = advancedService.tables$;
-		this.total$ = advancedService.total$;
-	}
+	constructor(public mockService: MockApiService) {}
 	ngOnInit() {
 		this.breadCrumbItems = [
 			{ label: 'Category' },
 			{ label: 'List', active: true },
 		];
+		this.selectValue = [
+			'Monday',
+			'Tuesday',
+			'Wednesday',
+			'Thursday',
+			'Friday',
+			'Saturday',
+			'Sunday',
+		];
+
 		this._fetchData();
-
-		// Select dropdown value
-		// tslint:disable-next-line: max-line-length
-		this.selectValue = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
-
-		this.selected = '';
-		this.hidden = true;
 	}
 
 	/**
 	 * fetches the table value
 	 */
 	_fetchData() {
-		this.tableData = tableData;
+		this.mockSub = this.mockService.getTableData().subscribe((val) => {
+			this.temp = [...val[0]];
+			this.rows = val[0];
+		});
 	}
 
-	/**
-	 * Sort table data
-	 * @param param0 sort the column
-	 *
-	 */
-	onSort({ column, direction }: SortEvent) {
-		// resetting other headers
-		this.headers.forEach((header) => {
-			if (header.sortable !== column) {
-				header.direction = '';
-			}
+	updateFilter(event) {
+		const val = event.target.value.toLowerCase();
+
+		// filter our data
+		const temp = this.temp.filter((d) => {
+			return d.name.toLowerCase().indexOf(val) !== -1 || !val;
 		});
-		this.advancedService.sortColumn = column;
-		this.advancedService.sortDirection = direction;
+
+		// update the rows
+		this.rows = temp;
+		// Whenever the filter changes, always go back to the first page
+		this.table.offset = 0;
+	}
+
+	setFilter(event) {
+		const val = event;
+		// filter our data
+		const temp = this.temp.filter((d) => {
+			return d.days.indexOf(val) !== -1 || !val;
+		});
+		// update the rows
+		this.rows = temp;
+		// Whenever the filter changes, always go back to the first page
+		this.table.offset = 0;
+	}
+
+	localeDate(time) {
+		let myDate = new Date(time * 1000);
+		return myDate.toLocaleString();
+	}
+
+	ngOnDestroy() {
+		if (this.mockSub) {
+			this.mockSub.unsubscribe();
+		}
 	}
 }

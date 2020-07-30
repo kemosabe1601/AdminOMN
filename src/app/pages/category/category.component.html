@@ -42,112 +42,63 @@
 						<!-- end col-->
 					</div>
 					<!-- Table -->
-					<div class="table-responsive">
-						<table
-							id="basic-datatable"
-							class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline"
+					<mat-progress-bar mode="query" *ngIf="!rows"></mat-progress-bar>
+					<div class="table-responsive" *ngIf="rows">
+						<ngx-datatable
+							class="material"
+							[rows]="rows"
+							[columnMode]="ColumnMode.force"
+							[headerHeight]="50"
+							[footerHeight]="50"
+							rowHeight="auto"
+							[limit]="10"
+							[sorts]="[{ prop: 'name', dir: 'acs' }]"
 						>
-							<thead>
-								<tr>
-									<th sortable="name" (sort)="onSort($event)">
-										Category set name
-									</th>
-									<th sortable="position" (sort)="onSort($event)">
-										List count
-									</th>
-									<th sortable="office" (sort)="onSort($event)">
-										Airing days in week
-									</th>
-									<th sortable="age" (sort)="onSort($event)">Start time</th>
-									<th sortable="date" (sort)="onSort($event)">End time</th>
-									<!-- <th sortable="salary" (sort)="onSort($event)">Salary</th> -->
-									<th></th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr *ngFor="let table of tables$ | async">
-									<td>
-										<ngb-highlight
-											[result]="table.name"
-											[term]="advancedService.searchTerm"
-										></ngb-highlight>
-									</td>
-									<td>
-										<ngb-highlight
-											[result]="table.listCount"
-											[term]="advancedService.searchTerm"
-										></ngb-highlight>
-									</td>
-									<td>
-										<ngb-highlight
-											[result]="table.days"
-											[term]="advancedService.searchTerm"
-										></ngb-highlight>
-									</td>
-									<td>
-										<ngb-highlight
-											[result]="table.startTime"
-											[term]="advancedService.searchTerm"
-										></ngb-highlight>
-									</td>
-									<td>
-										<ngb-highlight
-											[result]="table.endTime"
-											[term]="advancedService.searchTerm"
-										></ngb-highlight>
-									</td>
-									<!-- <td>
-                    <ngb-highlight [result]="table.salary" [term]="advancedService.searchTerm"></ngb-highlight>
-                  </td> -->
-									<td>
-										<div class="button-items">
-											<button type="button" class="btn btn-primary">
-												Config
-											</button>
-											<button type="button" class="btn btn-light">
-												Delete
-											</button>
-											<button type="button" class="btn btn-light">
-												Update
-											</button>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+							<ngx-datatable-column name="Challenger Set Name">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ row.name }}
+								</ng-template>
+							</ngx-datatable-column>
+
+							<ngx-datatable-column name="List Count">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ row.listCount }}
+								</ng-template>
+							</ngx-datatable-column>
+
+							<ngx-datatable-column name="Airing days in week">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ row.days }}
+								</ng-template>
+							</ngx-datatable-column>
+
+							<ngx-datatable-column name="Start Time">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ localeDate(row.startTime) | date: 'shortTime' }}
+								</ng-template>
+							</ngx-datatable-column>
+
+							<ngx-datatable-column name="End Time">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ localeDate(row.endTime) | date: 'shortTime' }}
+								</ng-template>
+							</ngx-datatable-column>
+
+							<ngx-datatable-column name="Action">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									<div class="button-items">
+										<button type="button" class="btn btn-primary">
+											Config
+										</button>
+										<button type="button" class="btn btn-light">
+											Delete
+										</button>
+									</div>
+								</ng-template>
+							</ngx-datatable-column>
+						</ngx-datatable>
 					</div>
 					<!-- End table -->
-					<div
-						class="row justify-content-md-between align-items-md-center mt-2"
-					>
-						<div class="col-sm-12 col-md-5">
-							<div
-								class="dataTables_info mb-2"
-								id="tickets-table_info"
-								role="status"
-								aria-live="polite"
-							>
-								Showing {{ advancedService.startIndex }} to
-								{{ advancedService.endIndex }} of
-								{{ advancedService.totalRecords }}
-								entries
-							</div>
-						</div>
-						<!-- Pagination -->
-						<div class="col-sm-12 col-md-5">
-							<div class="text-md-right float-md-right pagination-rounded">
-								<ngb-pagination
-									[collectionSize]="total$ | async"
-									[(page)]="advancedService.page"
-									[pageSize]="advancedService.pageSize"
-								>
-								</ngb-pagination>
-							</div>
-						</div>
-						<!-- End Pagination -->
-					</div>
-
-					<!-- sdfghgfhjhsdfg -->
 				</div>
 			</div>
 		</div>
