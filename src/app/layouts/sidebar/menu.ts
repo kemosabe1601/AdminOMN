@@ -69,6 +69,13 @@ export const MENU: MenuItem[] = [
         // },
         subItems: []
     },
+    {
+        id: 9,
+        label: 'Challenger',
+        icon: 'dripicons-heart',
+        link: '/challenger',
+        subItems: []
+    },
     // {
     //     id: 6,
     //     isLayout: true

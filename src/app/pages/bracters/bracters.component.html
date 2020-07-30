@@ -5,8 +5,8 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Bracter set list</h4>
-          <p class="card-sub-title">(Each of the bracter set here will be contained in a category set).</p>
+          <h4 class="card-title">List of categories in Bracter</h4>
+          <p class="card-sub-title">(Each of the category set contains here will be shown on bracter page).</p>
 
           <div class="row mb-2">
             <div class="col-sm-4">
@@ -14,8 +14,8 @@
             </div>
             <div class="col-sm-8">
               <div class="text-sm-right">
-                <button type="button" class="btn btn-success btn-rounded mb-2 mr-2" target="_blank" routerLink="config"><i class="mdi mdi-plus mr-1"></i>
-                  Create New </button>
+                <button type="button" class="btn btn-outline-primary btn-rounded mb-2 mr-2" target="_blank" routerLink="config"><i class="bx bx-cog bx-spin mr-1" style="font-size: 12px;"></i>
+                  Settings </button>
               </div>
             </div><!-- end col-->
           </div>
@@ -30,10 +30,6 @@
                     </th>
                 </tr>
                 <tr style="text-align: center;">
-                    <td style="width: 50%; font-weight: 800;">Program</td>
-                    <td style="width: 50%; font-weight: 800;">Views</td>
-                </tr>
-                <tr style="text-align: center;">
                   <td>
                     <ngb-highlight [result]="table.programName" [term]="advancedService.searchTerm"></ngb-highlight>
                   </td>
@@ -43,16 +39,7 @@
                 </tr>
               </thead>
             <tbody>
-              <!-- <tr *ngFor="let table of tables$ | async">
-                <td>
-                  <ngb-highlight [result]="table.programName" [term]="advancedService.searchTerm"></ngb-highlight>
-                </td>
-                <td>
-                  <ngb-highlight [result]="table.viewNumber" [term]="advancedService.searchTerm"></ngb-highlight>
-                </td>
-              </tr> -->
-            </tbody>
-                
+            </tbody>      
             </table>
           </div>
           <!-- End table -->

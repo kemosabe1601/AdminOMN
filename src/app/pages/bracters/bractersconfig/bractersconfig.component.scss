@@ -64,3 +64,39 @@ mat-table {
 .backButton {
   display: flex; justify-content: flex-end
 }
+
+.inlinebutton {
+  display:inline-block;
+}
+
+// mat-table {
+//   width: 100%;
+//   font-family: 'Google Sans', sans-serif;
+// }
+
+.searchButton {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+table { 
+  border-collapse: separate;
+  display: flex;
+}
+
+td {
+  padding: 16px;
+}
+
+thead {
+  padding: 15px;
+}
+
+.datatables thead tr th:after {
+  content: unset;
+}
+
+.datatables thead tr th:before {
+  content: unset;
+}

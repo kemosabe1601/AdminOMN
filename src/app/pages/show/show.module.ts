@@ -31,7 +31,6 @@ import {
 } from '@ng-bootstrap/ng-bootstrap';
 
 
-
 @NgModule({
   declarations: [ShowComponent, ShowconfigComponent],
   imports: [

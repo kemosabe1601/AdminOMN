@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { BractersRoutingModule } from './bracters-routing.module';
 import { BractersComponent } from './bracters.component';
+import { BractersconfigComponent } from './bractersconfig/bractersconfig.component';
 
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -30,7 +31,7 @@ import {
 
 
 @NgModule({
-  declarations: [BractersComponent],
+  declarations: [BractersComponent, BractersconfigComponent],
   imports: [
     CommonModule,
     BractersRoutingModule,
