@@ -54,7 +54,7 @@
 
 mat-table {
   width: 100%;
-  font-family: Google-Sans;
+  font-family: 'Google Sans';
 }
 
 .back {
@@ -99,4 +99,8 @@ thead {
 
 .datatables thead tr th:before {
   content: unset;
+}
+
+.mat-column-programName{
+  flex: 0 0 450px;
 }
