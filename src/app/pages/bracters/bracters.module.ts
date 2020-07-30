@@ -1,3 +1,5 @@
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -20,43 +22,44 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {
-  NgbPaginationModule,
-  NgbTypeaheadModule,
-  NgbDropdownModule,
-  NgbTooltipModule,
-  NgbNavModule,
-  NgbDatepickerModule,
-  NgbAlertModule
+	NgbPaginationModule,
+	NgbTypeaheadModule,
+	NgbDropdownModule,
+	NgbTooltipModule,
+	NgbNavModule,
+	NgbDatepickerModule,
+	NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
 
-
 @NgModule({
-  declarations: [BractersComponent, BractersconfigComponent],
-  imports: [
-    CommonModule,
-    BractersRoutingModule,
-    NgSelectModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    DragDropModule,
-    MatIconModule,
-    UIModule,
-    UiSwitchModule,
-    PerfectScrollbarModule,
-    CKEditorModule,
-    ArchwizardModule,
-    NgxMaskModule,
-    ColorPickerModule,
-    DropzoneModule,
-    NgbPaginationModule,
-    NgbTypeaheadModule,
-    NgbDropdownModule,
-    NgbTooltipModule,
-    NgbNavModule,
-    NgbDatepickerModule,
-    NgbAlertModule
-  ]
+	declarations: [BractersComponent, BractersconfigComponent],
+	imports: [
+		CommonModule,
+		BractersRoutingModule,
+		NgSelectModule,
+		FormsModule,
+		ReactiveFormsModule,
+		MatTableModule,
+		MatPaginatorModule,
+		DragDropModule,
+		MatIconModule,
+		UIModule,
+		UiSwitchModule,
+		PerfectScrollbarModule,
+		CKEditorModule,
+		ArchwizardModule,
+		NgxMaskModule,
+		ColorPickerModule,
+		DropzoneModule,
+		NgbPaginationModule,
+		NgbTypeaheadModule,
+		NgbDropdownModule,
+		NgbTooltipModule,
+		NgbNavModule,
+		NgbDatepickerModule,
+		NgbAlertModule,
+		NgxDatatableModule,
+		MatProgressBarModule,
+	],
 })
-export class BractersModule { }
+export class BractersModule {}

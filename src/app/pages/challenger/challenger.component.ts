@@ -1,38 +1,47 @@
-import { DatatableComponent, ColumnMode } from '@swimlane/ngx-datatable';
-import { DecimalPipe } from '@angular/common';
+import { delay } from 'rxjs/operators';
+import { MockApiService } from './../../services/mock-api.service';
 import { Observable, Subscription } from 'rxjs';
 import { Table } from './advanced.model';
-
+import { DecimalPipe } from '@angular/common';
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
-import { MockApiService } from 'src/app/services/mock-api.service';
+import { ColumnMode, DatatableComponent } from '@swimlane/ngx-datatable';
 
+interface PageInfo {
+	offset: number;
+	pageSize: number;
+	limit: number;
+	count: number;
+}
 @Component({
-	selector: 'app-category',
-	templateUrl: './category.component.html',
-	styleUrls: ['./category.component.scss'],
+	selector: 'app-challenger',
+	templateUrl: './challenger.component.html',
+	styleUrls: ['./challenger.component.scss'],
 	providers: [DecimalPipe],
 })
-export class CategoryComponent implements OnInit, OnDestroy {
+export class ChallengerComponent implements OnInit, OnDestroy {
 	// bread crum data
 	breadCrumbItems: Array<{}>;
 
 	mockSub: Subscription;
 
+	selectValue: string[];
+
 	// Table data
 	rows: any[];
 	temp: any[];
 
-	selectValue: string[];
 	ColumnMode = ColumnMode;
 
 	@ViewChild(DatatableComponent) table: DatatableComponent;
 
 	constructor(public mockService: MockApiService) {}
-	ngOnInit() {
+
+	ngOnInit(): void {
 		this.breadCrumbItems = [
-			{ label: 'Category' },
+			{ label: 'Challengers' },
 			{ label: 'List', active: true },
 		];
+
 		this.selectValue = [
 			'Monday',
 			'Tuesday',
@@ -50,7 +59,7 @@ export class CategoryComponent implements OnInit, OnDestroy {
 	 * fetches the table value
 	 */
 	_fetchData() {
-		this.mockSub = this.mockService.getTableData().subscribe((val) => {
+		this.mockService.getTableData().subscribe((val) => {
 			this.temp = [...val[0]];
 			this.rows = val[0];
 		});
@@ -60,7 +69,7 @@ export class CategoryComponent implements OnInit, OnDestroy {
 		const val = event.target.value.toLowerCase();
 
 		// filter our data
-		const temp = this.temp.filter((d) => {
+		const temp = this.temp.filter(function (d) {
 			return d.name.toLowerCase().indexOf(val) !== -1 || !val;
 		});
 
@@ -73,7 +82,7 @@ export class CategoryComponent implements OnInit, OnDestroy {
 	setFilter(event) {
 		const val = event;
 		// filter our data
-		const temp = this.temp.filter((d) => {
+		const temp = this.temp.filter(function (d) {
 			return d.days.indexOf(val) !== -1 || !val;
 		});
 		// update the rows

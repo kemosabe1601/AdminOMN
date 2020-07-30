@@ -1,11 +1,11 @@
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CategoryRoutingModule } from './category-routing.module';
 import { CategoryComponent } from './category.component';
 import { CategoryconfigComponent } from './categoryconfig/categoryconfig.component';
-
-
 
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,39 +21,41 @@ import { NgxMaskModule } from 'ngx-mask';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import {
-  NgbPaginationModule,
-  NgbTypeaheadModule,
-  NgbDropdownModule,
-  NgbTooltipModule,
-  NgbNavModule,
-  NgbDatepickerModule
+	NgbPaginationModule,
+	NgbTypeaheadModule,
+	NgbDropdownModule,
+	NgbTooltipModule,
+	NgbNavModule,
+	NgbDatepickerModule,
 } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [CategoryComponent, CategoryconfigComponent],
-  imports: [
-    CommonModule,
-    CategoryRoutingModule,
-    NgSelectModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatTableModule,
-    DragDropModule,
-    MatIconModule,
-    UIModule,
-    UiSwitchModule,
-    PerfectScrollbarModule,
-    CKEditorModule,
-    ArchwizardModule,
-    NgxMaskModule,
-    ColorPickerModule,
-    DropzoneModule,
-    NgbPaginationModule,
-    NgbTypeaheadModule,
-    NgbDropdownModule,
-    NgbTooltipModule,
-    NgbNavModule,
-    NgbDatepickerModule
-  ]
+	declarations: [CategoryComponent, CategoryconfigComponent],
+	imports: [
+		CommonModule,
+		CategoryRoutingModule,
+		NgSelectModule,
+		FormsModule,
+		ReactiveFormsModule,
+		MatTableModule,
+		DragDropModule,
+		MatIconModule,
+		UIModule,
+		UiSwitchModule,
+		PerfectScrollbarModule,
+		CKEditorModule,
+		ArchwizardModule,
+		NgxMaskModule,
+		ColorPickerModule,
+		DropzoneModule,
+		NgbPaginationModule,
+		NgbTypeaheadModule,
+		NgbDropdownModule,
+		NgbTooltipModule,
+		NgbNavModule,
+		NgbDatepickerModule,
+		NgxDatatableModule,
+		MatProgressBarModule,
+	],
 })
-export class CategoryModule { }
+export class CategoryModule {}

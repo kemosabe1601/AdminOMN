@@ -1,5 +1,5 @@
-import { AdvancedService } from './default/advanced.service';
-import { AdvancedSortableDirective } from './default/advanced-sortable.directive';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { NgModule } from '@angular/core';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CommonModule } from '@angular/common';
@@ -15,12 +15,12 @@ import { UIModule } from '../../shared/ui/ui.module';
 
 import { UiSwitchModule } from 'ngx-ui-switch';
 import {
-  NgbPaginationModule,
-  NgbTypeaheadModule,
-  NgbDropdownModule,
-  NgbTooltipModule,
-  NgbNavModule,
-  NgbDatepickerModule
+	NgbPaginationModule,
+	NgbTypeaheadModule,
+	NgbDropdownModule,
+	NgbTooltipModule,
+	NgbNavModule,
+	NgbDatepickerModule,
 } from '@ng-bootstrap/ng-bootstrap';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
@@ -34,32 +34,33 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
 
 @NgModule({
-  declarations: [DefaultComponent, AdvancedSortableDirective, HomeconfigComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    DashboardsRoutingModule,
-    UIModule,
-    NgbDropdownModule,
-    NgbTooltipModule,
-    NgbNavModule,
-    PerfectScrollbarModule,
-    NgbPaginationModule,
-    NgbTypeaheadModule,
-    NgSelectModule,
-    NgbDatepickerModule,
-    UiSwitchModule,
-    CKEditorModule,
-    ArchwizardModule,
-    NgxMaskModule,
-    ColorPickerModule,
-    DropzoneModule,
-    MatTableModule,
-    DragDropModule,
-    MatIconModule
-  ],
-  providers: [
-  ]
+	declarations: [DefaultComponent, HomeconfigComponent],
+	imports: [
+		CommonModule,
+		FormsModule,
+		ReactiveFormsModule,
+		DashboardsRoutingModule,
+		UIModule,
+		NgbDropdownModule,
+		NgbTooltipModule,
+		NgbNavModule,
+		PerfectScrollbarModule,
+		NgbPaginationModule,
+		NgbTypeaheadModule,
+		NgSelectModule,
+		NgbDatepickerModule,
+		UiSwitchModule,
+		CKEditorModule,
+		ArchwizardModule,
+		NgxMaskModule,
+		ColorPickerModule,
+		DropzoneModule,
+		MatTableModule,
+		DragDropModule,
+		MatIconModule,
+		NgxDatatableModule,
+		MatProgressBarModule,
+	],
+	providers: [],
 })
-export class DashboardsModule { }
+export class DashboardsModule {}

@@ -5,24 +5,23 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DefaultComponent } from './default/default.component';
 
-
 const routes: Routes = [
-    {
-        path: 'home',
-        component: DefaultComponent
-    },
-    {
-        path: 'home/config',
-        component: HomeconfigComponent
-    },
-    {
-        path:'category',
-        component: CategoryModule
-    }
+	{
+		path: 'home',
+		component: DefaultComponent,
+	},
+	{
+		path: 'home/config',
+		component: HomeconfigComponent,
+	},
+	{
+		path: 'category',
+		component: CategoryModule,
+	},
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
 })
 export class DashboardsRoutingModule {}

@@ -1,6 +1,6 @@
 <div class="container-fluid">
 	<app-page-title
-		title="Home Management"
+		title="Challengers Management"
 		[breadcrumbItems]="breadCrumbItems"
 	></app-page-title>
 
@@ -8,26 +8,33 @@
 		<div class="col-12">
 			<div class="card">
 				<div class="card-body">
-					<h4 class="card-title">Home set list</h4>
+					<h4 class="card-title">Challenger list</h4>
 					<p class="card-sub-title">
-						(Each of the set here will be shown on the homepage).
+						(Each of the category set here will be contained in a home set).
 					</p>
 
 					<div class="row mb-2">
-						<div class="col-sm-4">
-							<!-- <div class="search-box mr-2 mb-2 d-inline-block">
-                <div class="position-relative">
-                  <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="advancedService.searchTerm">
-                  <i class="bx bx-search-alt search-icon"></i>
-                </div>
-              </div> -->
-							<ng-select
-								[items]="selectValue"
-								placeholder="Filter set"
-								(change)="setFilter($event)"
-							></ng-select>
+						<div class="col-md-9 inline">
+							<div class="search-box mr-2 mb-2 d-inline-block">
+								<div class="position-relative">
+									<input
+										type="text"
+										class="form-control"
+										placeholder="Search..."
+										(keyup)="updateFilter($event)"
+									/>
+									<i class="bx bx-search-alt search-icon"></i>
+								</div>
+							</div>
+							<div class="mr-2 mb-2 set-filter">
+								<ng-select
+									[items]="selectValue"
+									placeholder="Filter set"
+									(change)="setFilter($event)"
+								></ng-select>
+							</div>
 						</div>
-						<div class="col-sm-8">
+						<div class="col-md-3">
 							<div class="text-sm-right">
 								<button
 									type="button"

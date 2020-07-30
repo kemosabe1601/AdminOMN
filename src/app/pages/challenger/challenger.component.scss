@@ -1,0 +1,13 @@
+.inline {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+	& > .search-box {
+		width: 60%;
+	}
+
+	& > .set-filter {
+		width: 100%;
+	}
+}

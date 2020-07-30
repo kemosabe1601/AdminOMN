@@ -1,10 +1,11 @@
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ShowRoutingModule } from './show-routing.module';
 import { ShowComponent } from './show.component';
 import { ShowconfigComponent } from './showconfig/showconfig.component';
-
 
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,43 +22,44 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {
-  NgbPaginationModule,
-  NgbTypeaheadModule,
-  NgbDropdownModule,
-  NgbTooltipModule,
-  NgbNavModule,
-  NgbDatepickerModule,
-  NgbAlertModule
+	NgbPaginationModule,
+	NgbTypeaheadModule,
+	NgbDropdownModule,
+	NgbTooltipModule,
+	NgbNavModule,
+	NgbDatepickerModule,
+	NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
 
-
 @NgModule({
-  declarations: [ShowComponent, ShowconfigComponent],
-  imports: [
-    CommonModule,
-    ShowRoutingModule,
-    NgSelectModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    DragDropModule,
-    MatIconModule,
-    UIModule,
-    UiSwitchModule,
-    PerfectScrollbarModule,
-    CKEditorModule,
-    ArchwizardModule,
-    NgxMaskModule,
-    ColorPickerModule,
-    DropzoneModule,
-    NgbPaginationModule,
-    NgbTypeaheadModule,
-    NgbDropdownModule,
-    NgbTooltipModule,
-    NgbNavModule,
-    NgbDatepickerModule,
-    NgbAlertModule
-  ]
+	declarations: [ShowComponent, ShowconfigComponent],
+	imports: [
+		CommonModule,
+		ShowRoutingModule,
+		NgSelectModule,
+		FormsModule,
+		ReactiveFormsModule,
+		MatTableModule,
+		MatPaginatorModule,
+		DragDropModule,
+		MatIconModule,
+		UIModule,
+		UiSwitchModule,
+		PerfectScrollbarModule,
+		CKEditorModule,
+		ArchwizardModule,
+		NgxMaskModule,
+		ColorPickerModule,
+		DropzoneModule,
+		NgbPaginationModule,
+		NgbTypeaheadModule,
+		NgbDropdownModule,
+		NgbTooltipModule,
+		NgbNavModule,
+		NgbDatepickerModule,
+		NgbAlertModule,
+		NgxDatatableModule,
+		MatProgressBarModule,
+	],
 })
-export class ShowModule { }
+export class ShowModule {}
