@@ -26,6 +26,8 @@ import { ShowModule } from './show/show.module';
 
 import { BractersModule } from './bracters/bracters.module';
 
+import { ChallengerModule } from './challenger/challenger.module';
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 	suppressScrollX: true,
 	wheelSpeed: 0.3,
@@ -44,6 +46,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		CategoryModule,
 		ShowModule,
 		BractersModule,
+		ChallengerModule,
 		UIModule,
 		NgbNavModule,
 		NgbTooltipModule,

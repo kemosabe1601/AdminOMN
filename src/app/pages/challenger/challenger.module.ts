@@ -18,6 +18,10 @@ import { CommonModule } from '@angular/common';
 
 import { ChallengerRoutingModule } from './challenger-routing.module';
 import { ChallengerComponent } from './challenger.component';
+import { DetailComponent } from './detail/detail.component';
+import { DeletedComponent } from './deleted/deleted.component';
+
+
 import {
 	NgbPaginationModule,
 	NgbTypeaheadModule,
@@ -25,12 +29,13 @@ import {
 	NgbTooltipModule,
 	NgbNavModule,
 	NgbDatepickerModule,
+	NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
-	declarations: [ChallengerComponent],
+	declarations: [ChallengerComponent, DetailComponent, DeletedComponent],
 	imports: [
 		CommonModule,
 		ChallengerRoutingModule,
@@ -57,6 +62,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 		HttpClientModule,
 		NgxDatatableModule,
 		MatProgressBarModule,
+		NgbAlertModule
 	],
 })
 export class ChallengerModule {}

@@ -54,7 +54,7 @@
 
 mat-table {
   width: 100%;
-  font-family: 'Google Sans', sans-serif;
+  font-family: 'Google Sans';
 }
 
 .back {
@@ -63,13 +63,4 @@ mat-table {
 
 .backButton {
   display: flex; justify-content: flex-end
-}
-
-.inlinebutton {
-  display:inline-block;
-}
-
-table {
-  width: 100%;
-  font-family: 'Google Sans', sans-serif;
 }

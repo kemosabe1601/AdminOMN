@@ -59,9 +59,9 @@ export class ChallengerComponent implements OnInit, OnDestroy {
 	 * fetches the table value
 	 */
 	_fetchData() {
-		this.mockService.getTableData().subscribe((val) => {
-			this.temp = [...val[0]];
-			this.rows = val[0];
+		this.mockService.getTableData().subscribe((val:any) => {
+			this.temp = [...val];
+			this.rows = val;
 		});
 	}
 

@@ -8,11 +8,8 @@
 		<div class="col-12">
 			<div class="card">
 				<div class="card-body">
-					<h4 class="card-title text-primary">Challenger list</h4>
-					<p class="card-sub-title">
-						(Each of the category set here will be contained in a home set).
-					</p>
-
+					<h4 class="card-title text-primary">Delete Challenger Requests</h4>
+          <br/>
 					<form>
             <div class="row">
               <div class="col-md-4">
@@ -88,7 +85,7 @@
 				<hr/>
 				<br/>
 					<!-- Table -->
-					<ngb-alert role="alert" type="info" class="alert alert-info" ng-reflect-type="info" ng-reflect-dismissible="false"> Challenger Upload Data:</ngb-alert>
+					<ngb-alert role="alert" type="info" class="alert alert-info" ng-reflect-type="info" ng-reflect-dismissible="false"> Deleted Challenger Requests Data:</ngb-alert>
 					<mat-progress-bar mode="query" *ngIf="!rows"></mat-progress-bar>
 					<div class="table-responsive" *ngIf="rows">
 						<ngx-datatable
@@ -135,10 +132,7 @@
 								<ng-template let-row="row" ngx-datatable-cell-template>
 									<div class="button-items">
 										<button type="button" class="btn btn-primary" routerLink="detail">
-											Config
-										</button>
-										<button type="button" class="btn btn-light">
-											Delete
+											Result letter
 										</button>
 									</div>
 								</ng-template>

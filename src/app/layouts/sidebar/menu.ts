@@ -41,10 +41,6 @@ export const MENU: MenuItem[] = [
 		label: 'Category',
 		icon: 'bx bx-collection',
 		link: '/category',
-		// badge: {
-		//     variant: 'info',
-		//     text: '03',
-		// },
 		subItems: [],
 	},
 	{
@@ -52,10 +48,6 @@ export const MENU: MenuItem[] = [
 		label: 'List',
 		icon: 'bx bx-layer',
 		link: '/show',
-		// badge: {
-		//     variant: 'info',
-		//     text: '03',
-		// },
 		subItems: [],
 	},
 	{
@@ -63,10 +55,6 @@ export const MENU: MenuItem[] = [
 		label: 'Bracters',
 		icon: 'dripicons-lightbulb',
 		link: '/bracters',
-		// badge: {
-		//     variant: 'info',
-		//     text: '03',
-		// },
 		subItems: [],
 	},
 	{
@@ -74,12 +62,16 @@ export const MENU: MenuItem[] = [
 		label: 'Challengers',
 		icon: 'dripicons-heart',
 		link: '/challengers',
-		// badge: {
-		//     variant: 'info',
-		//     text: '03',
-		// },
-		subItems: [],
+		subItems: [
+			{
+				    id: 10,
+				    label: 'Deleted Requested',
+				    link: '/challengers/deleted',
+				    parentId: 9
+			}
+		],
 	},
+	
 	// {
 	//     id: 6,
 	//     isLayout: true

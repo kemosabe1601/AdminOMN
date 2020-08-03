@@ -18,7 +18,7 @@ export class MockApiService {
 			'Access-Control-Allow-Headers':
 				'Origin, X-Requested-With, Content-Type, Accept, Authorization',
 		});
-		return this.http.get(this.getBaseUrl() + 'products', {
+		return this.http.get( '/api/v1/admin/table', {
 			headers: header,
 		});
 	}

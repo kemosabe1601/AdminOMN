@@ -49,9 +49,9 @@ export class BractersComponent implements OnInit, OnDestroy {
 	 * fetches the table value
 	 */
 	_fetchData() {
-		this.mockSub = this.mockService.getTableData().subscribe((val) => {
-			this.temp = [...val[0]];
-			this.rows = val[0];
+		this.mockSub = this.mockService.getTableData().subscribe((val:any) => {
+			this.temp = [...val];
+			this.rows = val;
 		});
 	}
 
