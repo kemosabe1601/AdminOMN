@@ -1,0 +1,28 @@
+
+.back {
+  float: right;
+}
+
+.backButton {
+  display: flex; justify-content: flex-end
+}
+
+.inlinebutton {
+  display:inline-block;
+}
+
+.searchButton {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+.button-items {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+}

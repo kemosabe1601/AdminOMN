@@ -28,10 +28,13 @@ import {
 
 import { ProfitpaymentRoutingModule } from './profitpayment-routing.module';
 import { ProfitpaymentComponent } from './profitpayment.component';
+import { DetailComponent } from './detail/detail.component';
+import { CompleteComponent } from './complete/complete.component';
+import { DeletedComponent } from './deleted/deleted.component';
 
 
 @NgModule({
-  declarations: [ProfitpaymentComponent],
+  declarations: [ProfitpaymentComponent, DetailComponent, CompleteComponent, DeletedComponent],
   imports: [
     CommonModule,
 		ProfitpaymentRoutingModule,

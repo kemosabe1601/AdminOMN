@@ -1,0 +1,174 @@
+<div class="container-fluid">
+  <!-- start page title -->
+  <app-page-title title="Payment Request Detail" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <!-- end page title -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <a class="backButton">
+            <mat-icon>arrow_back_ios</mat-icon><span class="text-primary" routerLink="/profitpayment"
+              style="font-size: 14px; padding-top: 1px;">Return to list</span>
+          </a>
+          <br />
+          <form>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="productname">Name</label>
+                  <input id="productname" name="productname" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="manufacturername">Age</label>
+                  <input id="manufacturername" name="manufacturername" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="manufacturerbrand">Total program</label>
+                  <input id="manufacturerbrand" name="manufacturerbrand" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="price">Total cumulative view</label>
+                  <input id="price" name="price" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="price">Viewing fee per min</label>
+                  <input id="price" name="price" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="price">Possible payment amount</label>
+                  <input id="price" name="price" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="price">Tax</label>
+                  <input id="price" name="price" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="price">Confirmed amount</label>
+                  <input id="price" name="price" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="price">Actual amount</label>
+                  <input id="price" name="price" type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="price">Creator</label>
+                  <input id="price" name="price" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="price">Gender</label>
+                  <input id="price" name="price" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="price">Program view time max increment (day)</label>
+                  <input id="price" name="price" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="price">Program view time max increment (month)</label>
+                  <input id="price" name="price" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="price">Program view time (average)</label>
+                  <input id="price" name="price" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label class="control-label">ID suspension reason</label>
+                  <ng-select [items]="['Alaska','Hawaii','California','Nevada','Oregon','Washington']"
+                    [multiple]="true"></ng-select>
+                </div>
+                <div class="form-group">
+                  <label for="productdesc">Cancel reason</label>
+                  <textarea class="form-control" id="productdesc" rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+            <!-- <button type="submit" class="btn btn-primary mr-1">Save Changes</button>
+            <button type="submit" class="btn btn-secondary">Cancel</button> -->
+          </form>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-sm-6">
+                <h4 class="text-primary">Viewed Program</h4>
+                <div class="table-responsive">
+                  <table class="table table-hover mb-0">
+
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Program Name</th>
+                        <th>30 days (100%)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Video Larry</td>
+                        <td>11 (30%)</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Video Jacob</td>
+                        <td>8 (20%)</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Season 1</td>
+                        <td>1 (10%)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <h4 class="text-primary">Program view</h4>
+                <div class="table-responsive">
+                  <table class="table table-hover mb-0">
+
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Program Name</th>
+                        <th>30 days (100%)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>11 (30%)</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>8 (20%)</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>1 (10%)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <br />
+            <br />
+            <div class="button-items">
+              <button type="submit" class="btn btn-primary mr-1">Save Changes</button>
+              <button type="submit" class="btn btn-outline-info mr-1">See Report</button>
+              <button type="submit" class="btn btn-secondary">Cancel</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+</div> <!-- container-fluid -->

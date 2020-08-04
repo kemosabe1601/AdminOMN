@@ -1,6 +1,6 @@
 <div class="container-fluid">
 	<app-page-title
-		title="Profit Payment Management"
+		title="Completed Payment Request Management"
 		[breadcrumbItems]="breadCrumbItems"
 	></app-page-title>
 
@@ -8,11 +8,8 @@
 		<div class="col-12">
 			<div class="card">
 				<div class="card-body">
-					<h4 class="card-title text-primary">Payment Request list</h4>
-					<p class="card-sub-title">
-						(Each of the category set here will be contained in a home set).
-					</p>
-
+					<h4 class="card-title text-primary">Completed Payment Requests</h4>
+          <br/>
 					<form>
             <div class="row">
               <div class="col-md-4">
@@ -27,17 +24,6 @@
                   <input type="text" class="form-control" placeholder="Last name" value="Otto">
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="form-group position-relative">
-                  <label>Username</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">@</span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Username">
-                  </div>
-                </div>
-              </div>
             </div>
             <div class="text-sm-right">
 							<button class="btn btn-primary" type="submit">Search</button>
@@ -45,9 +31,9 @@
 					</form>
 					<br/>
 					<br/>
-				<br/>
+				  <br/>
 					<!-- Table -->
-					<ngb-alert role="alert" type="info" class="alert alert-info" ng-reflect-type="info" ng-reflect-dismissible="false"> Payment Request Data:</ngb-alert>
+					<ngb-alert role="alert" type="info" class="alert alert-info" ng-reflect-type="info" ng-reflect-dismissible="false"> Completed Payment Requests Data:</ngb-alert>
 					<mat-progress-bar mode="query" *ngIf="!rows"></mat-progress-bar>
 					<div class="table-responsive" *ngIf="rows">
 						<ngx-datatable
@@ -60,7 +46,7 @@
 							[limit]="10"
 							[sorts]="[{ prop: 'name', dir: 'acs' }]"
 						>
-							<ngx-datatable-column name="Payment Request Name">
+							<ngx-datatable-column name="Payment Request">
 								<ng-template let-row="row" ngx-datatable-cell-template>
 									{{ row.name }}
 								</ng-template>
@@ -94,10 +80,7 @@
 								<ng-template let-row="row" ngx-datatable-cell-template>
 									<div class="button-items">
 										<button type="button" class="btn btn-primary" routerLink="detail">
-											Detail
-										</button>
-										<button type="button" class="btn btn-light">
-											Delete
+											Result letter
 										</button>
 									</div>
 								</ng-template>

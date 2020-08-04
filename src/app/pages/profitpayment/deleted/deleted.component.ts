@@ -1,5 +1,5 @@
+import { MockApiService } from 'src/app/services/mock-api.service';
 import { delay } from 'rxjs/operators';
-import { MockApiService } from './../../services/mock-api.service';
 import { Observable, Subscription } from 'rxjs';
 import { Table } from './advanced.model';
 import { DecimalPipe } from '@angular/common';
@@ -14,12 +14,11 @@ interface PageInfo {
 }
 
 @Component({
-  selector: 'app-profitpayment',
-  templateUrl: './profitpayment.component.html',
-  styleUrls: ['./profitpayment.component.scss'],
-  providers: [DecimalPipe],
+  selector: 'app-deleted',
+  templateUrl: './deleted.component.html',
+  styleUrls: ['./deleted.component.scss']
 })
-export class ProfitpaymentComponent implements OnInit, OnDestroy {
+export class DeletedComponent implements OnInit, OnDestroy {
   breadCrumbItems: Array<{}>;
 
 	mockSub: Subscription;
@@ -39,7 +38,7 @@ export class ProfitpaymentComponent implements OnInit, OnDestroy {
 	ngOnInit(): void {
 		this.breadCrumbItems = [
 			{ label: 'Profit Payment Request' },
-			{ label: 'List', active: true },
+			{ label: 'Deleted', active: true },
 		];
 
 		this.selectValue = [
