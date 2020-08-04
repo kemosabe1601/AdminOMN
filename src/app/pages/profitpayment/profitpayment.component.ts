@@ -14,14 +14,13 @@ interface PageInfo {
 }
 
 @Component({
-	selector: 'app-challenger',
-	templateUrl: './challenger.component.html',
-	styleUrls: ['./challenger.component.scss'],
-	providers: [DecimalPipe],
+  selector: 'app-profitpayment',
+  templateUrl: './profitpayment.component.html',
+  styleUrls: ['./profitpayment.component.scss'],
+  providers: [DecimalPipe],
 })
-export class ChallengerComponent implements OnInit, OnDestroy {
-	// bread crum data
-	breadCrumbItems: Array<{}>;
+export class ProfitpaymentComponent implements OnInit, OnDestroy {
+  breadCrumbItems: Array<{}>;
 
 	mockSub: Subscription;
 

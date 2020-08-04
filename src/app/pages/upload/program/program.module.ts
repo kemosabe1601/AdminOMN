@@ -1,5 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
+import { DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
+import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { NgxMaskModule } from 'ngx-mask';
 import { ArchwizardModule } from 'angular-archwizard';
@@ -12,15 +14,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { UIModule } from './../../shared/ui/ui.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ChallengerRoutingModule } from './challenger-routing.module';
-import { ChallengerComponent } from './challenger.component';
-import { DetailComponent } from './detail/detail.component';
-import { DeletedComponent } from './deleted/deleted.component';
-
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { UIModule } from './../../../shared/ui/ui.module';
 import {
 	NgbPaginationModule,
 	NgbTypeaheadModule,
@@ -31,20 +28,28 @@ import {
 	NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
 
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { ProgramRoutingModule } from './program-routing.module';
+import { ProgramComponent } from './program.component';
+import { AddComponent } from './add/add.component';
+
+const config: DropzoneConfigInterface = {
+  // Change this to your upload POST address:
+  url: 'https://httpbin.org/post',
+  maxFilesize: 100,
+};
 
 @NgModule({
-	declarations: [ChallengerComponent, DetailComponent, DeletedComponent],
-	imports: [
+  declarations: [ProgramComponent, AddComponent],
+  imports: [
+    UIModule,
 		CommonModule,
-		ChallengerRoutingModule,
 		NgSelectModule,
 		FormsModule,
+		ProgramRoutingModule,
 		ReactiveFormsModule,
 		MatTableModule,
 		DragDropModule,
 		MatIconModule,
-		UIModule,
 		UiSwitchModule,
 		PerfectScrollbarModule,
 		CKEditorModule,
@@ -62,6 +67,12 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 		NgxDatatableModule,
 		MatProgressBarModule,
 		NgbAlertModule
-	],
+  ],
+  providers: [
+		{
+			provide: DROPZONE_CONFIG,
+			useValue: config
+		}
+	]
 })
-export class ChallengerModule {}
+export class ProgramModule { }

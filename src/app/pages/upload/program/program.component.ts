@@ -1,48 +1,36 @@
-import { delay } from 'rxjs/operators';
-import { MockApiService } from './../../services/mock-api.service';
+import { MockApiService } from 'src/app/services/mock-api.service';
+import { ColumnMode, DatatableComponent } from '@swimlane/ngx-datatable';
+import { DecimalPipe } from '@angular/common';
 import { Observable, Subscription } from 'rxjs';
 import { Table } from './advanced.model';
-import { DecimalPipe } from '@angular/common';
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
-import { ColumnMode, DatatableComponent } from '@swimlane/ngx-datatable';
-
-interface PageInfo {
-	offset: number;
-	pageSize: number;
-	limit: number;
-	count: number;
-}
 
 @Component({
-	selector: 'app-challenger',
-	templateUrl: './challenger.component.html',
-	styleUrls: ['./challenger.component.scss'],
-	providers: [DecimalPipe],
+  selector: 'app-program',
+  templateUrl: './program.component.html',
+  styleUrls: ['./program.component.scss'],
+  providers: [DecimalPipe],
 })
-export class ChallengerComponent implements OnInit, OnDestroy {
-	// bread crum data
-	breadCrumbItems: Array<{}>;
+export class ProgramComponent implements OnInit, OnDestroy {
+  breadCrumbItems: Array<{}>;
 
 	mockSub: Subscription;
-
-	selectValue: string[];
 
 	// Table data
 	rows: any[];
 	temp: any[];
 
+	selectValue: string[];
 	ColumnMode = ColumnMode;
 
 	@ViewChild(DatatableComponent) table: DatatableComponent;
 
 	constructor(public mockService: MockApiService) {}
-
-	ngOnInit(): void {
+	ngOnInit() {
 		this.breadCrumbItems = [
-			{ label: 'Challengers' },
+			{ label: 'Upload Program' },
 			{ label: 'List', active: true },
 		];
-
 		this.selectValue = [
 			'Monday',
 			'Tuesday',
@@ -60,7 +48,7 @@ export class ChallengerComponent implements OnInit, OnDestroy {
 	 * fetches the table value
 	 */
 	_fetchData() {
-		this.mockService.getTableData().subscribe((val:any) => {
+		this.mockSub = this.mockService.getTableData().subscribe((val:any) => {
 			this.temp = [...val];
 			this.rows = val;
 		});
@@ -70,7 +58,7 @@ export class ChallengerComponent implements OnInit, OnDestroy {
 		const val = event.target.value.toLowerCase();
 
 		// filter our data
-		const temp = this.temp.filter(function (d) {
+		const temp = this.temp.filter((d) => {
 			return d.name.toLowerCase().indexOf(val) !== -1 || !val;
 		});
 
@@ -83,7 +71,7 @@ export class ChallengerComponent implements OnInit, OnDestroy {
 	setFilter(event) {
 		const val = event;
 		// filter our data
-		const temp = this.temp.filter(function (d) {
+		const temp = this.temp.filter((d) => {
 			return d.days.indexOf(val) !== -1 || !val;
 		});
 		// update the rows

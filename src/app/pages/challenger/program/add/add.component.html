@@ -1,0 +1,90 @@
+<div class="container-fluid">
+    <!-- start page title -->
+    <app-page-title title="Add Challenger Program" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+    <!-- end page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <a class="backButton">
+                        <mat-icon>arrow_back_ios</mat-icon><span class="text-primary" routerLink="/challengers/program"
+                            style="font-size: 14px; padding-top: 1px;">Return to list</span>
+                    </a>
+                    <br/>
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="productname">Program Name</label>
+                                    <input id="productname" name="productname" type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="manufacturername">Manufacturer Name</label>
+                                    <input id="manufacturername" name="manufacturername" type="text"
+                                        class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="manufacturerbrand">Year</label>
+                                    <input id="manufacturerbrand" name="manufacturerbrand" type="text"
+                                        class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="price">Duration</label>
+                                    <input id="price" name="price" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="control-label">Category</label>
+                                    <ng-select [items]="['Alaska','Hawaii','California','Nevada','Oregon','Washington']"
+                                        [multiple]="true"></ng-select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productdesc">Description</label>
+                                    <textarea class="form-control" id="productdesc" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mr-1">Save Changes</button>
+                        <button type="submit" class="btn btn-secondary">Cancel</button>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mb-3">Upload Content</h4>
+                    <dropzone class="dropzone"></dropzone>
+                </div>
+            </div> <!-- end card-->
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Meta Data</h4>
+                    <p class="card-title-desc">Fill all information below</p>
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="metatitle">Meta title</label>
+                                    <input id="metatitle" name="productname" type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="metakeywords">Meta Keywords</label>
+                                    <input id="metakeywords" name="manufacturername" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="metadescription">Meta Description</label>
+                                    <textarea class="form-control" id="metadescription" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mr-1">Save Changes</button>
+                        <button type="submit" class="btn btn-secondary">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+</div> <!-- container-fluid -->

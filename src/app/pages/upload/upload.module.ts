@@ -15,12 +15,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { UIModule } from './../../shared/ui/ui.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ChallengerRoutingModule } from './challenger-routing.module';
-import { ChallengerComponent } from './challenger.component';
-import { DetailComponent } from './detail/detail.component';
-import { DeletedComponent } from './deleted/deleted.component';
-
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import {
 	NgbPaginationModule,
 	NgbTypeaheadModule,
@@ -31,14 +26,17 @@ import {
 	NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
 
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { UploadRoutingModule } from './upload-routing.module';
+import { UploadComponent } from './upload.component';
+import { DeletedComponent } from './deleted/deleted.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
-	declarations: [ChallengerComponent, DetailComponent, DeletedComponent],
-	imports: [
-		CommonModule,
-		ChallengerRoutingModule,
-		NgSelectModule,
+  declarations: [UploadComponent, DeletedComponent, DetailComponent],
+  imports: [
+    CommonModule,
+    UploadRoutingModule,
+    NgSelectModule,
 		FormsModule,
 		ReactiveFormsModule,
 		MatTableModule,
@@ -62,6 +60,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 		NgxDatatableModule,
 		MatProgressBarModule,
 		NgbAlertModule
-	],
+  ]
 })
-export class ChallengerModule {}
+export class UploadModule { }

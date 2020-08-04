@@ -40,7 +40,7 @@ export class DeletedComponent implements OnInit, OnDestroy {
 	ngOnInit(): void {
 		this.breadCrumbItems = [
 			{ label: 'Challengers' },
-			{ label: 'List', active: true },
+			{ label: 'Deleted', active: true },
 		];
 
 		this.selectValue = [

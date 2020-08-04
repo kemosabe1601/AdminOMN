@@ -61,17 +61,66 @@ export const MENU: MenuItem[] = [
 		id: 9,
 		label: 'Challengers',
 		icon: 'dripicons-heart',
-		link: '/challengers',
 		subItems: [
 			{
-				    id: 10,
-				    label: 'Deleted Requested',
-				    link: '/challengers/deleted',
-				    parentId: 9
+				id: 10,
+				label: 'List',
+				link: '/challengers',
+				parentId: 9
+			},
+			{
+				id: 11,
+				label: 'Deleted Requested',
+				link: '/challengers/deleted',
+				parentId: 9
+			},
+			{
+				id: 12,
+				label: 'Challenger Program',
+				link: '/challengers/program',
+				parentId: 9
 			}
 		],
 	},
-	
+	{
+		id: 13,
+		label: 'Upload',
+		icon: 'bx bxs-hot',
+		subItems: [
+			{
+				id: 14,
+				label: 'List',
+				link: '/upload',
+				parentId: 13
+			},
+			{
+				id: 15,
+				label: 'Deleted Requested',
+				link: '/upload/deleted',
+				parentId: 13
+			},
+			{
+				id: 16,
+				label: 'Challenger Program',
+				link: '/upload/program',
+				parentId: 13
+			}
+		],
+	},
+	{
+		id: 17,
+		label: 'Profit Payment',
+		icon: 'bx bx-won',
+		subItems: [
+			{
+				id: 18,
+				label: 'List',
+				link: '/profitpayment',
+				parentId: 17
+			},
+		],
+	},
+
 	// {
 	//     id: 6,
 	//     isLayout: true

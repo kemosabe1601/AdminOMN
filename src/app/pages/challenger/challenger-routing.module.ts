@@ -19,7 +19,8 @@ const routes: Routes = [
   {
     path: 'challengers/deleted',
     component: DeletedComponent
-  }
+  },
+  { path: 'challengers/program', loadChildren: () => import('./program/program.module').then(m => m.ProgramModule) },
 ];
 
 @NgModule({

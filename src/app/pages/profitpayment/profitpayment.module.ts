@@ -15,12 +15,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { UIModule } from './../../shared/ui/ui.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ChallengerRoutingModule } from './challenger-routing.module';
-import { ChallengerComponent } from './challenger.component';
-import { DetailComponent } from './detail/detail.component';
-import { DeletedComponent } from './deleted/deleted.component';
-
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import {
 	NgbPaginationModule,
 	NgbTypeaheadModule,
@@ -31,13 +26,15 @@ import {
 	NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
 
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { ProfitpaymentRoutingModule } from './profitpayment-routing.module';
+import { ProfitpaymentComponent } from './profitpayment.component';
+
 
 @NgModule({
-	declarations: [ChallengerComponent, DetailComponent, DeletedComponent],
-	imports: [
-		CommonModule,
-		ChallengerRoutingModule,
+  declarations: [ProfitpaymentComponent],
+  imports: [
+    CommonModule,
+		ProfitpaymentRoutingModule,
 		NgSelectModule,
 		FormsModule,
 		ReactiveFormsModule,
@@ -62,6 +59,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 		NgxDatatableModule,
 		MatProgressBarModule,
 		NgbAlertModule
-	],
+  ]
 })
-export class ChallengerModule {}
+export class ProfitpaymentModule { }

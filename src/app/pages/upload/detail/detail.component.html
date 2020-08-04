@@ -1,0 +1,179 @@
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <app-page-title title="Upload Record's Detail" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+    <!-- end page title -->
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="button-items">
+              <button type="button" class="btn btn-outline-primary">Edit</button>
+              <button type="button" class="btn btn-outline-secondary">Review</button>
+              <button type="button" class="btn btn-outline-success">Approval/Denial</button>
+              <button type="button" class="btn btn-outline-info">Delete</button>
+              <button type="button" class="btn btn-outline-warning">Print</button>
+              <button type="button" class="btn btn-outline-danger">Instant Upload</button>
+              <button type="button" class="btn btn-outline-dark">OMN</button>
+              <button type="button" class="btn btn-outline-light" routerLink="/upload">Return</button>
+            </div>
+          </div>
+        </div>
+        <!-- end card -->
+      </div> <!-- end col -->
+    </div>
+    <!-- end row -->
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="text-muted text-center">
+              <p class="mb-2">Total view: 1,123</p>
+              <h4>Month view: 9231</h4>
+              <!-- <p class="mt-4 mb-0"><span class="badge badge-soft-success font-size-11 mr-2"> 0.6% <i
+                    class="mdi mdi-arrow-up"></i> </span> From previous period</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-8">
+        <div class="card">
+          <div class="card-body">
+            <div class="form-group row">
+              <label for="example-text-input" class="col-md-2 col-form-label">Current status</label>
+              <div class="col-md-10">
+                <input class="form-control" type="text" value="Edit Request" id="example-text-input" readonly="true">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-search-input" class="col-md-2 col-form-label">ID</label>
+              <div class="col-md-10">
+                <input class="form-control" type="search" value="alex@gmail.com" id="example-search-input" [readonly]="true">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-email-input" class="col-md-2 col-form-label">Title name</label>
+              <div class="col-md-10">
+                <input class="form-control" type="text" value="Back To The Future" id="example-email-input" [readonly]="true">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-url-input" class="col-md-2 col-form-label">Subtitle</label>
+              <div class="col-md-10">
+                <input class="form-control" type="search" value="Subtitle Details" id="example-url-input" [readonly]="true">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-tel-input" class="col-md-2 col-form-label">Summary</label>
+              <div class="col-md-10">
+                <input class="form-control" type="search" value="Summary Details" id="example-tel-input" [readonly]="true">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-password-input" class="col-md-2 col-form-label">Category</label>
+              <div class="col-md-10">
+                <input class="form-control" type="search" value="Movie/Action" id="example-password-input" [readonly]="true">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-number-input" class="col-md-2 col-form-label">Participant</label>
+              <div class="col-md-10">
+                <input class="form-control" type="search" value="Main actor" id="example-number-input" [readonly]="true">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-datetime-local-input" class="col-md-2 col-form-label">Type</label>
+              <div class="col-md-10">
+                <input class="form-control" type="search" value="Seasons" id="example-datetime-local-input" [readonly]="true">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-date-input" class="col-md-2 col-form-label">Content</label>
+              <div class="col-md-10">
+                <input class="form-control" type="search" value="2019-08-19" id="example-date-input" [readonly]="true">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-month-input" class="col-md-2 col-form-label">Music info</label>
+              <div class="col-md-10">
+                <input class="form-control" type="search" value="2019-08" id="example-month-input" [readonly]="true">
+              </div>
+            </div>
+            <div class="form-group row mb-0">
+              <label class="col-md-2 col-form-label">Custom Select</label>
+              <div class="col-md-10">
+                <select class="custom-select">
+                  <option selected>Open this select menu</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-xl-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="text-muted text-center">
+              <h4>Action History</h4>
+              <div class="table-responsive mt-4">
+                <table class="table table-centered mb-0">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <h5 class="font-size-14 mb-1">Manager A</h5>
+                        <button type="button" class="btn btn-outline-primary">Result letter</button>
+  
+                      </td>
+  
+                      <td>
+                      </td>
+  
+                      <td>
+                        <p class="text-muted mb-1">22/02/20</p>
+                        <h5 class="text-danger">Denial</h5>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <h5 class="font-size-14 mb-1">Manager B</h5>
+                        <button type="button" class="btn btn-outline-primary">Result letter</button>
+  
+                      </td>
+  
+                      <td>
+                      </td>
+  
+                      <td>
+                        <p class="text-muted mb-1">22/02/20</p>
+                        <h5 class="text-success">Approval</h5>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <h5 class="font-size-14 mb-1">Manager C</h5>
+                        <button type="button" class="btn btn-outline-primary">Result letter</button>
+                      </td>
+  
+                      <td>
+                      </td>
+                      <td>
+                        <p class="text-muted mb-1">22/02/20</p>
+                        <h5 class="text-success">Approval</h5>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end row -->
+  </div>

@@ -25,6 +25,14 @@ const routes: Routes = [
 		loadChildren: () =>
 			import('./challenger/challenger.module').then((m) => m.ChallengerModule),
 	},
+	{ 
+		path: 'upload', 
+		loadChildren: () => 
+			import('./upload/upload.module').then(m => m.UploadModule) },
+	{ 
+		path: 'profitpayment', 
+			loadChildren: () => 
+				import('./profitpayment/profitpayment.module').then(m => m.ProfitpaymentModule) },
 ];
 
 @NgModule({

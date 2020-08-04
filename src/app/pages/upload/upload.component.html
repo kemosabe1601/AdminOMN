@@ -1,0 +1,142 @@
+<div class="container-fluid">
+    <app-page-title title="Upload Management" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-primary">Upload list</h4>
+
+                    <form>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group position-relative">
+                                    <label>First name</label>
+                                    <input type="text" class="form-control" placeholder="First name" value="Mark">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group position-relative">
+                                    <label>Last name</label>
+                                    <input type="text" class="form-control" placeholder="Last name" value="Otto">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group position-relative">
+                                    <label>Username</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">@</span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Username">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group position-relative">
+                                    <label>City</label>
+                                    <input type="text" class="form-control" placeholder="City">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-sm-right">
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </div>
+                    </form>
+                    <br />
+                    <hr />
+                    <br />
+                    <div class="col-lg-5 align-self-center" style="max-width: 100%;">
+                        <div class="text-lg-center mt-4 mt-lg-0">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div>
+                                        <p class="text-muted text-truncate mb-2">Total Projects</p>
+                                        <h5 class="mb-0">48</h5>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div>
+                                        <p class="text-muted text-truncate mb-2">Projects</p>
+                                        <h5 class="mb-0">40</h5>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div>
+                                        <p class="text-muted text-truncate mb-2">Clients</p>
+                                        <h5 class="mb-0">18</h5>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div>
+                                        <p class="text-muted text-truncate mb-2">Clients</p>
+                                        <h5 class="mb-0">18</h5>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <br />
+                    <!-- Table -->
+                    <ngb-alert role="alert" type="info" class="alert alert-info" ng-reflect-type="info"
+                        ng-reflect-dismissible="false">Upload Data:</ngb-alert>
+                    <mat-progress-bar mode="query" *ngIf="!rows"></mat-progress-bar>
+                    <div class="table-responsive" *ngIf="rows">
+                        <ngx-datatable class="material" [rows]="rows" [columnMode]="ColumnMode.force"
+                            [headerHeight]="50" [footerHeight]="50" rowHeight="auto" [limit]="10"
+                            [sorts]="[{ prop: 'name', dir: 'acs' }]">
+                            <ngx-datatable-column name="Upload Set Name">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                    {{ row.name }}
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="List Count">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                    {{ row.listCount }}
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="Airing days in week">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                    {{ row.days }}
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="Start Time">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                    {{ localeDate(row.startTime) | date: 'shortTime' }}
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="End Time">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                    {{ localeDate(row.endTime) | date: 'shortTime' }}
+                                </ng-template>
+                            </ngx-datatable-column>
+
+                            <ngx-datatable-column name="Action">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                    <div class="button-items">
+                                        <button type="button" class="btn btn-primary" routerLink="detail">
+                                            Config
+                                        </button>
+                                        <button type="button" class="btn btn-light">
+                                            Delete
+                                        </button>
+                                    </div>
+                                </ng-template>
+                            </ngx-datatable-column>
+                        </ngx-datatable>
+                    </div>
+                    <!-- End table -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- container-fluid -->

@@ -14,13 +14,13 @@ interface PageInfo {
 }
 
 @Component({
-	selector: 'app-challenger',
-	templateUrl: './challenger.component.html',
-	styleUrls: ['./challenger.component.scss'],
-	providers: [DecimalPipe],
+  selector: 'app-upload',
+  templateUrl: './upload.component.html',
+  styleUrls: ['./upload.component.scss'],
+  providers: [DecimalPipe],
 })
-export class ChallengerComponent implements OnInit, OnDestroy {
-	// bread crum data
+export class UploadComponent implements OnInit, OnDestroy {
+  // bread crum data
 	breadCrumbItems: Array<{}>;
 
 	mockSub: Subscription;
@@ -39,7 +39,7 @@ export class ChallengerComponent implements OnInit, OnDestroy {
 
 	ngOnInit(): void {
 		this.breadCrumbItems = [
-			{ label: 'Challengers' },
+			{ label: 'Upload' },
 			{ label: 'List', active: true },
 		];
 

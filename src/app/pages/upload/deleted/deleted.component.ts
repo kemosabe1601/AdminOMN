@@ -1,5 +1,5 @@
+import { MockApiService } from 'src/app/services/mock-api.service';
 import { delay } from 'rxjs/operators';
-import { MockApiService } from './../../services/mock-api.service';
 import { Observable, Subscription } from 'rxjs';
 import { Table } from './advanced.model';
 import { DecimalPipe } from '@angular/common';
@@ -14,14 +14,12 @@ interface PageInfo {
 }
 
 @Component({
-	selector: 'app-challenger',
-	templateUrl: './challenger.component.html',
-	styleUrls: ['./challenger.component.scss'],
-	providers: [DecimalPipe],
+  selector: 'app-deleted',
+  templateUrl: './deleted.component.html',
+  styleUrls: ['./deleted.component.scss']
 })
-export class ChallengerComponent implements OnInit, OnDestroy {
-	// bread crum data
-	breadCrumbItems: Array<{}>;
+export class DeletedComponent implements OnInit, OnDestroy {
+  breadCrumbItems: Array<{}>;
 
 	mockSub: Subscription;
 
@@ -39,8 +37,8 @@ export class ChallengerComponent implements OnInit, OnDestroy {
 
 	ngOnInit(): void {
 		this.breadCrumbItems = [
-			{ label: 'Challengers' },
-			{ label: 'List', active: true },
+			{ label: 'Upload' },
+			{ label: 'Deleted', active: true },
 		];
 
 		this.selectValue = [
