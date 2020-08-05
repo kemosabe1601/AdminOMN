@@ -9,11 +9,11 @@ import { DeletedComponent } from './deleted/deleted.component';
 
 const routes: Routes = [
   { 
-    path: '', 
+    path: 'challengers/list', 
     component: ChallengerComponent 
   },
   {
-    path: 'challengers/detail',
+    path: 'challengers/list/detail',
     component: DetailComponent
   },
   {

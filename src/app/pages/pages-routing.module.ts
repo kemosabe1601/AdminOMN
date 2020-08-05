@@ -8,8 +8,7 @@ const routes: Routes = [
 	{ path: 'home', component: DefaultComponent },
 	{
 		path: 'category',
-		loadChildren: () =>
-			import('./category/category.module').then((m) => m.CategoryModule),
+		loadChildren: () => import('./category/category.module').then((m) => m.CategoryModule),
 	},
 	{
 		path: 'show',
@@ -17,22 +16,18 @@ const routes: Routes = [
 	},
 	{
 		path: 'bracters',
-		loadChildren: () =>
-			import('./bracters/bracters.module').then((m) => m.BractersModule),
+		loadChildren: () => import('./bracters/bracters.module').then((m) => m.BractersModule),
 	},
 	{
 		path: 'challengers',
-		loadChildren: () =>
-			import('./challenger/challenger.module').then((m) => m.ChallengerModule),
+		loadChildren: () => import('./challenger/challenger.module').then((m) => m.ChallengerModule),
 	},
 	{ 
 		path: 'upload', 
-		loadChildren: () => 
-			import('./upload/upload.module').then(m => m.UploadModule) },
+		loadChildren: () => import('./upload/upload.module').then(m => m.UploadModule) },
 	{ 
 		path: 'profitpayment', 
-			loadChildren: () => 
-				import('./profitpayment/profitpayment.module').then(m => m.ProfitpaymentModule) },
+			loadChildren: () => import('./profitpayment/profitpayment.module').then(m => m.ProfitpaymentModule) },
 ];
 
 @NgModule({

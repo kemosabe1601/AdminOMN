@@ -65,7 +65,7 @@ export const MENU: MenuItem[] = [
 			{
 				id: 10,
 				label: 'List',
-				link: '/challengers',
+				link: '/challengers/list',
 				parentId: 9
 			},
 			{
@@ -90,7 +90,7 @@ export const MENU: MenuItem[] = [
 			{
 				id: 14,
 				label: 'List',
-				link: '/upload',
+				link: '/upload/list',
 				parentId: 13
 			},
 			{
@@ -115,7 +115,7 @@ export const MENU: MenuItem[] = [
 			{
 				id: 18,
 				label: 'List',
-				link: '/profitpayment',
+				link: '/profitpayment/list',
 				parentId: 17
 			},
 			{

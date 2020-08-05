@@ -11,11 +11,11 @@ import { DetailComponent } from './detail/detail.component';
 
 const routes: Routes = [
   { 
-    path: '', 
+    path: 'list', 
     component: ProfitpaymentComponent 
   },
   {
-    path: 'detail',
+    path: 'list/detail',
     component: DetailComponent
   },
   {
