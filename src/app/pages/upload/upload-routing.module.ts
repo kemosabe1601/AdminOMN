@@ -7,11 +7,11 @@ import { DetailComponent } from './detail/detail.component';
 
 const routes: Routes = [
   { 
-    path: '', 
+    path: 'list', 
     component: UploadComponent 
   },
   {
-    path: 'detail',
+    path: 'list/detail',
     component: DetailComponent
   },
   {
