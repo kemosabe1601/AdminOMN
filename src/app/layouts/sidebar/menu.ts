@@ -118,6 +118,18 @@ export const MENU: MenuItem[] = [
 				link: '/profitpayment',
 				parentId: 17
 			},
+			{
+				id: 19,
+				label: 'Completed',
+				link: '/profitpayment/complete',
+				parentId: 17
+			},
+			{
+				id: 20,
+				label: 'Deleted',
+				link: '/profitpayment/deleted',
+				parentId: 17
+			},
 		],
 	},
 
