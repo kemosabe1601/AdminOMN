@@ -1,3 +1,6 @@
+import { UserService } from "./../../services/user.service";
+import { UsersearchComponent } from "./usersearch/usersearch.component";
+import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { MockApiService } from "./../../services/mock-api.service";
 import { Subscription } from "rxjs";
 import { ColumnMode } from "@swimlane/ngx-datatable";
@@ -29,17 +32,18 @@ export class CustomerComponent implements OnInit {
   username: string;
   usermessage: string;
 
-  mockSub: Subscription;
-
   // Table data
   rows: any[];
   trans: any[];
+  loadingIndicator = true;
 
   ColumnMode = ColumnMode;
 
   constructor(
     public formBuilder: FormBuilder,
-    public mockService: MockApiService
+    public mockService: MockApiService,
+    public modal: MatDialog,
+    public userService: UserService
   ) {}
 
   ngOnInit() {
@@ -53,6 +57,8 @@ export class CustomerComponent implements OnInit {
     });
 
     this._fetchData();
+    this.getUploadData();
+    this.getTransactionData();
   }
 
   /**
@@ -65,23 +71,20 @@ export class CustomerComponent implements OnInit {
   private _fetchData() {
     this.chatData = chatData;
     this.chatMessagesData = chatMessagesData;
-
-    this.getUploadData();
-    this.getTransactionData();
   }
 
   getUploadData() {
-    this.mockSub = this.mockService.getUploadData().subscribe((val: any) => {
+    this.mockService.getUploadData().subscribe((val: any) => {
       this.rows = val;
+      this.loadingIndicator = false;
     });
   }
 
   getTransactionData() {
-    this.mockSub = this.mockService
-      .getTransactionData()
-      .subscribe((val: any) => {
-        this.trans = val;
-      });
+    this.mockService.getTransactionData().subscribe((val: any) => {
+      this.trans = val;
+      this.loadingIndicator = false;
+    });
   }
 
   chatUsername(name) {
@@ -119,6 +122,15 @@ export class CustomerComponent implements OnInit {
     }
 
     this.chatSubmit = true;
+  }
+
+  onCreate() {
+    this.userService.initializeFormGroup(); 
+    const dialogConfig = new MatDialogConfig();
+    // dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "50%";
+    this.modal.open(UsersearchComponent, dialogConfig);
   }
 
   localeDate(time) {

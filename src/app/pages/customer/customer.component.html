@@ -5,7 +5,7 @@
   ></app-page-title>
 
   <div class="row">
-    <div class="col-12">
+    <div class="col-md-8">
       <div class="card">
         <div class="card-body">
           <h4 class="card-title text-primary">Challenger list</h4>
@@ -13,7 +13,7 @@
             (Each of the category set here will be contained in a home set).
           </p>
           <div class="row">
-            <div class="chat-leftsidebar col-md-3">
+            <div class="chat-leftsidebar col-md-5">
               <div class="">
                 <div class="chat-leftsidebar-nav py-4">
                   <ul
@@ -92,7 +92,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-5 user-chat">
+            <div class="col-md-7 user-chat">
               <div class="card">
                 <div class="p-4 border-bottom">
                   <div class="row">
@@ -364,172 +364,151 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4 user-chat">
-              <div class="card">
-                <div class="p-4 border-bottom">
-                  <div class="row">
-                    <div class="col-md-8 col-3">
-                      <ul class="list-inline user-chat-nav text-right mb-0">
-                        <li class="list-inline-item">
-                          <button
-                            class="btn btn-success btn-rounded"
-                            type="button"
-                          >
-                            <i class="mdi mdi-plus mr-1"></i> Create New
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="user-chat">
+            <div class="p-4 border-bottom">
+              <div class="row">
+                <div class="col-md-8">
+                  <ul class="list-inline user-chat-nav text-right mb-0">
+                    <li class="list-inline-item">
+                      <button
+                        class="btn btn-success btn-rounded"
+                        type="button"
+                        (click)="onCreate()"
+                      >
+                        User Search
+                      </button>
+                    </li>
+                  </ul>
                 </div>
-
-                <div>
-                  <div
-                    class="col-lg-5 align-self-center"
-                    style="max-width: 100%;"
-                  >
-                    <div class="text-lg-center mt-4">
-                      <div class="row">
-                        <div class="col-4">
-                          <div>
-                            <p class="text-muted text-truncate mb-2">
-                              Age
-                            </p>
-                            <h5 class="mb-0">20 years old</h5>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div>
-                            <p class="text-muted text-truncate mb-2">
-                              Name
-                            </p>
-                            <h5 class="mb-0">Name 1</h5>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div>
-                            <p class="text-muted text-truncate mb-2">Gender</p>
-                            <h5 class="mb-0">Male</h5>
-                          </div>
-                        </div>
+              </div>
+            </div>
+            <div>
+              <div class="col-lg-5 align-self-center" style="max-width: 100%;">
+                <div class="text-lg-center mt-4">
+                  <div class="row">
+                    <div class="col-4">
+                      <div>
+                        <p class="text-muted text-truncate mb-2">
+                          Age
+                        </p>
+                        <h5 class="mb-0">20 years old</h5>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div>
+                        <p class="text-muted text-truncate mb-2">
+                          Name
+                        </p>
+                        <h5 class="mb-0">Name 1</h5>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div>
+                        <p class="text-muted text-truncate mb-2">Gender</p>
+                        <h5 class="mb-0">Male</h5>
                       </div>
                     </div>
                   </div>
-                  <div class="chat-conversation p-3">
-                    <ul class="list-unstyled">
-                      <li>
-                        <div class="chat-day-title">
-                          <span class="title">Upload</span>
-                        </div>
-                      </li>
-                      <ngx-datatable
-                        class="material"
-                        [rows]="rows"
-                        [columnMode]="ColumnMode.force"
-                        [headerHeight]="50"
-                        [footerHeight]="0"
-                        [rowHeight]="20"
-                        [scrollbarV]="true"
-                      >
-                        <ngx-datatable-column name="Date">
-                          <ng-template
-                            let-row="row"
-                            ngx-datatable-cell-template
-                          >
-                            {{ localeDate(row.date) | date: "shortTime" }}
-                          </ng-template>
-                        </ngx-datatable-column>
-
-                        <ngx-datatable-column name="Program">
-                          <ng-template
-                            let-row="row"
-                            ngx-datatable-cell-template
-                          >
-                            {{ row.program }}
-                          </ng-template>
-                        </ngx-datatable-column>
-
-                        <ngx-datatable-column name="ID">
-                          <ng-template
-                            let-row="row"
-                            ngx-datatable-cell-template
-                          >
-                            {{ row.email }}
-                          </ng-template>
-                        </ngx-datatable-column>
-
-                        <ngx-datatable-column name="Status">
-                          <ng-template
-                            let-row="row"
-                            ngx-datatable-cell-template
-                          >
-                            {{ row.status }}
-                          </ng-template>
-                        </ngx-datatable-column>
-                      </ngx-datatable>
-                      <li>
-                        <div class="chat-day-title">
-                          <span class="title">Upload</span>
-                        </div>
-                      </li>
-                      <perfect-scrollbar style="height: 150px;">
-                        <li
-                          *ngFor="let data of chatMessagesData"
-                          [ngClass]="{
-                            right: data.align === 'right'
-                          }"
-                        >
-                          <div class="conversation-list">
-                            <div class="dropdown" ngbDropdown>
-                              <a
-                                class="dropdown-toggle"
-                                href="javascript: void(0);"
-                                role="button"
-                                ngbDropdownToggle
-                              >
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                              </a>
-                              <div class="dropdown-menu" ngbDropdownMenu>
-                                <a
-                                  class="dropdown-item"
-                                  href="javascript: void(0);"
-                                  >Copy</a
-                                >
-                                <a
-                                  class="dropdown-item"
-                                  href="javascript: void(0);"
-                                  >Save</a
-                                >
-                                <a
-                                  class="dropdown-item"
-                                  href="javascript: void(0);"
-                                  >Forward</a
-                                >
-                                <a
-                                  class="dropdown-item"
-                                  href="javascript: void(0);"
-                                  >Delete</a
-                                >
-                              </div>
-                            </div>
-                            <div class="ctext-wrap">
-                              <div class="conversation-name">
-                                {{ data.name }}
-                              </div>
-                              <p>
-                                {{ data.message }}
-                              </p>
-                              <p class="chat-time mb-0">
-                                <i
-                                  class="bx bx-time-five align-middle mr-1"
-                                ></i>
-                                {{ data.time }}
-                              </p>
-                            </div>
-                          </div>
-                        </li>
-                      </perfect-scrollbar>
-                    </ul>
+                </div>
+              </div>
+              <div class="col-lg-5 align-self-center" style="max-width: 100%;">
+                <div class="text-lg-center mt-4 upload">
+                  <h3>Upload</h3>
+                  <div class="table-responsive">
+                    <ngx-datatable
+                      class="material"
+                      [rows]="rows"
+                      [loadingIndicator]="loadingIndicator"
+                      [columnMode]="ColumnMode.force"
+                      [headerHeight]="50"
+                      [footerHeight]="50"
+                      [rowHeight]="50"
+                      [limit]="5"
+                    >
+                      <ngx-datatable-column name="Date">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          {{ localeDate(row.date) | date: "shortTime" }}
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="Program">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          {{ row.program }}
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="ID">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          {{ row.email }}
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="Status">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          {{ row.status }}
+                        </ng-template>
+                      </ngx-datatable-column>
+                    </ngx-datatable>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5 align-self-center" style="max-width: 100%;">
+                <div class="text-lg-center mt-4">
+                  <h3>Transaction Detail</h3>
+                  <div class="table-responsive">
+                    <ngx-datatable
+                      class="material"
+                      [rows]="trans"
+                      [loadingIndicator]="loadingIndicator"
+                      [columnMode]="ColumnMode.force"
+                      [headerHeight]="50"
+                      [footerHeight]="50"
+                      [rowHeight]="50"
+                      [limit]="5"
+                    >
+                      <ngx-datatable-column name="Membership">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          {{ row.memberShip }}
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="Trans Date">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          {{
+                            localeDate(row.transactionDate) | date: "shortTime"
+                          }}
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="Trans Amount">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          {{ row.amount }}
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="Status">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          {{ row.status }}
+                        </ng-template>
+                      </ngx-datatable-column>
+                    </ngx-datatable>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5 align-self-center" style="max-width: 100%;">
+                <div class="text-lg-center mt-4">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <button class="btn btn-warning" type="button">
+                        Type
+                      </button>
+                    </div>
+                    <div class="col-md-6">
+                      <button class="btn btn-danger" type="button">
+                        End Chat
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

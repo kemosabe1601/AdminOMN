@@ -46,4 +46,16 @@ export class MockApiService {
       headers: header,
     });
   }
+
+  getUserData() {
+    const header = new HttpHeaders({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
+      "Access-Control-Allow-Headers":
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+    });
+    return this.http.get("/api/v1/admin/user", {
+      headers: header,
+    });
+  }
 }

@@ -1,0 +1,80 @@
+<div class="container-fluid">
+  <button class="btn btn-secondary"><i class="bx bx-exit-fullscreen"></i></button>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">User Search</h4>
+
+          <form>
+            <div class="form-group row">
+              <label for="example-text-input" class="col-md-2 col-form-label"
+                >Name</label
+              >
+              <div class="col-md-10">
+                <input
+                  class="form-control"
+                  type="text"
+                  value="Artisanal kale"
+                />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="example-text-input" class="col-md-2 col-form-label"
+                >ID</label
+              >
+              <div class="col-md-10">
+                <input
+                  class="form-control"
+                  type="text"
+                  value="Artisanal kale"
+                />
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- end col -->
+  </div>
+  <!-- end row -->
+  <!-- <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive">
+            <ngx-datatable
+              class="material"
+              [rows]="rows"
+              [loadingIndicator]="loadingIndicator"
+              [columnMode]="ColumnMode.force"
+              [headerHeight]="50"
+              [footerHeight]="50"
+              [rowHeight]="50"
+              [limit]="5"
+            >
+              <ngx-datatable-column name="Name">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.name }}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="Phone">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.phone }}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="User ID">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.id }}
+                </ng-template>
+              </ngx-datatable-column>
+            </ngx-datatable>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- end row -->
+</div>

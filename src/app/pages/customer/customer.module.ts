@@ -1,3 +1,7 @@
+import { UsersearchComponent } from "./usersearch/usersearch.component";
+
+import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { MatDialogModule } from "@angular/material/dialog";
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
 import { UIModule } from "./../../shared/ui/ui.module";
@@ -20,6 +24,9 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     FormsModule,
     ReactiveFormsModule,
     NgxDatatableModule,
+    MatProgressBarModule,
+    MatDialogModule,
   ],
+  entryComponents: [UsersearchComponent],
 })
 export class CustomerModule {}
