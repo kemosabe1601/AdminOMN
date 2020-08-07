@@ -1,105 +1,125 @@
-import { MockApiService } from 'src/app/services/mock-api.service';
-import { delay } from 'rxjs/operators';
-import { Observable, Subscription } from 'rxjs';
-import { Table } from './advanced.model';
-import { DecimalPipe } from '@angular/common';
-import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
-import { ColumnMode, DatatableComponent } from '@swimlane/ngx-datatable';
-
+import { MockApiService } from "src/app/services/mock-api.service";
+import { delay } from "rxjs/operators";
+import { Observable, Subscription } from "rxjs";
+import { Table } from "./advanced.model";
+import { DecimalPipe } from "@angular/common";
+import { Component, OnInit, ViewChild, OnDestroy } from "@angular/core";
+import { ColumnMode, DatatableComponent } from "@swimlane/ngx-datatable";
+import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 
 interface PageInfo {
-	offset: number;
-	pageSize: number;
-	limit: number;
-	count: number;
+  offset: number;
+  pageSize: number;
+  limit: number;
+  count: number;
 }
 
 @Component({
-  selector: 'app-deleted',
-  templateUrl: './deleted.component.html',
-  styleUrls: ['./deleted.component.scss']
+  selector: "app-deleted",
+  templateUrl: "./deleted.component.html",
+  styleUrls: ["./deleted.component.scss"],
 })
 export class DeletedComponent implements OnInit, OnDestroy {
+  closeResult = "";
+
   // bread crum data
-	breadCrumbItems: Array<{}>;
+  breadCrumbItems: Array<{}>;
 
-	mockSub: Subscription;
+  mockSub: Subscription;
 
-	selectValue: string[];
+  selectValue: string[];
 
-	// Table data
-	rows: any[];
-	temp: any[];
+  // Table data
+  rows: any[];
+  temp: any[];
 
-	ColumnMode = ColumnMode;
+  ColumnMode = ColumnMode;
 
-	@ViewChild(DatatableComponent) table: DatatableComponent;
+  @ViewChild(DatatableComponent) table: DatatableComponent;
 
-	constructor(public mockService: MockApiService) {}
+  constructor(public mockService: MockApiService, private modalService: NgbModal) {}
 
-	ngOnInit(): void {
-		this.breadCrumbItems = [
-			{ label: 'Challengers' },
-			{ label: 'Deleted', active: true },
-		];
+  ngOnInit(): void {
+    this.breadCrumbItems = [
+      { label: "Challengers" },
+      { label: "Deleted", active: true },
+    ];
 
-		this.selectValue = [
-			'Monday',
-			'Tuesday',
-			'Wednesday',
-			'Thursday',
-			'Friday',
-			'Saturday',
-			'Sunday',
-		];
+    this.selectValue = [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ];
 
-		this._fetchData();
-	}
+    this._fetchData();
+  }
 
-	/**
-	 * fetches the table value
-	 */
-	_fetchData() {
-		this.mockService.getTableData().subscribe((val:any) => {
-			this.temp = [...val];
-			this.rows = val;
-		});
-	}
+  open(content) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
 
-	updateFilter(event) {
-		const val = event.target.value.toLowerCase();
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
 
-		// filter our data
-		const temp = this.temp.filter(function (d) {
-			return d.name.toLowerCase().indexOf(val) !== -1 || !val;
-		});
+  /**
+   * fetches the table value
+   */
+  _fetchData() {
+    this.mockService.getTableData().subscribe((val: any) => {
+      this.temp = [...val];
+      this.rows = val;
+    });
+  }
 
-		// update the rows
-		this.rows = temp;
-		// Whenever the filter changes, always go back to the first page
-		this.table.offset = 0;
-	}
+  updateFilter(event) {
+    const val = event.target.value.toLowerCase();
 
-	setFilter(event) {
-		const val = event;
-		// filter our data
-		const temp = this.temp.filter(function (d) {
-			return d.days.indexOf(val) !== -1 || !val;
-		});
-		// update the rows
-		this.rows = temp;
-		// Whenever the filter changes, always go back to the first page
-		this.table.offset = 0;
-	}
+    // filter our data
+    const temp = this.temp.filter(function (d) {
+      return d.name.toLowerCase().indexOf(val) !== -1 || !val;
+    });
 
-	localeDate(time) {
-		let myDate = new Date(time * 1000);
-		return myDate.toLocaleString();
-	}
+    // update the rows
+    this.rows = temp;
+    // Whenever the filter changes, always go back to the first page
+    this.table.offset = 0;
+  }
 
-	ngOnDestroy() {
-		if (this.mockSub) {
-			this.mockSub.unsubscribe();
-		}
-	}
+  setFilter(event) {
+    const val = event;
+    // filter our data
+    const temp = this.temp.filter(function (d) {
+      return d.days.indexOf(val) !== -1 || !val;
+    });
+    // update the rows
+    this.rows = temp;
+    // Whenever the filter changes, always go back to the first page
+    this.table.offset = 0;
+  }
+
+  localeDate(time) {
+    let myDate = new Date(time * 1000);
+    return myDate.toLocaleString();
+  }
+
+  ngOnDestroy() {
+    if (this.mockSub) {
+      this.mockSub.unsubscribe();
+    }
+  }
 }
