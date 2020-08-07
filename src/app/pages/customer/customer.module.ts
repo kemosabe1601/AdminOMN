@@ -1,3 +1,4 @@
+import { ChatDetailComponent } from "./chat-detail/chat-detail.component";
 import { UsersearchComponent } from "./usersearch/usersearch.component";
 
 import { MatProgressBarModule } from "@angular/material/progress-bar";

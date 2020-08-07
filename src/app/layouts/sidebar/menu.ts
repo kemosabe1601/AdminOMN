@@ -145,8 +145,8 @@ export const MENU: MenuItem[] = [
       },
       {
         id: 23,
-        label: "Chat Details",
-        link: "/customer/chat-details",
+        label: "Chat Detail",
+        link: "/customer/chat-detail",
         parentId: 21,
       },
       {
@@ -158,7 +158,7 @@ export const MENU: MenuItem[] = [
       {
         id: 24,
         label: "Problem",
-        link: "/customer/problem",
+        link: "/customer/problems",
         parentId: 21,
       },
     ],
