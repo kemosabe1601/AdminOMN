@@ -21,6 +21,7 @@ import {
 	NgbTooltipModule,
 	NgbNavModule,
 	NgbDatepickerModule,
+	NgbTimepickerModule
 } from '@ng-bootstrap/ng-bootstrap';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
@@ -48,6 +49,7 @@ import { DropzoneModule } from 'ngx-dropzone-wrapper';
 		NgbPaginationModule,
 		NgbTypeaheadModule,
 		NgSelectModule,
+		NgbTimepickerModule,
 		NgbDatepickerModule,
 		UiSwitchModule,
 		CKEditorModule,
