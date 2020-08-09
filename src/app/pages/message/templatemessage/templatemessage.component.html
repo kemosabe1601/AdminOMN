@@ -1,0 +1,65 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-header">
+					<button mat-icon-button color="primary" (click)="close()">
+						<mat-icon>close_fullscreen</mat-icon>
+					</button>
+				</div>
+				<div class="card-body">
+					<h2 class="card-title">Message Template</h2>
+					<div class="row">
+						<div class="col-md-10">
+							<form>
+								<div class="form-group row">
+									<label
+										for="example-text-input"
+										class="col-md-2 col-form-label"
+										>Title</label
+									>
+									<div class="col-md-10">
+										<input
+											class="form-control"
+											type="text"
+											placeholder="Title"
+										/>
+									</div>
+								</div>
+
+								<div class="form-group row">
+									<label
+										for="example-text-input"
+										class="col-md-2 col-form-label"
+										>Detail</label
+									>
+									<div class="col-md-10">
+										<textarea
+											class="form-control"
+											type="text"
+											placeholder="Message Template"
+											rows="6"
+										></textarea>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="col-md-2">
+							<div class="template-list">
+								<button mat-button>Template 1</button>
+								<button mat-button>Template 2</button>
+								<button mat-button>Template 3</button>
+								<button mat-button>Template 4</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 button">
+				<button class="btn btn-primary btn-lg">Check</button>
+				<button class="btn btn-secondary btn-lg">Cancle</button>
+			</div>
+		</div>
+		<!-- end col -->
+	</div>
+</div>

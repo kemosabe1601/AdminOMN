@@ -29,9 +29,10 @@ import { MatTableModule } from "@angular/material/table";
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { MatIconModule } from "@angular/material/icon";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
-  declarations: [InquiryComponent],
+  declarations: [InquiryComponent, DetailComponent],
   imports: [
     CommonModule,
     InquiryRoutingModule,

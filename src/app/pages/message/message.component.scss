@@ -1,0 +1,15 @@
+.backButton {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+	margin-top: 6px;
+	margin-left: 16px;
+	margin-bottom: 10px;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+}

@@ -1,267 +1,267 @@
 <div class="container-fluid">
-  <!-- start page title -->
-  <app-page-title
-    title="customer management"
-    [breadcrumbItems]="breadCrumbItems"
-  ></app-page-title>
-  <!-- end page title -->
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="card">
-        <div class="card-header">
-          <a class="backButton" routerLink="/customer/chat-detail">
-            <mat-icon>arrow_back_ios</mat-icon>
-            <span style="font-size: 14px; padding-top: 1px;"
-              >Return to list
-            </span>
-          </a>
-        </div>
-        <div class="card-body">
-          <!-- <h4 class="card-title">Bootstrap Validation - Normal</h4>
+	<!-- start page title -->
+	<app-page-title
+		title="customer management"
+		[breadcrumbItems]="breadCrumbItems"
+	></app-page-title>
+	<!-- end page title -->
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="card">
+				<div class="card-header">
+					<a class="backButton" routerLink="/customer/chat-detail">
+						<mat-icon>arrow_back_ios</mat-icon>
+						<span style="font-size: 14px; padding-top: 1px;"
+							>Return to list
+						</span>
+					</a>
+				</div>
+				<div class="card-body">
+					<!-- <h4 class="card-title">Bootstrap Validation - Normal</h4>
           <p class="card-title-desc">Provide valuable, actionable feedback to your users with HTML5 form
             validation–available in all our supported browsers.</p> -->
-          <div class="row">
-            <div class="col-md-6">
-              <form class="needs-validation" [formGroup]="validationform">
-                <div class="form-group row">
-                  <label
-                    for="example-text-input"
-                    class="col-md-2 col-form-label"
-                    >Text</label
-                  >
-                  <div class="col-md-10">
-                    <input
-                      class="form-control"
-                      type="text"
-                      value="Artisanal kale"
-                      id="example-text-input"
-                    />
-                  </div>
-                </div>
-                <br />
-                <div class="form-group row">
-                  <label
-                    for="example-text-input"
-                    class="col-md-2 col-form-label"
-                    >Text</label
-                  >
-                  <div class="col-md-10">
-                    <input
-                      class="form-control"
-                      type="text"
-                      value="Artisanal kale"
-                      id="example-text-input"
-                    />
-                  </div>
-                </div>
-                <br />
-                <div class="form-group row">
-                  <label class="col-md-2 col-form-label">Textarea</label>
-                  <div class="col-md-10">
-                    <textarea
-                      formControlName="textarea"
-                      class="form-control"
-                      rows="30"
-                    ></textarea>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <div class="col-md-6">
-              <div class="user-chat">
-                <div class="p-4 border-bottom">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <ul class="list-inline user-chat-nav text-right mb-0">
-                        <li class="list-inline-item">
-                          <button
-                            class="btn btn-success btn-rounded"
-                            type="button"
-                            (click)="onCreate()"
-                          >
-                            User Search
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    class="col-lg-5 align-self-center"
-                    style="max-width: 100%;"
-                  >
-                    <div class="text-lg-center mt-4">
-                      <div class="row">
-                        <div class="col-4">
-                          <div>
-                            <p class="text-muted text-truncate mb-2">
-                              Age
-                            </p>
-                            <h5 class="mb-0">20 years old</h5>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div>
-                            <p class="text-muted text-truncate mb-2">
-                              Name
-                            </p>
-                            <h5 class="mb-0">Name 1</h5>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div>
-                            <p class="text-muted text-truncate mb-2">Gender</p>
-                            <h5 class="mb-0">Male</h5>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="col-lg-5 align-self-center"
-                    style="max-width: 100%;"
-                  >
-                    <div class="text-lg-center mt-4 upload">
-                      <h3>Upload</h3>
-                      <div class="table-responsive">
-                        <ngx-datatable
-                          class="material"
-                          [rows]="rows"
-                          [loadingIndicator]="loadingIndicator"
-                          [columnMode]="ColumnMode.force"
-                          [headerHeight]="50"
-                          [footerHeight]="50"
-                          [rowHeight]="50"
-                          [limit]="5"
-                        >
-                          <ngx-datatable-column name="Date">
-                            <ng-template
-                              let-row="row"
-                              ngx-datatable-cell-template
-                            >
-                              {{ localeDate(row.date) | date: "shortTime" }}
-                            </ng-template>
-                          </ngx-datatable-column>
-                          <ngx-datatable-column name="Program">
-                            <ng-template
-                              let-row="row"
-                              ngx-datatable-cell-template
-                            >
-                              {{ row.program }}
-                            </ng-template>
-                          </ngx-datatable-column>
-                          <ngx-datatable-column name="ID">
-                            <ng-template
-                              let-row="row"
-                              ngx-datatable-cell-template
-                            >
-                              {{ row.email }}
-                            </ng-template>
-                          </ngx-datatable-column>
-                          <ngx-datatable-column name="Status">
-                            <ng-template
-                              let-row="row"
-                              ngx-datatable-cell-template
-                            >
-                              {{ row.status }}
-                            </ng-template>
-                          </ngx-datatable-column>
-                        </ngx-datatable>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="col-lg-5 align-self-center"
-                    style="max-width: 100%;"
-                  >
-                    <div class="text-lg-center mt-4">
-                      <h3>Original Detail</h3>
-                    </div>
-                  </div>
-                  <div
-                    class="col-lg-5 align-self-center"
-                    style="max-width: 100%;"
-                  >
-                    <div class="text-lg-center mt-4">
-                      <h3>Transaction Detail</h3>
-                      <div class="table-responsive">
-                        <ngx-datatable
-                          class="material"
-                          [rows]="trans"
-                          [loadingIndicator]="loadingIndicator"
-                          [columnMode]="ColumnMode.force"
-                          [headerHeight]="50"
-                          [footerHeight]="50"
-                          [rowHeight]="50"
-                          [limit]="5"
-                        >
-                          <ngx-datatable-column name="Membership">
-                            <ng-template
-                              let-row="row"
-                              ngx-datatable-cell-template
-                            >
-                              {{ row.memberShip }}
-                            </ng-template>
-                          </ngx-datatable-column>
-                          <ngx-datatable-column name="Trans Date">
-                            <ng-template
-                              let-row="row"
-                              ngx-datatable-cell-template
-                            >
-                              {{
-                                localeDate(row.transactionDate)
-                                  | date: "shortTime"
-                              }}
-                            </ng-template>
-                          </ngx-datatable-column>
-                          <ngx-datatable-column name="Trans Amount">
-                            <ng-template
-                              let-row="row"
-                              ngx-datatable-cell-template
-                            >
-                              {{ row.amount }}
-                            </ng-template>
-                          </ngx-datatable-column>
-                          <ngx-datatable-column name="Status">
-                            <ng-template
-                              let-row="row"
-                              ngx-datatable-cell-template
-                            >
-                              {{ row.status }}
-                            </ng-template>
-                          </ngx-datatable-column>
-                        </ngx-datatable>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="col-lg-5 align-self-center"
-                    style="max-width: 100%;"
-                  >
-                    <div class="text-lg-right mt-4">
-                      <h3>Payment Detail</h3>
-                    </div>
-                  </div>
-                  <div
-                    class="col-lg-5 align-self-center"
-                    style="max-width: 100%;"
-                  >
-                    <div class="text-lg-right mt-4">
-                      <button class="btn btn-danger" type="button">
-                        Chat Type
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end card -->
-    </div>
-    <!-- end col -->
-  </div>
-  <!-- end row -->
+					<div class="row">
+						<div class="col-md-6">
+							<form class="needs-validation" [formGroup]="validationform">
+								<div class="form-group row">
+									<label
+										for="example-text-input"
+										class="col-md-2 col-form-label"
+										>Text</label
+									>
+									<div class="col-md-10">
+										<input
+											class="form-control"
+											type="text"
+											value="Artisanal kale"
+											id="example-text-input"
+										/>
+									</div>
+								</div>
+								<br />
+								<div class="form-group row">
+									<label
+										for="example-text-input"
+										class="col-md-2 col-form-label"
+										>Text</label
+									>
+									<div class="col-md-10">
+										<input
+											class="form-control"
+											type="text"
+											value="Artisanal kale"
+											id="example-text-input"
+										/>
+									</div>
+								</div>
+								<br />
+								<div class="form-group row">
+									<label class="col-md-2 col-form-label">Textarea</label>
+									<div class="col-md-10">
+										<textarea
+											formControlName="textarea"
+											class="form-control"
+											rows="30"
+										></textarea>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="col-md-6">
+							<div class="user-chat">
+								<div class="p-4 border-bottom">
+									<div class="row">
+										<div class="col-md-12">
+											<ul class="list-inline user-chat-nav text-right mb-0">
+												<li class="list-inline-item">
+													<button
+														class="btn btn-success btn-rounded"
+														type="button"
+														(click)="onCreate()"
+													>
+														User Search
+													</button>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div
+										class="col-lg-5 align-self-center"
+										style="max-width: 100%;"
+									>
+										<div class="text-lg-center mt-4">
+											<div class="row">
+												<div class="col-4">
+													<div>
+														<p class="text-muted text-truncate mb-2">
+															Age
+														</p>
+														<h5 class="mb-0">20 years old</h5>
+													</div>
+												</div>
+												<div class="col-4">
+													<div>
+														<p class="text-muted text-truncate mb-2">
+															Name
+														</p>
+														<h5 class="mb-0">Name 1</h5>
+													</div>
+												</div>
+												<div class="col-4">
+													<div>
+														<p class="text-muted text-truncate mb-2">Gender</p>
+														<h5 class="mb-0">Male</h5>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div
+										class="col-lg-5 align-self-center"
+										style="max-width: 100%;"
+									>
+										<div class="text-lg-center mt-4 upload">
+											<h3>Upload</h3>
+											<div class="table-responsive">
+												<ngx-datatable
+													class="material"
+													[rows]="rows"
+													[loadingIndicator]="loadingIndicator"
+													[columnMode]="ColumnMode.force"
+													[headerHeight]="50"
+													[footerHeight]="50"
+													[rowHeight]="50"
+													[limit]="5"
+												>
+													<ngx-datatable-column name="Date">
+														<ng-template
+															let-row="row"
+															ngx-datatable-cell-template
+														>
+															{{ localeDate(row.date) | date: 'shortTime' }}
+														</ng-template>
+													</ngx-datatable-column>
+													<ngx-datatable-column name="Program">
+														<ng-template
+															let-row="row"
+															ngx-datatable-cell-template
+														>
+															{{ row.program }}
+														</ng-template>
+													</ngx-datatable-column>
+													<ngx-datatable-column name="ID">
+														<ng-template
+															let-row="row"
+															ngx-datatable-cell-template
+														>
+															{{ row.email }}
+														</ng-template>
+													</ngx-datatable-column>
+													<ngx-datatable-column name="Status">
+														<ng-template
+															let-row="row"
+															ngx-datatable-cell-template
+														>
+															{{ row.status }}
+														</ng-template>
+													</ngx-datatable-column>
+												</ngx-datatable>
+											</div>
+										</div>
+									</div>
+									<div
+										class="col-lg-5 align-self-center"
+										style="max-width: 100%;"
+									>
+										<div class="text-lg-center mt-4">
+											<h3>Original Detail</h3>
+										</div>
+									</div>
+									<div
+										class="col-lg-5 align-self-center"
+										style="max-width: 100%;"
+									>
+										<div class="text-lg-center mt-4">
+											<h3>Transaction Detail</h3>
+											<div class="table-responsive">
+												<ngx-datatable
+													class="material"
+													[rows]="trans"
+													[loadingIndicator]="loadingIndicator"
+													[columnMode]="ColumnMode.force"
+													[headerHeight]="50"
+													[footerHeight]="50"
+													[rowHeight]="50"
+													[limit]="5"
+												>
+													<ngx-datatable-column name="Membership">
+														<ng-template
+															let-row="row"
+															ngx-datatable-cell-template
+														>
+															{{ row.memberShip }}
+														</ng-template>
+													</ngx-datatable-column>
+													<ngx-datatable-column name="Trans Date">
+														<ng-template
+															let-row="row"
+															ngx-datatable-cell-template
+														>
+															{{
+																localeDate(row.transactionDate)
+																	| date: 'shortTime'
+															}}
+														</ng-template>
+													</ngx-datatable-column>
+													<ngx-datatable-column name="Trans Amount">
+														<ng-template
+															let-row="row"
+															ngx-datatable-cell-template
+														>
+															{{ row.amount }}
+														</ng-template>
+													</ngx-datatable-column>
+													<ngx-datatable-column name="Status">
+														<ng-template
+															let-row="row"
+															ngx-datatable-cell-template
+														>
+															{{ row.status }}
+														</ng-template>
+													</ngx-datatable-column>
+												</ngx-datatable>
+											</div>
+										</div>
+									</div>
+									<div
+										class="col-lg-5 align-self-center"
+										style="max-width: 100%;"
+									>
+										<div class="text-lg-right mt-4">
+											<h3>Payment Detail</h3>
+										</div>
+									</div>
+									<div
+										class="col-lg-5 align-self-center"
+										style="max-width: 100%;"
+									>
+										<div class="text-lg-right mt-4">
+											<button class="btn btn-danger" type="button">
+												Chat Type
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end card -->
+		</div>
+		<!-- end col -->
+	</div>
+	<!-- end row -->
 </div>

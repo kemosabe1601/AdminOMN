@@ -1,15 +1,45 @@
+import { ColumnMode } from '@swimlane/ngx-datatable';
+import { MockApiService } from './../../../services/mock-api.service';
+import { FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-problem',
-  templateUrl: './problem.component.html',
-  styleUrls: ['./problem.component.scss']
+	selector: 'app-problem',
+	templateUrl: './problem.component.html',
+	styleUrls: ['./problem.component.scss'],
 })
 export class ProblemComponent implements OnInit {
+	breadCrumbItems: Array<{}>;
 
-  constructor() { }
+	// Table data
+	rows: any[];
+	trans: any[];
+	loadingIndicator = true;
 
-  ngOnInit(): void {
-  }
+	ColumnMode = ColumnMode;
+	constructor(
+		public formBuilder: FormBuilder,
+		public mockService: MockApiService,
+	) {}
 
+	ngOnInit(): void {
+		this.breadCrumbItems = [
+			{ label: 'Customer' },
+			{ label: 'Problem', active: true },
+		];
+
+		this._fetchData();
+	}
+
+	private _fetchData() {
+		this.mockService.getTableData().subscribe((val: any) => {
+			this.rows = val;
+			this.loadingIndicator = false;
+		});
+	}
+
+	localeDate(time) {
+		let myDate = new Date(time * 1000);
+		return myDate.toLocaleString();
+	}
 }

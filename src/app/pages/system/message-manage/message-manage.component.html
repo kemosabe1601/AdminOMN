@@ -1,0 +1,140 @@
+<div class="container-fluid">
+	<app-page-title
+		title="System Management"
+		[breadcrumbItems]="breadCrumbItems"
+	></app-page-title>
+
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title text-primary">Challenger list</h4>
+					<p class="card-sub-title">
+						(Each of the category set here will be contained in a home set).
+					</p>
+					<div class="row">
+						<form class="col-md-12">
+							<div class="form-row">
+								<div class="col-md-3 mb-3">
+									<label for="example-date-input">Date</label>
+									<input
+										class="form-control"
+										type="date"
+										value="2019-08-19"
+										id="example-date-input"
+									/>
+								</div>
+								<div class="col-md-3 mb-3">
+									<label for="example-date-input">Letter Type</label>
+									<select class="custom-select">
+										<option selected disabled>Payment Method</option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+								</div>
+								<div class="col-md-3 mb-3">
+									<label for="validationDefault03">ID</label>
+									<input
+										type="text"
+										class="form-control"
+										id="validationDefault03"
+										placeholder="Enter ID"
+										required
+									/>
+								</div>
+								<div class="col-md-3 mb-3">
+									<label for="validationDefault03">Representatives</label>
+									<input
+										type="text"
+										class="form-control"
+										id="validationDefault03"
+										placeholder="Enter Representatives"
+										required
+									/>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 search">
+									<button class="btn btn-primary" type="submit">
+										Search
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12">
+			<div class="card">
+				<div class="card-header phone-regis">
+					<button class="btn btn-primary" [routerLink]="['register']">
+						Phone call record register
+					</button>
+				</div>
+				<div class="card-body">
+					<!-- Table -->
+					<div class="table-responsive">
+						<ngx-datatable
+							class="material"
+							[rows]="rows"
+							[loadingIndicator]="loadingIndicator"
+							[columnMode]="ColumnMode.force"
+							[headerHeight]="50"
+							[footerHeight]="50"
+							rowHeight="auto"
+							[limit]="10"
+							[routerLink]="['detail']"
+						>
+							<ngx-datatable-column name="Challenger Set Name">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ row.name }}
+								</ng-template>
+							</ngx-datatable-column>
+
+							<ngx-datatable-column name="List Count">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ row.listCount }}
+								</ng-template>
+							</ngx-datatable-column>
+
+							<ngx-datatable-column name="Airing days in week">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ row.days }}
+								</ng-template>
+							</ngx-datatable-column>
+
+							<ngx-datatable-column name="Start Time">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ localeDate(row.startTime) | date: 'shortTime' }}
+								</ng-template>
+							</ngx-datatable-column>
+
+							<ngx-datatable-column name="End Time">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ localeDate(row.endTime) | date: 'shortTime' }}
+								</ng-template>
+							</ngx-datatable-column>
+
+							<ngx-datatable-column name="Action">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									<div class="button-items">
+										<button type="button" class="btn btn-primary">
+											Config
+										</button>
+										<button type="button" class="btn btn-light">
+											Delete
+										</button>
+									</div>
+								</ng-template>
+							</ngx-datatable-column>
+						</ngx-datatable>
+					</div>
+					<!-- End table -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- container-fluid -->
