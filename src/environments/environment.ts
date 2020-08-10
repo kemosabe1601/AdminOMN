@@ -6,14 +6,14 @@ export const environment = {
   production: false,
   defaultauth: 'fakebackend',
   firebaseConfig: {
-    apiKey: '',
-    authDomain: '',
-    databaseURL: '',
-    projectId: '',
-    storageBucket: '',
-    messagingSenderId: '',
-    appId: '',
-    measurementId: ''
+    apiKey: "AIzaSyA5qVFcSbhZa8SzDEkzfwMJUbYGH-cKp0U",
+    authDomain: "omnmock.firebaseapp.com",
+    databaseURL: "https://omnmock.firebaseio.com",
+    projectId: "omnmock",
+    storageBucket: "omnmock.appspot.com",
+    messagingSenderId: "100798457227",
+    appId: "1:100798457227:web:ed0a62fa4deb867159bb8e",
+    measurementId: "G-9TD84S62PT"
   }
 };
 

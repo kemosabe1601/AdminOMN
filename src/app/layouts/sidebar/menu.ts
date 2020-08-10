@@ -11,29 +11,7 @@ export const MENU: MenuItem[] = [
     label: "Home",
     icon: "bx-home-circle",
     link: "/home",
-    // badge: {
-    //     variant: 'info',
-    //     text: '03',
-    // },
     subItems: [
-      // {
-      //     id: 3,
-      //     label: 'Default',
-      //     link: '/dashboard',
-      //     parentId: 2
-      // },
-      // {
-      //     id: 4,
-      //     label: 'Saas',
-      //     link: 'javascript: void(0);',
-      //     parentId: 2
-      // },
-      // {
-      //     id: 5,
-      //     label: 'Crypto',
-      //     link: 'javascript: void(0);',
-      //     parentId: 2
-      // },
     ],
   },
   {
@@ -65,7 +43,7 @@ export const MENU: MenuItem[] = [
       {
         id: 10,
         label: "List",
-        link: "/challengers",
+        link: "/challengers/list",
         parentId: 9,
       },
       {
@@ -90,7 +68,7 @@ export const MENU: MenuItem[] = [
       {
         id: 14,
         label: "List",
-        link: "/upload",
+        link: "/upload/list",
         parentId: 13,
       },
       {
@@ -101,7 +79,7 @@ export const MENU: MenuItem[] = [
       },
       {
         id: 16,
-        label: "Challenger Program",
+        label: "Program",
         link: "/upload/program",
         parentId: 13,
       },
@@ -115,7 +93,7 @@ export const MENU: MenuItem[] = [
       {
         id: 18,
         label: "List",
-        link: "/profitpayment",
+        link: "/profitpayment/list",
         parentId: 17,
       },
       {

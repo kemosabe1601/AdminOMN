@@ -154,13 +154,11 @@
               <ngx-datatable-column name="Action">
                 <ng-template let-row="row" ngx-datatable-cell-template>
                   <div class="button-items">
-                    <button
-                      type="button"
-                      class="btn btn-primary"
-                      routerLink="detail"
-                    >
-                      Result letter
-                    </button>
+                    <div class="button-items">
+                      <button class="btn btn-primary" (click)="open(content)">
+                        Result Letter
+                      </button>
+                    </div>
                   </div>
                 </ng-template>
               </ngx-datatable-column>
@@ -173,3 +171,64 @@
   </div>
 </div>
 <!-- container-fluid -->
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Result letter</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <div class="form-group">
+          <label for="productname">Upload ID</label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="manufacturername">Program Name</label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Select Date</label>
+          <div class="input-group">
+            <input
+              id="dateOfBirth"
+              class="form-control"
+              placeholder="yyyy-mm-dd"
+              name="dp"
+              ngbDatepicker
+              #dp="ngbDatepicker"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-outline-secondary bx bx-calendar"
+                (click)="dp.toggle()"
+                type="button"
+              ></button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="price">Duration</label>
+          <textarea class="form-control" rows="5"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close('Close click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>

@@ -54,33 +54,33 @@
 							[limit]="10"
 							[sorts]="[{ prop: 'name', dir: 'acs' }]"
 						>
-							<ngx-datatable-column name="Challenger Set Name">
+							<ngx-datatable-column name="Home Set Name">
 								<ng-template let-row="row" ngx-datatable-cell-template>
-									{{ row.name }}
+									{{ row.home_set_name }}
 								</ng-template>
 							</ngx-datatable-column>
 
 							<ngx-datatable-column name="List Count">
 								<ng-template let-row="row" ngx-datatable-cell-template>
-									{{ row.listCount }}
+									{{ row.list_count }}
 								</ng-template>
 							</ngx-datatable-column>
 
-							<ngx-datatable-column name="Airing days in week">
+							<ngx-datatable-column name="Airing Days In Week"> 
 								<ng-template let-row="row" ngx-datatable-cell-template>
-									{{ row.days }}
+									{{ row.air_mon }} <br> {{ row.air_tue }} <br> {{ row.air_wed }} <br> {{ row.air_thurs }} <br> {{ row.air_fri }} <br> {{ row.air_sat }} <br> {{row.air_sun}}
 								</ng-template>
 							</ngx-datatable-column>
 
 							<ngx-datatable-column name="Start Time">
 								<ng-template let-row="row" ngx-datatable-cell-template>
-									{{ localeDate(row.startTime) | date: 'shortTime' }}
+									{{ row.start_time }}
 								</ng-template>
 							</ngx-datatable-column>
 
 							<ngx-datatable-column name="End Time">
 								<ng-template let-row="row" ngx-datatable-cell-template>
-									{{ localeDate(row.endTime) | date: 'shortTime' }}
+									{{ row.end_time }}
 								</ng-template>
 							</ngx-datatable-column>
 
