@@ -24,6 +24,11 @@ import { Page404Component } from './extrapages/page404/page404.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { MatNativeDateModule } from '@angular/material/core';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 if (environment.defaultauth === 'firebase') {
 	initFirebaseBackend(environment.firebaseConfig);
 } else {
@@ -44,6 +49,10 @@ if (environment.defaultauth === 'firebase') {
 		NgbTooltipModule,
 		NgxDatatableModule,
 		MatNativeDateModule,
+		AngularFireModule.initializeApp(environment.firebaseConfig),
+		AngularFireAuthModule,
+		AngularFirestoreModule,
+		AngularFireStorageModule,
 	],
 	bootstrap: [AppComponent],
 	providers: [

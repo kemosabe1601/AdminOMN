@@ -1,0 +1,65 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-header">
+					<button mat-icon-button color="primary" (click)="close()">
+						<mat-icon>close_fullscreen</mat-icon>
+					</button>
+				</div>
+				<div class="card-body">
+					<h2 class="card-title">Menu List</h2>
+
+					<div class="table-responsive">
+						<ngx-datatable
+							class="material"
+							[rows]="access"
+							[columnMode]="ColumnMode.force"
+							[loadingIndicator]="loading"
+							[headerHeight]="50"
+							[footerHeight]="50"
+							rowHeight="auto"
+							[limit]="5"
+							[selected]="selected"
+							[selectionType]="SelectionType.checkbox"
+							[selectAllRowsOnPage]="false"
+							[displayCheck]="displayCheck"
+							(activate)="onActivate($event)"
+							(select)="onSelect($event)"
+						>
+							<ngx-datatable-column
+								[width]="30"
+								[sortable]="false"
+								[canAutoResize]="false"
+								[draggable]="false"
+								[resizeable]="false"
+								[headerCheckboxable]="true"
+								[checkboxable]="true"
+							>
+							</ngx-datatable-column>
+							<ngx-datatable-column name="Large Category">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ row.large }}
+								</ng-template>
+							</ngx-datatable-column>
+							<ngx-datatable-column name="Medium Category">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ row.mid }}
+								</ng-template>
+							</ngx-datatable-column>
+							<ngx-datatable-column name="Small Category">
+								<ng-template let-row="row" ngx-datatable-cell-template>
+									{{ row.small }}
+								</ng-template>
+							</ngx-datatable-column>
+						</ngx-datatable>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 button">
+				<button class="btn btn-primary btn-lg">Add</button>
+			</div>
+		</div>
+		<!-- end col -->
+	</div>
+</div>

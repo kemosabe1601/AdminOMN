@@ -22,6 +22,16 @@ const routes: Routes = [
 		path: 'employee',
 		component: EmployeeManageComponent,
 	},
+	{
+		path: 'footer',
+		loadChildren: () =>
+			import('./footer/footer.module').then((m) => m.FooterModule),
+	},
+	{
+		path: 'access',
+		loadChildren: () =>
+			import('./access/access.module').then((m) => m.AccessModule),
+	},
 ];
 
 @NgModule({

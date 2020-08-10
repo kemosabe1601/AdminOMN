@@ -113,10 +113,6 @@ export class DetailsComponent implements OnInit {
 		this.chatSubmit = true;
 	}
 
-	onCreate() {
-		console.log('Ahihi');
-	}
-
 	localeDate(time) {
 		let myDate = new Date(time * 1000);
 		return myDate.toLocaleString();
