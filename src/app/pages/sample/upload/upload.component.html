@@ -1,0 +1,192 @@
+<div class="container-fluid">
+  <app-page-title
+    title="Message"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <form>
+                    <div class="form-group row">
+                      <label class="col-md-2 col-form-label">Upload Type</label>
+                      <div class="col-md-10">
+                        <mat-radio-group aria-label="Select an option">
+                          <mat-radio-button value="1" checked
+                            >Upload</mat-radio-button
+                          >
+                          <mat-radio-button value="2"
+                            >Challenger</mat-radio-button
+                          >
+                        </mat-radio-group>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2 col-form-label">Title</label>
+                      <div class="col-md-10 row">
+                        <div class="col-md-4">
+                          <p>Poster Image</p>
+                          <dropzone class="dropzone"></dropzone>
+                        </div>
+                        <div class="col-md-4">
+                          <p>Title Image</p>
+                          <dropzone class="dropzone"></dropzone>
+                        </div>
+                        <div class="col-md-4">
+                          <p>Bracters Image</p>
+                          <dropzone class="dropzone"></dropzone>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2 col-form-label">Subtitle</label>
+                      <div class="col-md-4">
+                        <input
+                          class="form-control"
+                          type="text"
+                          placeholder="Subtitle"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2 col-form-label">Category</label>
+                      <div class="col-md-10 row">
+                        <div class="col-md-6">
+                          <select class="custom-select">
+                            <option selected disabled
+                              >Open this select menu</option
+                            >
+                            <option value="1">Movie</option>
+                            <option value="2">Movie 2</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <select class="custom-select">
+                            <option selected disabled
+                              >Open this select menu</option
+                            >
+                            <option value="1">SF</option>
+                            <option value="2">Fiction</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-md-2 col-form-label"
+                        >Participants</label
+                      >
+                      <div class="col-md-10 row">
+                        <div class="col-md-4">
+                          <input
+                            class="form-control"
+                            type="text"
+                            placeholder="Name 1"
+                          />
+                        </div>
+                        <div class="col-md-4">
+                          <input
+                            class="form-control"
+                            type="text"
+                            placeholder="Name 2"
+                          />
+                        </div>
+                        <div class="col-md-4">
+                          <button class="btn btn-primary">
+                            Add
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2 col-form-label">Type</label>
+                      <div class="col-md-10 row">
+                        <div class="col-md-4">
+                          <select class="custom-select">
+                            <option selected disabled>Select Type</option>
+                            <option value="1">Stand-alone</option>
+                            <option value="2">Episode</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2 col-form-label mt-2"
+                        >Contents</label
+                      >
+                      <div class="col-md-10 row">
+                        <div class="col-md-6">
+                          <dropzone class="dropzone"></dropzone>
+                        </div>
+                        <div class="col-md-6">
+                          <h3>Thumbnail (after video starts)</h3>
+                          <mat-radio-group aria-label="Select an option">
+                            <mat-radio-button value="1" checked
+                              >3sec</mat-radio-button
+                            >
+                            <mat-radio-button value="2">5sec</mat-radio-button>
+                            <mat-radio-button value="3">10sec</mat-radio-button>
+                            <mat-radio-button value="4">20sec</mat-radio-button>
+                            <mat-radio-button value="5">30sec</mat-radio-button>
+                          </mat-radio-group>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label
+                        for="example-text-input"
+                        class="col-md-2 col-form-label"
+                        >Episode Summary</label
+                      >
+                      <div class="col-md-10">
+                        <ckeditor
+                          [editor]="Editor"
+                          data="<p>Content of the editor.</p>"
+                        ></ckeditor>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-2 col-form-label">Music Infor</label>
+                      <div class="col-md-10 row">
+                        <div class="col-md-4">
+                          <input
+                            class="form-control"
+                            type="text"
+                            placeholder="Title"
+                          />
+                        </div>
+                        <div class="col-md-4">
+                          <input
+                            class="form-control"
+                            type="text"
+                            placeholder="Artist"
+                          />
+                        </div>
+                        <div class="col-md-4">
+                          <button class="btn btn-primary">
+                            Add
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row button">
+            <button type="submit" class="btn btn-primary btn-lg">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- container-fluid -->
