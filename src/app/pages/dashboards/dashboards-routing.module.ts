@@ -1,9 +1,10 @@
-import { CategoryModule } from './../category/category.module';
-import { HomeconfigComponent } from './homeconfig/homeconfig.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DefaultComponent } from './default/default.component';
+import { CategoryModule } from './../category/category.module';
+import { HomeconfigComponent } from './homeconfig/homeconfig.component';
+import { AddComponent } from './add/add.component';
 
 const routes: Routes = [
 	{
@@ -13,6 +14,10 @@ const routes: Routes = [
 	{
 		path: 'home/config',
 		component: HomeconfigComponent,
+	},
+	{
+		path: 'home/add',
+		component: AddComponent,
 	},
 	{
 		path: 'category',

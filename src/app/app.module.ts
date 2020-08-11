@@ -28,6 +28,8 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFireStorageModule } from "@angular/fire/storage";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
+
 if (environment.defaultauth === "firebase") {
   initFirebaseBackend(environment.firebaseConfig);
 } else {
@@ -47,11 +49,11 @@ if (environment.defaultauth === "firebase") {
     NgbNavModule,
     NgbTooltipModule,
     NgxDatatableModule,
-    MatNativeDateModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
   ],
   bootstrap: [AppComponent],
   providers: [

@@ -29,6 +29,7 @@ import {
 	NgbNavModule,
 	NgbDatepickerModule,
 	NgbAlertModule,
+	NgbModalModule
 } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
@@ -58,6 +59,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 		NgbTooltipModule,
 		NgbNavModule,
 		NgbDatepickerModule,
+		NgbModalModule,
 		HttpClientModule,
 		NgxDatatableModule,
 		MatProgressBarModule,

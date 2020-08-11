@@ -15,22 +15,29 @@
               <div class="col-md-4">
                 <div class="form-group position-relative">
                   <label>Select Date</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    type="date"
-                    value="Mark"
-                  />
+                  <div class="input-group">
+                    <input
+                      id="dateOfBirth"
+                      class="form-control"
+                      placeholder="yyyy-mm-dd"
+                      name="dp"
+                      ngbDatepicker
+                      #dp="ngbDatepicker"
+                    />
+                    <div class="input-group-append">
+                      <button
+                        class="btn btn-outline-secondary bx bx-calendar"
+                        (click)="dp.toggle()"
+                        type="button"
+                      ></button>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group position-relative">
                   <label>ID</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Input id value here"
-                  />
+                  <input type="text" class="form-control" placeholder="" />
                 </div>
               </div>
               <div class="col-md-4">
@@ -126,6 +133,14 @@
                   {{ row.name }}
                 </ng-template>
               </ngx-datatable-column>
+              <<<<<<< HEAD =======
+
+              <ngx-datatable-column name="List Count">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.listCount }}
+                </ng-template>
+              </ngx-datatable-column>
+              >>>>>>> b8983b1df44f1b219ec9213f1bf13bbdecf922a9
 
               <ngx-datatable-column name="List Count">
                 <ng-template let-row="row" ngx-datatable-cell-template>

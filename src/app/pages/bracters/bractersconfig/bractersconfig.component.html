@@ -22,11 +22,43 @@
                 </div>
                 <div class="col-md-3 mb-3">
                   <label for="example-date-input">From Date</label>
-                  <input class="form-control" type="date" value="2019-08-19" id="example-date-input">
+                  <div class="input-group">
+                    <input
+                      id="fromDate"
+                      class="form-control"
+                      placeholder="yyyy-mm-dd"
+                      name="dp"
+                      ngbDatepicker
+                      #dp="ngbDatepicker"
+                    />
+                    <div class="input-group-append">
+                      <button
+                        class="btn btn-outline-secondary bx bx-calendar"
+                        (click)="dp.toggle()"
+                        type="button"
+                      ></button>
+                    </div>
+                  </div>
                 </div>
                 <div class="col-md-3 mb-3">
                   <label for="example-date-input">To Date</label>
-                  <input class="form-control" type="date" value="2019-08-19" id="example-date-input">
+                  <div class="input-group">
+                    <input
+                      id="toDate"
+                      class="form-control"
+                      placeholder="yyyy-mm-dd"
+                      name="dp2"
+                      ngbDatepicker
+                      #dp2="ngbDatepicker"
+                    />
+                    <div class="input-group-append">
+                      <button
+                        class="btn btn-outline-secondary bx bx-calendar"
+                        (click)="dp2.toggle()"
+                        type="button"
+                      ></button>
+                    </div>
+                  </div>
                 </div>
               </div>
               <button class="btn btn-primary" type="submit">Search</button>

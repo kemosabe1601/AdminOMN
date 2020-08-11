@@ -21,20 +21,24 @@ import {
 	NgbTooltipModule,
 	NgbNavModule,
 	NgbDatepickerModule,
+	NgbTimepickerModule
 } from '@ng-bootstrap/ng-bootstrap';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
 import { DefaultComponent } from './default/default.component';
 import { HomeconfigComponent } from './homeconfig/homeconfig.component';
+import { AddComponent } from './add/add.component';
 
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ArchwizardModule } from 'angular-archwizard';
 import { NgxMaskModule } from 'ngx-mask';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
+import { CrudService } from './../../services/crud.service';
+
 
 @NgModule({
-	declarations: [DefaultComponent, HomeconfigComponent],
+	declarations: [DefaultComponent, HomeconfigComponent, AddComponent],
 	imports: [
 		CommonModule,
 		FormsModule,
@@ -48,6 +52,7 @@ import { DropzoneModule } from 'ngx-dropzone-wrapper';
 		NgbPaginationModule,
 		NgbTypeaheadModule,
 		NgSelectModule,
+		NgbTimepickerModule,
 		NgbDatepickerModule,
 		UiSwitchModule,
 		CKEditorModule,
@@ -61,6 +66,6 @@ import { DropzoneModule } from 'ngx-dropzone-wrapper';
 		NgxDatatableModule,
 		MatProgressBarModule,
 	],
-	providers: [],
+	providers: [CrudService],
 })
 export class DashboardsModule {}
