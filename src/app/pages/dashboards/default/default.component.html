@@ -68,7 +68,9 @@
 
 							<ngx-datatable-column name="Airing Days In Week"> 
 								<ng-template let-row="row" ngx-datatable-cell-template>
-									{{ row.air_mon }} <br> {{ row.air_tue }} <br> {{ row.air_wed }} <br> {{ row.air_thurs }} <br> {{ row.air_fri }} <br> {{ row.air_sat }} <br> {{row.air_sun}}
+									<span *ngIf="row.air_mon || row.air_tue || row.air_wed || row.air_thurs || row.air_fri || row.air_sat || row.air_sun">
+									{{ row.air_mon ? 'Monday' : '' }} <br> {{ row.air_tue ? 'Tuesday' : '' }} <br> {{ row.air_wed ? 'Wednesday' : '' }} <br> {{ row.air_thurs ? 'Thursday' : '' }} <br> {{ row.air_fri ? 'Friday' : '' }} <br> {{ row.air_sat ? 'Saturday' : '' }} <br> {{ row.air_sun ? 'Sunday' : ''}}
+									</span>
 								</ng-template>
 							</ngx-datatable-column>
 

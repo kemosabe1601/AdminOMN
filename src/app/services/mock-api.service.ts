@@ -24,15 +24,14 @@ export class MockApiService {
   }
 
   getHomeDataFireBase() {
-    // return this.fireStore.collection('home').snapshotChanges();
-    return this.fireStore.collection('home', ref => ref.where('air_mon', '==', true)
-                                    .where('air_tue', '==', false)
-                                    .where('air_wed', '==', true)
-                                    .where('air_thurs', '==', false)
-                                    .where('air_fri', '==', true)
-                                    .where('air_sat', '==', false)
-                                    .where('air_sun', '==', false)).snapshotChanges();
-    
+    return this.fireStore.collection('home').snapshotChanges();
+    // return this.fireStore.collection('home', ref => ref.where('air_mon', '==', true)
+    //                                 .where('air_tue', '==', true)
+    //                                 .where('air_wed', '==', true)
+    //                                 .where('air_thurs', '==', true)
+    //                                 .where('air_fri', '==', true)
+    //                                 .where('air_sat', '==', true)
+    //                                 .where('air_sun', '==', true)).snapshotChanges();
   }
 
   // getAiringDaysInHome(id: string) {
