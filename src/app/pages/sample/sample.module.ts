@@ -1,3 +1,4 @@
+import { MatNativeDateModule } from "@angular/material/core";
 import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
 import { DropzoneModule } from "ngx-dropzone-wrapper";
 import { DROPZONE_CONFIG } from "ngx-dropzone-wrapper";
@@ -18,7 +19,10 @@ import { CommonModule } from "@angular/common";
 import { SampleRoutingModule } from "./sample-routing.module";
 import { SampleComponent } from "./sample.component";
 import { UploadComponent } from "./upload/upload.component";
-import { ProductionSPComponent } from './production-sp/production-sp.component';
+import { ProductionSPComponent } from "./production-sp/production-sp.component";
+import { SelfProductionComponent } from "./self-production/self-production.component";
+import { DetailComponent } from "./self-production/detail/detail.component";
+import { MatSelectModule } from "@angular/material/select";
 
 const config: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -27,22 +31,30 @@ const config: DropzoneConfigInterface = {
 };
 
 @NgModule({
-  declarations: [SampleComponent, UploadComponent, ProductionSPComponent],
+  declarations: [
+    SampleComponent,
+    UploadComponent,
+    ProductionSPComponent,
+    SelfProductionComponent,
+    DetailComponent,
+  ],
   imports: [
     CommonModule,
     SampleRoutingModule,
     UIModule,
     UiSwitchModule,
-    MatInputModule,
-    MatFormFieldModule,
     NgxDatatableModule,
     MatIconModule,
     MatDialogModule,
     MatButtonModule,
-    MatDatepickerModule,
     MatRadioModule,
     DropzoneModule,
     CKEditorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatNativeDateModule,
   ],
   providers: [
     {

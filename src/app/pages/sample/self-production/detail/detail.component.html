@@ -1,0 +1,430 @@
+<div class="container-fluid">
+  <!-- start page title -->
+  <app-page-title
+    title="Chat Details Detail Page"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title>
+  <!-- end page title -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <a class="backButton" routerLink="/customer/chat-detail">
+            <mat-icon>arrow_back_ios</mat-icon>
+            <span style="font-size: 14px; padding-top: 1px;"
+              >Return to list
+            </span>
+          </a>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <form class="col-md-12">
+              <div class="form-row">
+                <mat-form-field appearance="outline" class="col-md-3 mb-3">
+                  <mat-label>Title</mat-label>
+                  <input matInput placeholder="Ex. Movie" />
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="col-md-3 mb-3">
+                  <mat-label>Genre</mat-label>
+                  <mat-select>
+                    <mat-option value="1">
+                      Movie
+                    </mat-option>
+                    <mat-option value="2">
+                      SF
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="col-md-3 mb-3">
+                  <mat-label>Production</mat-label>
+                  <mat-select>
+                    <mat-option value="1">
+                      Season
+                    </mat-option>
+                    <mat-option value="2">
+                      Episode
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="col-md-3 mb-3">
+                  <mat-label>Recruiting</mat-label>
+                  <mat-select>
+                    <mat-option value="1">
+                      Recruiting
+                    </mat-option>
+                    <mat-option value="2">
+                      Not
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="form-row">
+                <mat-form-field appearance="outline" class="col-md-4 mb-3">
+                  <mat-label>Production</mat-label>
+                  <input matInput placeholder="Ex. Production A" />
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="col-md-4 mb-3">
+                  <mat-label>Applying Periods</mat-label>
+                  <mat-date-range-input>
+                    <input matStartDate placeholder="Start date" />
+                    <input matEndDate placeholder="End date" />
+                  </mat-date-range-input>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="col-md-4 mb-3">
+                  <mat-label>Title</mat-label>
+                  <input matInput placeholder="Ex. Movie" />
+                </mat-form-field>
+              </div>
+              <div class="form-row">
+                <mat-form-field appearance="outline" class="col-md-3 mb-3">
+                  <mat-label>Title</mat-label>
+                  <input matInput placeholder="Ex. Movie" />
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="col-md-3 mb-3">
+                  <mat-label>Title</mat-label>
+                  <input matInput placeholder="Ex. Movie" />
+                </mat-form-field>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  Learn More
+                </div>
+                <div class="card-body">
+                  <form class="col-md-12">
+                    <div class="form-row">
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                    </div>
+                    <div class="form-row">
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-4 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-4 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-4 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                    </div>
+                    <div class="form-row">
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  Learn More
+                </div>
+                <div class="card-body">
+                  <form class="col-md-12">
+                    <div class="form-row">
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                    </div>
+                    <div class="form-row">
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-4 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-4 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-4 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                    </div>
+                    <div class="form-row">
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  Learn More
+                </div>
+                <div class="card-body">
+                  <form class="col-md-12">
+                    <div class="form-row">
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                    </div>
+                    <div class="form-row">
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-4 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-4 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-4 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                    </div>
+                    <div class="form-row">
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  Learn More
+                </div>
+                <div class="card-body">
+                  <form class="col-md-12">
+                    <div class="form-row">
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                    </div>
+                    <div class="form-row">
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-4 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-4 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-4 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                    </div>
+                    <div class="form-row">
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                      <mat-form-field
+                        appearance="outline"
+                        class="col-md-3 mb-3"
+                      >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Ex. Movie" />
+                      </mat-form-field>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer button">
+          <button class="btn btn-primary btn-lg mr-5">
+            Save
+          </button>
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+    <!-- end col -->
+  </div>
+  <!-- end row -->
+</div>
