@@ -1,3 +1,4 @@
+import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatNativeDateModule } from "@angular/material/core";
 import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
 import { DropzoneModule } from "ngx-dropzone-wrapper";
@@ -23,6 +24,8 @@ import { ProductionSPComponent } from "./production-sp/production-sp.component";
 import { SelfProductionComponent } from "./self-production/self-production.component";
 import { DetailComponent } from "./self-production/detail/detail.component";
 import { MatSelectModule } from "@angular/material/select";
+import { MainVideoComponent } from "./main-video/main-video.component";
+import { VideoDetailComponent } from "./main-video/video-detail/video-detail.component";
 
 const config: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -37,6 +40,8 @@ const config: DropzoneConfigInterface = {
     ProductionSPComponent,
     SelfProductionComponent,
     DetailComponent,
+    MainVideoComponent,
+    VideoDetailComponent,
   ],
   imports: [
     CommonModule,
@@ -55,6 +60,7 @@ const config: DropzoneConfigInterface = {
     MatDatepickerModule,
     MatSelectModule,
     MatNativeDateModule,
+    MatCheckboxModule,
   ],
   providers: [
     {

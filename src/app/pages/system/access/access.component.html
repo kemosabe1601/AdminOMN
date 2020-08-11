@@ -12,11 +12,14 @@
             <div class="col-4">
               <div class="card">
                 <div class="card-header">
-                  <button class="btn btn-primary btn-lg">
-                    Add Dept
-                  </button>
+                  <label class="mt-2">Dept List</label>
                 </div>
                 <div class="card-body">
+                  <div class="body-header-button">
+                    <button class="btn btn-primary">
+                      Add Dept
+                    </button>
+                  </div>
                   <div class="table-responsive">
                     <ngx-datatable
                       class="material"
@@ -51,11 +54,14 @@
             <div class="col-4">
               <div class="card">
                 <div class="card-header">
-                  <button class="btn btn-primary btn-lg">
-                    Add Team
-                  </button>
+                  <label class="mt-2">Team List</label>
                 </div>
                 <div class="card-body">
+                  <div class="body-header-button">
+                    <button class="btn btn-primary">
+                      Add Team
+                    </button>
+                  </div>
                   <div class="table-responsive">
                     <ngx-datatable
                       class="material"
@@ -90,11 +96,16 @@
             <div class="col-4">
               <div class="card">
                 <div class="card-header">
-                  <button class="btn btn-primary btn-lg">
-                    Add Employee
-                  </button>
+                  <label class="mt-2">
+                    Employee Type List
+                  </label>
                 </div>
                 <div class="card-body">
+                  <div class="body-header-button">
+                    <button class="btn btn-primary">
+                      Add Employee
+                    </button>
+                  </div>
                   <div class="table-responsive">
                     <ngx-datatable
                       class="material"
@@ -105,7 +116,7 @@
                       [footerHeight]="50"
                       rowHeight="auto"
                     >
-                      <ngx-datatable-column name="Employee List">
+                      <ngx-datatable-column name="Employee Type">
                         <ng-template let-row="row" ngx-datatable-cell-template>
                           <div class="row">
                             <div class="col-md-9">
@@ -132,12 +143,17 @@
             <div class="col-8">
               <div class="card">
                 <div class="card-header">
-                  <h2>Accessible Menu</h2>
+                  <label class="mt-2">Accessible Menu</label>
                 </div>
                 <div class="card-body">
-                  <button class="btn btn-primary btn-lg" (click)="userModal()">
-                    Menu Add
-                  </button>
+                  <div class="body-header-button">
+                    <button
+                      class="btn btn-primary btn-lg"
+                      (click)="userModal()"
+                    >
+                      Menu Add
+                    </button>
+                  </div>
                   <div class="table-responsive">
                     <ngx-datatable
                       class="material"

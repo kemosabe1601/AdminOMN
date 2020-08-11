@@ -1,3 +1,5 @@
+import { VideoDetailComponent } from "./main-video/video-detail/video-detail.component";
+import { MainVideoComponent } from "./main-video/main-video.component";
 import { DetailComponent } from "./self-production/detail/detail.component";
 import { SelfProductionComponent } from "./self-production/self-production.component";
 import { ProductionSPComponent } from "./production-sp/production-sp.component";
@@ -24,6 +26,14 @@ const routes: Routes = [
   {
     path: "self-production/detail",
     component: DetailComponent,
+  },
+  {
+    path: "main-video",
+    component: MainVideoComponent,
+  },
+  {
+    path: "main-video/detail",
+    component: VideoDetailComponent,
   },
 ];
 

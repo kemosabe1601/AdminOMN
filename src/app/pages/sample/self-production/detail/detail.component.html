@@ -59,31 +59,86 @@
                 </mat-form-field>
               </div>
               <div class="form-row">
-                <mat-form-field appearance="outline" class="col-md-4 mb-3">
+                <mat-form-field
+                  appearance="outline"
+                  class="col-md-4 mat-margin"
+                >
                   <mat-label>Production</mat-label>
                   <input matInput placeholder="Ex. Production A" />
                 </mat-form-field>
-                <mat-form-field appearance="outline" class="col-md-4 mb-3">
-                  <mat-label>Applying Periods</mat-label>
-                  <mat-date-range-input>
-                    <input matStartDate placeholder="Start date" />
-                    <input matEndDate placeholder="End date" />
-                  </mat-date-range-input>
-                </mat-form-field>
-                <mat-form-field appearance="outline" class="col-md-4 mb-3">
-                  <mat-label>Title</mat-label>
-                  <input matInput placeholder="Ex. Movie" />
-                </mat-form-field>
+                <div class="col-md-4 mb-3">
+                  <label>Applying Periods</label>
+                  <div class="row">
+                    <mat-form-field appearance="outline" class="col-md-5">
+                      <mat-label>Start Date</mat-label>
+                      <input
+                        matInput
+                        [matDatepicker]="start"
+                        placeholder="Start date"
+                      />
+                      <mat-datepicker-toggle
+                        matSuffix
+                        [for]="start"
+                      ></mat-datepicker-toggle>
+                      <mat-datepicker #start></mat-datepicker>
+                    </mat-form-field>
+                    <p class="connect">~~</p>
+                    <mat-form-field appearance="outline" class="col-md-5">
+                      <mat-label>End Date</mat-label>
+                      <input
+                        matInput
+                        [matDatepicker]="end"
+                        placeholder="End date"
+                      />
+                      <mat-datepicker-toggle
+                        matSuffix
+                        [for]="end"
+                      ></mat-datepicker-toggle>
+                      <mat-datepicker #end></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Result Periods</label>
+                  <div class="row">
+                    <mat-form-field appearance="outline" class="col-md-5">
+                      <mat-label>Start Date</mat-label>
+                      <input
+                        matInput
+                        [matDatepicker]="startResult"
+                        placeholder="Start date"
+                      />
+                      <mat-datepicker-toggle
+                        matSuffix
+                        [for]="startResult"
+                      ></mat-datepicker-toggle>
+                      <mat-datepicker #startResult></mat-datepicker>
+                    </mat-form-field>
+                    <p class="connect">~~</p>
+                    <mat-form-field appearance="outline" class="col-md-5">
+                      <mat-label>End Date</mat-label>
+                      <input
+                        matInput
+                        [matDatepicker]="endResult"
+                        placeholder="End date"
+                      />
+                      <mat-datepicker-toggle
+                        matSuffix
+                        [for]="endResult"
+                      ></mat-datepicker-toggle>
+                      <mat-datepicker #endResult></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                </div>
               </div>
               <div class="form-row">
-                <mat-form-field appearance="outline" class="col-md-3 mb-3">
-                  <mat-label>Title</mat-label>
-                  <input matInput placeholder="Ex. Movie" />
-                </mat-form-field>
-                <mat-form-field appearance="outline" class="col-md-3 mb-3">
-                  <mat-label>Title</mat-label>
-                  <input matInput placeholder="Ex. Movie" />
-                </mat-form-field>
+                <div class="col-md-3 mb-3">
+                  <label>Poster Image</label>
+                  <dropzone class="dropzone"></dropzone>
+                </div>
+                <div class="col-md-3 mt-4">
+                  <mat-checkbox>Autoplay?</mat-checkbox>
+                </div>
               </div>
             </form>
           </div>
@@ -100,71 +155,60 @@
                     <div class="form-row">
                       <mat-form-field
                         appearance="outline"
-                        class="col-md-3 mb-3"
+                        class="col-md-10 mb-3"
                       >
                         <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
+                        <input
+                          matInput
+                          placeholder="Ex. Movie"
+                          value="Avenger"
+                        />
                       </mat-form-field>
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-3 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-3 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-3 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
+                      <div class="col-md-2">
+                        <button
+                          mat-flat-button
+                          color="accent"
+                          class="flat-button"
+                        >
+                          Delete
+                        </button>
+                      </div>
                     </div>
                     <div class="form-row">
                       <mat-form-field
                         appearance="outline"
-                        class="col-md-4 mb-3"
+                        class="col-md-10 mb-3"
                       >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
+                        <mat-label>Subtitle</mat-label>
+                        <input
+                          matInput
+                          placeholder="Ex. Movie"
+                          value="Infinity War"
+                        />
                       </mat-form-field>
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-4 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-4 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
+                      <div class="col-md-2">
+                        <button
+                          mat-flat-button
+                          color="accent"
+                          class="flat-button"
+                        >
+                          Delete
+                        </button>
+                      </div>
                     </div>
-                    <div class="form-row">
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-3 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
+                    <div class="form-row sub-add">
+                      <mat-form-field appearance="outline" class="col-md-4">
+                        <mat-label>Type</mat-label>
+                        <mat-select>
+                          <mat-option value="1">Subtitle</mat-option>
+                          <mat-option value="2">Title</mat-option>
+                        </mat-select>
                       </mat-form-field>
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-3 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
+                      <div class="col-md-2">
+                        <button mat-flat-button color="primary" class="mb-3">
+                          Add
+                        </button>
+                      </div>
                     </div>
                   </form>
                 </div>
@@ -173,78 +217,55 @@
             <div class="col-md-6">
               <div class="card">
                 <div class="card-header">
-                  Learn More
+                  Requirements
                 </div>
                 <div class="card-body">
                   <form class="col-md-12">
                     <div class="form-row">
                       <mat-form-field
                         appearance="outline"
-                        class="col-md-3 mb-3"
+                        class="col-md-2 mb-3"
                       >
-                        <mat-label>Title</mat-label>
+                        <mat-label>Recruiting</mat-label>
                         <input matInput placeholder="Ex. Movie" />
                       </mat-form-field>
                       <mat-form-field
                         appearance="outline"
-                        class="col-md-3 mb-3"
+                        class="col-md-4 mb-3"
                       >
-                        <mat-label>Title</mat-label>
+                        <mat-label>Position</mat-label>
                         <input matInput placeholder="Ex. Movie" />
                       </mat-form-field>
                       <mat-form-field
                         appearance="outline"
-                        class="col-md-3 mb-3"
+                        class="col-md-2 mb-3"
                       >
-                        <mat-label>Title</mat-label>
+                        <mat-label>Playing Program</mat-label>
                         <input matInput placeholder="Ex. Movie" />
                       </mat-form-field>
                       <mat-form-field
                         appearance="outline"
-                        class="col-md-3 mb-3"
+                        class="col-md-2 mb-3"
                       >
-                        <mat-label>Title</mat-label>
+                        <mat-label>Program date</mat-label>
                         <input matInput placeholder="Ex. Movie" />
                       </mat-form-field>
+                      <div class="col-md-2">
+                        <button
+                          mat-flat-button
+                          color="accent"
+                          class="flat-button"
+                        >
+                          Delete
+                        </button>
+                      </div>
                     </div>
-                    <div class="form-row">
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-4 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-4 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-4 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
-                    </div>
-                    <div class="form-row">
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-3 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-3 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
+                    <div class="form-row sub-add">
+                      <div class="col-md-2">
+                        <button mat-flat-button color="primary" class="mb-3">
+                          Add
+                        </button>
+                      </div>
                     </div>
                   </form>
                 </div>
@@ -257,78 +278,41 @@
             <div class="col-md-6">
               <div class="card">
                 <div class="card-header">
-                  Learn More
+                  Playing Part
                 </div>
                 <div class="card-body">
                   <form class="col-md-12">
                     <div class="form-row">
                       <mat-form-field
                         appearance="outline"
-                        class="col-md-3 mb-3"
+                        class="col-md-10 mb-3"
                       >
-                        <mat-label>Title</mat-label>
+                        <mat-label>Actor</mat-label>
                         <input matInput placeholder="Ex. Movie" />
                       </mat-form-field>
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-3 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-3 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-3 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
+                      <div class="col-md-2">
+                        <button
+                          mat-flat-button
+                          color="accent"
+                          class="flat-button"
+                        >
+                          Delete
+                        </button>
+                      </div>
                     </div>
-                    <div class="form-row">
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-4 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
+                    <div class="form-row sub-add">
+                      <mat-form-field appearance="outline" class="col-md-4">
+                        <mat-label>Actor</mat-label>
+                        <mat-select>
+                          <mat-option value="1">Actor</mat-option>
+                          <mat-option value="2">Actor 2</mat-option>
+                        </mat-select>
                       </mat-form-field>
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-4 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-4 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
-                    </div>
-                    <div class="form-row">
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-3 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
-                      <mat-form-field
-                        appearance="outline"
-                        class="col-md-3 mb-3"
-                      >
-                        <mat-label>Title</mat-label>
-                        <input matInput placeholder="Ex. Movie" />
-                      </mat-form-field>
+                      <div class="col-md-2">
+                        <button mat-flat-button color="primary" class="mb-3">
+                          Add
+                        </button>
+                      </div>
                     </div>
                   </form>
                 </div>

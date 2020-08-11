@@ -1,4 +1,10 @@
 .access {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+.body-header-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
