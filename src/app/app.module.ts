@@ -27,6 +27,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 if (environment.defaultauth === 'firebase') {
 	initFirebaseBackend(environment.firebaseConfig);
@@ -50,7 +51,8 @@ if (environment.defaultauth === 'firebase') {
 		AngularFireAuthModule,
 		AngularFireModule.initializeApp(environment.firebaseConfig),
 		AngularFireStorageModule,
-		AngularFirestoreModule
+		AngularFirestoreModule,
+		AngularFireDatabaseModule
 	],
 	bootstrap: [AppComponent],
 	providers: [

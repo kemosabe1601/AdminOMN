@@ -1,23 +1,33 @@
 import { Component, OnInit, ViewChild, EventEmitter, Output, Input, ContentChildren, QueryList, forwardRef } from '@angular/core';
-
 import { NgbDate, NgbCalendar, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
-
 import { MustMatch } from './validation.mustmatch';
-
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDragHandle } from '@angular/cdk/drag-drop';
 import { MatTable } from '@angular/material/table';
+import { CrudService } from './../../../services/crud.service';
+
 
 @Component({
-  selector: 'app-homeconfig',
-  templateUrl: './homeconfig.component.html',
-  styleUrls: ['./homeconfig.component.scss']
+  selector: 'app-add',
+  templateUrl: './add.component.html',
+  styleUrls: ['./add.component.scss']
 })
+export class AddComponent implements OnInit {
+  home: string;
+  home_set_name: string;
+  start_time: number;
+  end_time: number;
+  category_list: string;
+  air_mon: false;
+  air_tue: false;
+  air_wed: false;
+  air_thurs: false;
+  air_fri: false;
+  air_sat: false;
+  air_sun: false;
 
-export class HomeconfigComponent implements OnInit {
   validationform: FormGroup; // bootstrap validation form
   tooltipvalidationform: FormGroup; // bootstrap tooltip validation form
   typeValidationForm: FormGroup; // type validation form
@@ -37,7 +47,7 @@ export class HomeconfigComponent implements OnInit {
 
   // bread crumb items
   breadCrumbItems: Array<{}>;
-  constructor(private calendar: NgbCalendar, public formBuilder: FormBuilder) { }
+  constructor(private calendar: NgbCalendar, public formBuilder: FormBuilder, crudservice: CrudService) { }
 
   // name: string;
   // position: number;
@@ -80,7 +90,7 @@ export class HomeconfigComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.breadCrumbItems = [{ label: 'Home' }, { label: 'Config', active: true }];
+    this.breadCrumbItems = [{ label: 'Home' }, { label: 'Create New', active: true }];
     // Component color value of color picker
     this.componentcolor = '#3bafda';
     this.presetcolor = '#2889e9';
@@ -152,6 +162,21 @@ export class HomeconfigComponent implements OnInit {
     this.formsubmit = false;
     this.typesubmit = false;
     this.rangesubmit = false;
+  }
+
+  createNew() {
+    let data = {};
+    data['home_set_name'] = this.home_set_name
+    data['air_mon'] = this.air_mon
+    data['air_tue'] = this.air_tue
+    data['air_wed'] = this.air_wed
+    data['air_thurs'] = this.air_thurs
+    data['air_fri'] = this.air_fri
+    data['air_sat'] = this.air_sat
+    data['air_sun'] = this.air_sun
+    data['start_time'] = this.start_time
+    data['end_time'] = this.end_time
+    console.log(data);
   }
 
   /**

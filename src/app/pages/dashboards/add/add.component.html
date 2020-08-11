@@ -1,0 +1,296 @@
+<div class="container-fluid">
+  <!-- start page title -->
+  <app-page-title
+    title="Create New Home Set"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title>
+  <!-- end page title -->
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <a class="backButton" routerLink="/home">
+            <mat-icon>arrow_back_ios</mat-icon
+            ><span style="font-size: 14px; padding-top: 1px;"
+              >Return to list</span
+            >
+          </a>
+          <form
+            class="needs-validation"
+            (ngSubmit)="validSubmit()"
+          >
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="validationCustom01">Home set name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="validationCustom01"
+                    [(ngModel)]="home_set_name"
+                    placeholder="Home set name"
+                    [ngClass]="{ 'is-valid': submit && form.firstName.errors }"
+                    [ngModelOptions]="{standalone: true}"
+                  />
+                  <div
+                    *ngIf="submit && form.firstName.errors"
+                    class="valid-feedback"
+                  >
+                    <span *ngIf="form.firstName.errors.required"
+                      >Looks good!</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-md-6">
+                <div>
+                  <label>Airing days in week</label>
+                  <br />
+                  <br />
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck1"
+                      checked="true"
+                      [(ngModel)]="air_mon"
+                      [ngModelOptions]="{standalone: true}"
+                    />
+                    <label class="custom-control-label" for="customCheck1"
+                      >Monday</label
+                    >
+                  </div>
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck2"
+                      checked="true"
+                      [(ngModel)]="air_tue"
+                      [ngModelOptions]="{standalone: true}"
+                    />
+                    <label class="custom-control-label" for="customCheck2"
+                      >Tuesday</label
+                    >
+                  </div>
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck3"
+                      checked="true"
+                      [(ngModel)]="air_wed"
+                      [ngModelOptions]="{standalone: true}"
+                    />
+                    <label class="custom-control-label" for="customCheck3"
+                      >Wednesday</label
+                    >
+                  </div>
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck4"
+                      checked="true"
+                      [(ngModel)]="air_thurs"
+                      [ngModelOptions]="{standalone: true}"
+                    />
+                    <label class="custom-control-label" for="customCheck4"
+                      >Thursday</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 ml-auto">
+                <div class="mt-4 mt-lg-0">
+                  <label style="visibility: hidden;">Airing days in week</label>
+                  <br />
+                  <br />
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck5"
+                      checked="true"
+                      [(ngModel)]="air_fri"
+                      [ngModelOptions]="{standalone: true}"
+                    />
+                    <label class="custom-control-label" for="customCheck5"
+                      >Friday</label
+                    >
+                  </div>
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck6"
+                      checked="true"
+                      [(ngModel)]="air_sat"
+                      [ngModelOptions]="{standalone: true}"
+                    />
+                    <label class="custom-control-label" for="customCheck6"
+                      >Saturday</label
+                    >
+                  </div>
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck7"
+                      checked="true"
+                      [(ngModel)]="air_sun"
+                      [ngModelOptions]="{standalone: true}"
+                    />
+                    <label class="custom-control-label" for="customCheck7"
+                      >Sunday</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="validationCustom03">Start time</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Ex: 7:00 AM"
+                    type="time"
+                    value="13:45:00"
+                    id="example-time-input"
+                    [(ngModel)]="start_time"
+                    [ngModelOptions]="{standalone: true}"
+                  />
+                  <div
+                    *ngIf="submit && form.city.errors"
+                    class="invalid-feedback"
+                  >
+                    <span *ngIf="form.city.errors.required"
+                      >Please provide a valid time.</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="validationCustom04">End time</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="validationCustom04"
+                    placeholder="Ex: 7:00 PM"
+                    type="time"
+                    value="13:45:00"
+                    id="example-time-input"
+                    [(ngModel)]="end_time"
+                    [ngModelOptions]="{standalone: true}"
+                  />
+                  <div
+                    *ngIf="submit && form.state.errors"
+                    class="invalid-feedback"
+                  >
+                    <span *ngIf="form.state.errors.required"
+                      >Please provide a valid time.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-md-6">
+                <label for="validationCustom01">Import category list</label>
+                <div class="input-group">
+                  <select class="custom-select" id="inputGroupSelect04">
+                    <option selected>Choose...</option>
+                    <option value="1">Korean Drama</option>
+                    <option value="2">Comedy</option>
+                    <option value="3">Action</option>
+                  </select>
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-success" type="button">
+                      import
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <br />
+            <!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                  <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
+              </div> -->
+            <!-- <br/>
+              <br/> -->
+            <!-- <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8" cdkDropList
+                [cdkDropListData]="dataSource" (cdkDropListDropped)="dropTable($event)">
+  
+                <ng-container matColumnDef="position">
+                  <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    <mat-icon cdkDragHandle>reorder</mat-icon>
+                  </mat-cell>
+                </ng-container>
+  
+                <ng-container matColumnDef="name">
+                  <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                </ng-container>
+  
+                <ng-container matColumnDef="programcount">
+                  <mat-header-cell *matHeaderCellDef> Program Count </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.programcount}} </mat-cell>
+                </ng-container>
+  
+                <ng-container matColumnDef="createddate">
+                  <mat-header-cell *matHeaderCellDef> Created Date </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.createddate}} </mat-cell>
+                </ng-container>
+  
+                <ng-container matColumnDef="remove">
+                  <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    <a href="#"><mat-icon>close</mat-icon></a>
+                  </mat-cell>
+                </ng-container>
+  
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag [cdkDragData]="row"></mat-row>
+              </mat-table> -->
+
+            <br />
+            <br />
+            <div class="form-group mb-0">
+              <div>
+                <button
+                  type="submit"
+                  class="btn btn-primary mr-1"
+                  [disabled]="!home_set_name || !start_time || !end_time"
+                  (click)="createNew()"
+                >
+                  Submit
+                </button>
+                <button
+                  type="reset"
+                  class="btn btn-secondary"
+                  routerLink="/home"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </form>
+          <br />
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+    <!-- end col -->
+  </div>
+  <!-- end row -->
+</div>
