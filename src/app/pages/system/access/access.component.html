@@ -1,0 +1,202 @@
+<div class="container-fluid">
+  <app-page-title
+    title="Accessible"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-4">
+              <div class="card">
+                <div class="card-header">
+                  <label class="mt-2">Dept List</label>
+                </div>
+                <div class="card-body">
+                  <div class="body-header-button">
+                    <button class="btn btn-primary">
+                      Add Dept
+                    </button>
+                  </div>
+                  <div class="table-responsive">
+                    <ngx-datatable
+                      class="material"
+                      [rows]="dept"
+                      [columnMode]="ColumnMode.force"
+                      [loadingIndicator]="loadingIndicator"
+                      [headerHeight]="50"
+                      [footerHeight]="50"
+                      rowHeight="auto"
+                    >
+                      <ngx-datatable-column name="Dept List">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          <div class="row">
+                            <div class="col-md-9">
+                              {{ row.name }}
+                            </div>
+                            <div class="col-md-3">
+                              <div class="button-items">
+                                <button type="button" class="btn btn-primary">
+                                  Delete
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </ngx-datatable-column>
+                    </ngx-datatable>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="card">
+                <div class="card-header">
+                  <label class="mt-2">Team List</label>
+                </div>
+                <div class="card-body">
+                  <div class="body-header-button">
+                    <button class="btn btn-primary">
+                      Add Team
+                    </button>
+                  </div>
+                  <div class="table-responsive">
+                    <ngx-datatable
+                      class="material"
+                      [rows]="team"
+                      [columnMode]="ColumnMode.force"
+                      [loadingIndicator]="loadingIndicator"
+                      [headerHeight]="50"
+                      [footerHeight]="50"
+                      rowHeight="auto"
+                    >
+                      <ngx-datatable-column name="Team List">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          <div class="row">
+                            <div class="col-md-9">
+                              {{ row.name }}
+                            </div>
+                            <div class="col-md-3">
+                              <div class="button-items">
+                                <button type="button" class="btn btn-primary">
+                                  Delete
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </ngx-datatable-column>
+                    </ngx-datatable>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="card">
+                <div class="card-header">
+                  <label class="mt-2">
+                    Employee Type List
+                  </label>
+                </div>
+                <div class="card-body">
+                  <div class="body-header-button">
+                    <button class="btn btn-primary">
+                      Add Employee
+                    </button>
+                  </div>
+                  <div class="table-responsive">
+                    <ngx-datatable
+                      class="material"
+                      [rows]="employ"
+                      [columnMode]="ColumnMode.force"
+                      [loadingIndicator]="loadingIndicator"
+                      [headerHeight]="50"
+                      [footerHeight]="50"
+                      rowHeight="auto"
+                    >
+                      <ngx-datatable-column name="Employee Type">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          <div class="row">
+                            <div class="col-md-9">
+                              {{ row.name }}
+                            </div>
+                            <div class="col-md-3">
+                              <div class="button-items">
+                                <button type="button" class="btn btn-primary">
+                                  Delete
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </ngx-datatable-column>
+                    </ngx-datatable>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row access">
+            <div class="col-8">
+              <div class="card">
+                <div class="card-header">
+                  <label class="mt-2">Accessible Menu</label>
+                </div>
+                <div class="card-body">
+                  <div class="body-header-button">
+                    <button
+                      class="btn btn-primary btn-lg"
+                      (click)="userModal()"
+                    >
+                      Menu Add
+                    </button>
+                  </div>
+                  <div class="table-responsive">
+                    <ngx-datatable
+                      class="material"
+                      [rows]="access"
+                      [columnMode]="ColumnMode.force"
+                      [loadingIndicator]="loadingIndicator"
+                      [headerHeight]="50"
+                      [footerHeight]="50"
+                      rowHeight="auto"
+                    >
+                      <ngx-datatable-column name="Large Category">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          {{ row.large }}
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="Medium Category">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          {{ row.mid }}
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="Small Category">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          {{ row.small }}
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="Action">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          <div class="button-items">
+                            <button type="button" class="btn btn-primary">
+                              Delete
+                            </button>
+                          </div>
+                        </ng-template>
+                      </ngx-datatable-column>
+                    </ngx-datatable>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- container-fluid -->

@@ -1,0 +1,19 @@
+.card-header {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.template-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+
+	& button:first-child {
+		margin-right: 30px;
+	}
+}

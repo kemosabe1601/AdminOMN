@@ -11,7 +11,29 @@ export const MENU: MenuItem[] = [
     label: "Home",
     icon: "bx-home-circle",
     link: "/home",
+    // badge: {
+    //     variant: 'info',
+    //     text: '03',
+    // },
     subItems: [
+      // {
+      //     id: 3,
+      //     label: 'Default',
+      //     link: '/dashboard',
+      //     parentId: 2
+      // },
+      // {
+      //     id: 4,
+      //     label: 'Saas',
+      //     link: 'javascript: void(0);',
+      //     parentId: 2
+      // },
+      // {
+      //     id: 5,
+      //     label: 'Crypto',
+      //     link: 'javascript: void(0);',
+      //     parentId: 2
+      // },
     ],
   },
   {
@@ -43,7 +65,7 @@ export const MENU: MenuItem[] = [
       {
         id: 10,
         label: "List",
-        link: "/challengers/list",
+        link: "/challengers",
         parentId: 9,
       },
       {
@@ -68,7 +90,7 @@ export const MENU: MenuItem[] = [
       {
         id: 14,
         label: "List",
-        link: "/upload/list",
+        link: "/upload",
         parentId: 13,
       },
       {
@@ -79,7 +101,7 @@ export const MENU: MenuItem[] = [
       },
       {
         id: 16,
-        label: "Program",
+        label: "Challenger Program",
         link: "/upload/program",
         parentId: 13,
       },
@@ -93,7 +115,7 @@ export const MENU: MenuItem[] = [
       {
         id: 18,
         label: "List",
-        link: "/profitpayment/list",
+        link: "/profitpayment",
         parentId: 17,
       },
       {
@@ -123,8 +145,8 @@ export const MENU: MenuItem[] = [
       },
       {
         id: 23,
-        label: "Chat Details",
-        link: "/customer/chat-details",
+        label: "Chat Detail",
+        link: "/customer/chat-detail",
         parentId: 21,
       },
       {
@@ -136,12 +158,105 @@ export const MENU: MenuItem[] = [
       {
         id: 24,
         label: "Problem",
-        link: "/customer/problem",
+        link: "/customer/problems",
         parentId: 21,
       },
     ],
   },
-
+  {
+    id: 25,
+    label: "Message",
+    link: "/message",
+    icon: "bx bx-message-square-dots",
+  },
+  {
+    id: 26,
+    label: "Systems Manage",
+    icon: "bx bx-spray-can",
+    subItems: [
+      {
+        id: 27,
+        label: "Message Manage",
+        link: "/system/message",
+        parentId: 26,
+      },
+      {
+        id: 28,
+        label: "Membership Manage",
+        link: "/system/membership",
+        parentId: 26,
+      },
+      {
+        id: 29,
+        label: "Employee Manage",
+        link: "/system/employee",
+        parentId: 26,
+      },
+      {
+        id: 30,
+        label: "Footer Manage",
+        link: "/system/footer",
+        parentId: 26,
+        subItems: [
+          {
+            id: 31,
+            label: "Terms & Conditions",
+            link: "/system/footer/terms&conditions",
+            parentId: 30,
+          },
+          {
+            id: 32,
+            label: "Privacy Policy",
+            link: "/system/footer/privacy",
+            parentId: 30,
+          },
+          {
+            id: 33,
+            label: "Video Manage",
+            link: "/system/footer/video-manage",
+            parentId: 30,
+          },
+        ],
+      },
+      {
+        id: 34,
+        label: "Access Manage",
+        link: "/system/access",
+        parentId: 26,
+      },
+    ],
+  },
+  {
+    id: 35,
+    label: "Sample Manage",
+    icon: "bx bx-comment-edit",
+    subItems: [
+      {
+        id: 36,
+        label: "Upload Sample",
+        link: "/sample/upload",
+        parentId: 35,
+      },
+      {
+        id: 37,
+        label: "Production Support Sample",
+        link: "/sample/production-support",
+        parentId: 35,
+      },
+      {
+        id: 38,
+        label: "Self-Production Sample",
+        link: "/sample/self-production",
+        parentId: 35,
+      },
+      {
+        id: 39,
+        label: "Main Video Sample",
+        link: "/sample/main-video",
+        parentId: 35,
+      },
+    ],
+  },
   // {
   //     id: 6,
   //     isLayout: true

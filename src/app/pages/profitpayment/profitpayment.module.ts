@@ -32,11 +32,15 @@ import { DetailComponent } from './detail/detail.component';
 import { CompleteComponent } from './complete/complete.component';
 import { DeletedComponent } from './deleted/deleted.component';
 
-
 @NgModule({
-  declarations: [ProfitpaymentComponent, DetailComponent, CompleteComponent, DeletedComponent],
-  imports: [
-    CommonModule,
+	declarations: [
+		ProfitpaymentComponent,
+		DetailComponent,
+		CompleteComponent,
+		DeletedComponent,
+	],
+	imports: [
+		CommonModule,
 		ProfitpaymentRoutingModule,
 		NgSelectModule,
 		FormsModule,
@@ -61,7 +65,7 @@ import { DeletedComponent } from './deleted/deleted.component';
 		HttpClientModule,
 		NgxDatatableModule,
 		MatProgressBarModule,
-		NgbAlertModule
-  ]
+		NgbAlertModule,
+	],
 })
-export class ProfitpaymentModule { }
+export class ProfitpaymentModule {}

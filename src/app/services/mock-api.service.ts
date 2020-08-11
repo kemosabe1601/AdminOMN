@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from "@angular/fire/firestore";
 @Injectable({
   providedIn: "root",
 })
@@ -24,7 +24,7 @@ export class MockApiService {
   }
 
   getHomeDataFireBase() {
-    return this.fireStore.collection('home').snapshotChanges();
+    return this.fireStore.collection("home").snapshotChanges();
     // return this.fireStore.collection('home', ref => ref.where('air_mon', '==', true)
     //                                 .where('air_tue', '==', true)
     //                                 .where('air_wed', '==', true)
@@ -35,7 +35,7 @@ export class MockApiService {
   }
 
   // getAiringDaysInHome(id: string) {
-	// 	return this.fireStore.collection('home').doc(id).collection('airing_days').snapshotChanges();
+  // 	return this.fireStore.collection('home').doc(id).collection('airing_days').snapshotChanges();
   // }
 
   getTableData() {
@@ -70,6 +70,18 @@ export class MockApiService {
         "Origin, X-Requested-With, Content-Type, Accept, Authorization",
     });
     return this.http.get("/api/v1/admin/transactions", {
+      headers: header,
+    });
+  }
+
+  getUserData() {
+    const header = new HttpHeaders({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
+      "Access-Control-Allow-Headers":
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+    });
+    return this.http.get("/api/v1/admin/user", {
       headers: header,
     });
   }

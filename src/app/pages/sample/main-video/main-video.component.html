@@ -1,0 +1,209 @@
+<div class="container-fluid">
+  <app-page-title
+    title="Sample Management"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title text-primary">Main Video List</h4>
+          <p class="card-sub-title">
+            (Each of the category set here will be contained in a home set).
+          </p>
+          <div class="row">
+            <form class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-3 mb-3">
+                  <label>Registered Date</label>
+                  <input class="form-control" type="date" value="2019-08-19" />
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label>Type</label>
+                  <select class="custom-select">
+                    <option selected disabled>Select Type</option>
+                    <option value="1">Upload</option>
+                    <option value="2">Download</option>
+                  </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label>Large Category</label>
+                  <select class="custom-select">
+                    <option selected disabled>Select category</option>
+                    <option value="1">Season</option>
+                    <option value="2">Episode</option>
+                  </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label>Small Category</label>
+                  <select class="custom-select">
+                    <option selected disabled>Select category</option>
+                    <option value="1">Season</option>
+                    <option value="2">Episode</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-3 mb-3">
+                  <label>Program Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Program A"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 search">
+                  <button class="btn btn-primary" type="submit">
+                    Search
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <!-- Table -->
+          <div class="table-responsive">
+            <ngx-datatable
+              class="material"
+              [rows]="rows"
+              [loadingIndicator]="loadingIndicator"
+              [columnMode]="ColumnMode.force"
+              [headerHeight]="50"
+              [footerHeight]="50"
+              rowHeight="auto"
+              [limit]="6"
+            >
+              <ngx-datatable-column name="Challenger Set Name">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.name }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="List Count">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.listCount }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Airing days in week">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.days }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Start Time">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ localeDate(row.startTime) | date: "shortTime" }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="End Time">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ localeDate(row.endTime) | date: "shortTime" }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Action">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  <div class="button-items">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      [routerLink]="['detail']"
+                    >
+                      Config
+                    </button>
+                    <button type="button" class="btn btn-light">
+                      Delete
+                    </button>
+                  </div>
+                </ng-template>
+              </ngx-datatable-column>
+            </ngx-datatable>
+          </div>
+          <!-- End table -->
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <label class="mt-2">Current Main Video</label>
+        </div>
+        <div class="card-body">
+          <!-- Table -->
+          <div class="table-responsive">
+            <ngx-datatable
+              class="material"
+              [rows]="rows"
+              [loadingIndicator]="loadingIndicator"
+              [columnMode]="ColumnMode.force"
+              [headerHeight]="50"
+              [footerHeight]="50"
+              rowHeight="auto"
+              [limit]="3"
+            >
+              <ngx-datatable-column name="Challenger Set Name">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.name }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="List Count">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.listCount }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Airing days in week">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.days }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Start Time">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ localeDate(row.startTime) | date: "shortTime" }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="End Time">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ localeDate(row.endTime) | date: "shortTime" }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Action">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  <div class="button-items">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      [routerLink]="['detail']"
+                    >
+                      Config
+                    </button>
+                    <button type="button" class="btn btn-light">
+                      Delete
+                    </button>
+                  </div>
+                </ng-template>
+              </ngx-datatable-column>
+            </ngx-datatable>
+          </div>
+          <!-- End table -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- container-fluid -->

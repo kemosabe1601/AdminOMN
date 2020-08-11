@@ -42,6 +42,21 @@ const routes: Routes = [
     loadChildren: () =>
       import("./customer/customer.module").then((m) => m.CustomerModule),
   },
+  {
+    path: "message",
+    loadChildren: () =>
+      import("./message/message.module").then((m) => m.MessageModule),
+  },
+  {
+    path: "system",
+    loadChildren: () =>
+      import("./system/system.module").then((m) => m.SystemModule),
+  },
+  {
+    path: "sample",
+    loadChildren: () =>
+      import("./sample/sample.module").then((m) => m.SampleModule),
+  },
 ];
 
 @NgModule({

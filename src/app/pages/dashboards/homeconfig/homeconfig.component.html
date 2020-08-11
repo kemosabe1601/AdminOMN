@@ -1,27 +1,44 @@
 <div class="container-fluid">
-
   <!-- start page title -->
   <app-page-title title="Config Home Set" [breadcrumbItems]="breadCrumbItems"></app-page-title>
   <!-- end page title -->
   <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-12">
       <div class="card">
         <div class="card-body">
           <a class="backButton" routerLink="/home">
-            <mat-icon>arrow_back_ios</mat-icon><span style="font-size: 14px; padding-top: 1px;">Return to list</span>
+            <mat-icon>arrow_back_ios</mat-icon
+            ><span style="font-size: 14px; padding-top: 1px;"
+              >Return to list</span
+            >
           </a>
           <!-- <h4 class="card-title">Bootstrap Validation - Normal</h4>
           <p class="card-title-desc">Provide valuable, actionable feedback to your users with HTML5 form
             validation–available in all our supported browsers.</p> -->
-          <form class="needs-validation" (ngSubmit)="validSubmit()" [formGroup]="validationform">
+          <form
+            class="needs-validation"
+            (ngSubmit)="validSubmit()"
+            [formGroup]="validationform"
+          >
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="validationCustom01">Home set name</label>
-                  <input type="text" class="form-control" id="validationCustom01" formControlName="firstName"
-                    placeholder="Home set name" [ngClass]="{'is-valid': submit && form.firstName.errors}">
-                  <div *ngIf="submit && form.firstName.errors" class="valid-feedback">
-                    <span *ngIf="form.firstName.errors.required">Looks good!</span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="validationCustom01"
+                    formControlName="firstName"
+                    placeholder="Home set name"
+                    [ngClass]="{ 'is-valid': submit && form.firstName.errors }"
+                  />
+                  <div
+                    *ngIf="submit && form.firstName.errors"
+                    class="valid-feedback"
+                  >
+                    <span *ngIf="form.firstName.errors.required"
+                      >Looks good!</span
+                    >
                   </div>
                 </div>
               </div>
@@ -71,25 +88,50 @@
                 </div>
               </div>
             </div>
-            <br/>
+            <br />
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="validationCustom03">Start time</label>
-                  <input type="text" class="form-control" formControlName="city" placeholder="Ex: 7:00 AM" type="time"
-                    value="13:45:00" id="example-time-input">
-                  <div *ngIf="submit && form.city.errors" class="invalid-feedback">
-                    <span *ngIf="form.city.errors.required">Please provide a valid time.</span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="city"
+                    placeholder="Ex: 7:00 AM"
+                    type="time"
+                    value="13:45:00"
+                    id="example-time-input"
+                  />
+                  <div
+                    *ngIf="submit && form.city.errors"
+                    class="invalid-feedback"
+                  >
+                    <span *ngIf="form.city.errors.required"
+                      >Please provide a valid time.</span
+                    >
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="validationCustom04">End time</label>
-                  <input type="text" class="form-control" id="validationCustom04" formControlName="state"
-                    placeholder="Ex: 7:00 PM" type="time" value="13:45:00" id="example-time-input">
-                  <div *ngIf="submit && form.state.errors" class="invalid-feedback">
-                    <span *ngIf="form.state.errors.required">Please provide a valid time.</span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="validationCustom04"
+                    formControlName="state"
+                    placeholder="Ex: 7:00 PM"
+                    type="time"
+                    value="13:45:00"
+                    id="example-time-input"
+                  />
+                  <div
+                    *ngIf="submit && form.state.errors"
+                    class="invalid-feedback"
+                  >
+                    <span *ngIf="form.state.errors.required"
+                      >Please provide a valid time.</span
+                    >
                   </div>
                 </div>
               </div>
@@ -106,7 +148,9 @@
                     <option value="3">Action</option>
                   </select>
                   <div class="input-group-append">
-                    <button class="btn btn-outline-success" type="button">import</button>
+                    <button class="btn btn-outline-success" type="button">
+                      import
+                    </button>
                   </div>
                 </div>
               </div>
@@ -118,9 +162,14 @@
             </div> -->
             <!-- <br/>
             <br/> -->
-            <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8" cdkDropList
-              [cdkDropListData]="dataSource" (cdkDropListDropped)="dropTable($event)">
-
+            <mat-table
+              #table
+              [dataSource]="dataSource"
+              class="mat-elevation-z8"
+              cdkDropList
+              [cdkDropListData]="dataSource"
+              (cdkDropListDropped)="dropTable($event)"
+            >
               <!-- Position Column -->
               <ng-container matColumnDef="position">
                 <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
@@ -132,19 +181,29 @@
               <!-- Name Column -->
               <ng-container matColumnDef="name">
                 <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                <mat-cell *matCellDef="let element">
+                  {{ element.name }}
+                </mat-cell>
               </ng-container>
 
               <!-- Weight Column -->
               <ng-container matColumnDef="programcount">
-                <mat-header-cell *matHeaderCellDef> Program Count </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.programcount}} </mat-cell>
+                <mat-header-cell *matHeaderCellDef>
+                  Program Count
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{ element.programcount }}
+                </mat-cell>
               </ng-container>
 
               <!-- Symbol Column -->
               <ng-container matColumnDef="createddate">
-                <mat-header-cell *matHeaderCellDef> Created Date </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.createddate}} </mat-cell>
+                <mat-header-cell *matHeaderCellDef>
+                  Created Date
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{ element.createddate }}
+                </mat-cell>
               </ng-container>
 
               <!-- Remove Action Column -->
@@ -155,8 +214,14 @@
                 </mat-cell>
               </ng-container>
 
-              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-              <mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag [cdkDragData]="row"></mat-row>
+              <mat-header-row
+                *matHeaderRowDef="displayedColumns"
+              ></mat-header-row>
+              <mat-row
+                *matRowDef="let row; columns: displayedColumns"
+                cdkDrag
+                [cdkDragData]="row"
+              ></mat-row>
             </mat-table>
 
             <br />
@@ -166,7 +231,11 @@
                 <button type="submit" class="btn btn-primary mr-1">
                   Submit
                 </button>
-                <button type="reset" class="btn btn-secondary" routerLink="/home">
+                <button
+                  type="reset"
+                  class="btn btn-secondary"
+                  routerLink="/home"
+                >
                   Cancel
                 </button>
               </div>
@@ -176,8 +245,8 @@
         </div>
       </div>
       <!-- end card -->
-    </div> <!-- end col -->
-
+    </div>
+    <!-- end col -->
   </div>
   <!-- end row -->
 </div>

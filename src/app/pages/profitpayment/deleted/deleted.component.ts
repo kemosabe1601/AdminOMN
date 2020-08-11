@@ -14,12 +14,12 @@ interface PageInfo {
 }
 
 @Component({
-  selector: 'app-deleted',
-  templateUrl: './deleted.component.html',
-  styleUrls: ['./deleted.component.scss']
+	selector: 'app-deleted',
+	templateUrl: './deleted.component.html',
+	styleUrls: ['./deleted.component.scss'],
 })
 export class DeletedComponent implements OnInit, OnDestroy {
-  breadCrumbItems: Array<{}>;
+	breadCrumbItems: Array<{}>;
 
 	mockSub: Subscription;
 
@@ -58,7 +58,7 @@ export class DeletedComponent implements OnInit, OnDestroy {
 	 * fetches the table value
 	 */
 	_fetchData() {
-		this.mockService.getTableData().subscribe((val:any) => {
+		this.mockService.getTableData().subscribe((val: any) => {
 			this.temp = [...val];
 			this.rows = val;
 		});

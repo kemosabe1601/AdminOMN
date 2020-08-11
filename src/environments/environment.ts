@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  defaultauth: 'fakebackend',
+  defaultauth: "fakebackend",
   firebaseConfig: {
     apiKey: "AIzaSyA5qVFcSbhZa8SzDEkzfwMJUbYGH-cKp0U",
     authDomain: "omnmock.firebaseapp.com",
@@ -13,8 +13,8 @@ export const environment = {
     storageBucket: "omnmock.appspot.com",
     messagingSenderId: "100798457227",
     appId: "1:100798457227:web:ed0a62fa4deb867159bb8e",
-    measurementId: "G-9TD84S62PT"
-  }
+    measurementId: "G-9TD84S62PT",
+  },
 };
 
 /*

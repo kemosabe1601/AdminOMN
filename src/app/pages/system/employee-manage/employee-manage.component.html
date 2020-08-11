@@ -1,0 +1,191 @@
+<div class="container-fluid">
+	<app-page-title
+		title="Message"
+		[breadcrumbItems]="breadCrumbItems"
+	></app-page-title>
+
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body">
+					<div class="card-header">
+						<a class="backButton" routerLink="/system/employee">
+							<mat-icon>arrow_back_ios</mat-icon>
+							<span style="font-size: 14px; padding-top: 1px;"
+								>Return to list
+							</span>
+						</a>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-body">
+									<form>
+										<div class="form-group row">
+											<label class="col-md-2 col-form-label">Name</label>
+											<div class="col-md-4">
+												<input
+													class="form-control"
+													type="text"
+													placeholder="Name 1"
+												/>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-md-2 col-form-label"
+												>Employee Number</label
+											>
+											<div class="col-md-4">
+												<input
+													class="form-control"
+													type="text"
+													placeholder="0556445"
+												/>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-md-2 col-form-label">ID</label>
+											<div class="col-md-4">
+												<input
+													class="form-control"
+													type="text"
+													placeholder="ID"
+												/>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-md-2 col-form-label">Password</label>
+											<div class="col-md-4">
+												<input class="form-control" type="password" />
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-md-2 col-form-label"
+												>Password Check</label
+											>
+											<div class="col-md-4">
+												<input class="form-control" type="password" />
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-md-2 col-form-label">Gender</label>
+											<div class="col-md-6">
+												<div class="row">
+													<div class="col-md-8">
+														<select class="custom-select">
+															<option selected disabled>Select Gender</option>
+															<option value="1">Male</option>
+															<option value="2">Female</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-md-2 col-form-label mt-2">DOB</label>
+											<div class="col-md-4">
+												<mat-form-field appearance="fill" class="mb-0 mt-2">
+													<mat-label>Choose a date</mat-label>
+													<input matInput [matDatepicker]="date" readonly />
+													<mat-datepicker-toggle matSuffix [for]="date">
+														<mat-icon matDatepickerToggleIcon
+															>keyboard_arrow_down</mat-icon
+														>
+													</mat-datepicker-toggle>
+													<mat-datepicker #date></mat-datepicker>
+												</mat-form-field>
+												<mat-datepicker #date></mat-datepicker>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label
+												for="example-text-input"
+												class="col-md-2 col-form-label"
+												>Phone Number</label
+											>
+											<div class="col-md-4">
+												<input
+													class="form-control"
+													type="text"
+													placeholder="0934246357"
+												/>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-md-2 col-form-label">Dept</label>
+											<div class="col-md-6">
+												<div class="row">
+													<div class="col-md-8">
+														<select class="custom-select">
+															<option selected disabled
+																>Open this select menu</option
+															>
+															<option value="1">One</option>
+															<option value="2">Two</option>
+															<option value="3">Three</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-md-2 col-form-label">Team</label>
+											<div class="col-md-6">
+												<div class="row">
+													<div class="col-md-8">
+														<select class="custom-select">
+															<option selected disabled
+																>Open this select menu</option
+															>
+															<option value="1">One</option>
+															<option value="2">Two</option>
+															<option value="3">Three</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-md-2 col-form-label">Employee</label>
+											<div class="col-md-6">
+												<div class="row">
+													<div class="col-md-8">
+														<select class="custom-select">
+															<option selected disabled
+																>Open this select menu</option
+															>
+															<option value="1">One</option>
+															<option value="2">Two</option>
+															<option value="3">Three</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-md-2 col-form-label">Usage</label>
+											<div class="col-md-10">
+												<mat-radio-group aria-label="Select an option">
+													<mat-radio-button value="1" checked
+														>Use</mat-radio-button
+													>
+													<mat-radio-button value="2">Dis-use</mat-radio-button>
+												</mat-radio-group>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row button">
+						<button type="submit" class="btn btn-primary btn-lg">
+							Save
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- container-fluid -->

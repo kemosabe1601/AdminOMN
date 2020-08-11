@@ -1,3 +1,5 @@
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { UserService } from './../services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -52,12 +54,14 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		NgbTooltipModule,
 		PerfectScrollbarModule,
 		HttpClientModule,
+		NgxDatatableModule,
 	],
 	providers: [
 		{
 			provide: PERFECT_SCROLLBAR_CONFIG,
 			useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
 		},
+		UserService,
 	],
 })
 export class PagesModule {}

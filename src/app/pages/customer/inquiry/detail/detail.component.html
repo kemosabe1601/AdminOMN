@@ -1,0 +1,153 @@
+<div class="container-fluid">
+	<app-page-title
+		title="Customer Management"
+		[breadcrumbItems]="breadCrumbItems"
+	></app-page-title>
+
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-header">
+					<a class="backButton" routerLink="/customer/inquiry">
+						<mat-icon>arrow_back_ios</mat-icon>
+						<span style="font-size: 14px; padding-top: 1px;"
+							>Return to list
+						</span>
+					</a>
+				</div>
+				<div class="card-body">
+					<h4 class="card-title text-primary">Challenger list</h4>
+					<p class="card-sub-title">
+						(Each of the category set here will be contained in a home set).
+					</p>
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+									<h2 class="text-center">Questions</h2>
+								</div>
+								<div class="card-body">
+									<form>
+										<div class="form-group row">
+											<label
+												for="example-text-input"
+												class="col-md-2 col-form-label"
+												>Register</label
+											>
+											<div class="col-md-10">
+												<input
+													class="form-control"
+													type="text"
+													placeholder="ID"
+												/>
+											</div>
+										</div>
+
+										<div class="form-group row">
+											<label
+												for="example-text-input"
+												class="col-md-2 col-form-label"
+												>Title</label
+											>
+											<div class="col-md-10">
+												<input
+													class="form-control"
+													type="text"
+													placeholder="Payment Question"
+												/>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label
+												for="example-text-input"
+												class="col-md-2 col-form-label"
+												>Details</label
+											>
+											<div class="col-md-10">
+												<textarea
+													class="form-control"
+													type="text"
+													placeholder="Question Details"
+													rows="20"
+												></textarea>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+									<h2 class="text-center">Answer</h2>
+								</div>
+								<div class="card-body">
+									<form>
+										<div class="form-group row">
+											<label
+												for="example-text-input"
+												class="col-md-2 col-form-label"
+												>Register</label
+											>
+											<div class="col-md-10">
+												<input
+													class="form-control"
+													type="text"
+													placeholder="Manager A"
+												/>
+											</div>
+										</div>
+
+										<div class="form-group row">
+											<label
+												for="example-text-input"
+												class="col-md-2 col-form-label"
+												>Title</label
+											>
+											<div class="col-md-10">
+												<input
+													class="form-control"
+													type="text"
+													placeholder="This is answer for your question
+                          "
+												/>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label
+												for="example-text-input"
+												class="col-md-2 col-form-label"
+												>Details</label
+											>
+											<div class="col-md-10">
+												<textarea
+													class="form-control"
+													type="text"
+													placeholder="Question Details"
+													rows="20"
+												></textarea>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row button">
+						<div>
+							<button type="submit" class="btn btn-primary mr-1">
+								Save
+							</button>
+							<button type="reset" class="btn btn-secondary">
+								Cancel
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- container-fluid -->
