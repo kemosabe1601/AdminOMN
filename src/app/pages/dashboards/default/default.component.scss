@@ -22,7 +22,7 @@ fieldset {
     float: left;
     clear: none;
     display: block;
-    padding: 0px 1em 0px 8px;
+    padding: 0px 1.2rem 0px 4px;
   }
   
   input[type=radio],
@@ -30,4 +30,8 @@ fieldset {
     float: left;
     clear: none;
     margin: 2px 0 0 2px;
+  }
+
+  .inline-checkbox {
+    display: inline-flex;
   }

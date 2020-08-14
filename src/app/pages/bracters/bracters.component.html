@@ -9,17 +9,26 @@
       <div class="card">
         <div class="card-body">
           <h4 class="card-title text-primary">Bracter set list</h4>
-          <p class="card-sub-title">
-            (Each of the bracter set here will be contained in a category set).
-          </p>
 
           <div class="row mb-2">
             <div class="col-sm-4">
-              <ng-select
-                [items]="selectValue"
-                [multiple]="true"
-                placeholder="Filter set"
-              ></ng-select>
+              <div class="input-group">
+                <input
+                  id="toDate"
+                  class="form-control"
+                  placeholder="yyyy-mm-dd"
+                  name="dp2"
+                  ngbDatepicker
+                  #dp2="ngbDatepicker"
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn btn-outline-secondary bx bx-calendar"
+                    (click)="dp2.toggle()"
+                    type="button"
+                  ></button>
+                </div>
+              </div>
             </div>
             <div class="col-sm-8">
               <div class="text-sm-right">
@@ -37,62 +46,71 @@
           </div>
           <!-- Table -->
           <div class="table-responsive">
-            <ngx-datatable
-              class="material"
-              [rows]="rows"
-              [loadingIndicator]="loadingIndicator"
-              [columnMode]="ColumnMode.force"
-              [headerHeight]="50"
-              [footerHeight]="50"
-              rowHeight="auto"
-              [limit]="10"
-              [sorts]="[{ prop: 'name', dir: 'acs' }]"
+            <table
+              id="basic-datatable"
+              class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline"
             >
-              <ngx-datatable-column name="Challenger Set Name">
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.name }}
-                </ng-template>
-              </ngx-datatable-column>
-
-              <ngx-datatable-column name="List Count">
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.listCount }}
-                </ng-template>
-              </ngx-datatable-column>
-
-              <ngx-datatable-column name="Airing days in week">
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.days }}
-                </ng-template>
-              </ngx-datatable-column>
-
-              <ngx-datatable-column name="Start Time">
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ localeDate(row.startTime) | date: "shortTime" }}
-                </ng-template>
-              </ngx-datatable-column>
-
-              <ngx-datatable-column name="End Time">
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ localeDate(row.endTime) | date: "shortTime" }}
-                </ng-template>
-              </ngx-datatable-column>
-
-              <ngx-datatable-column name="Action">
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                  <div class="button-items">
-                    <button type="button" class="btn btn-primary">
-                      Config
-                    </button>
-                    <button type="button" class="btn btn-light">
-                      Delete
-                    </button>
-                  </div>
-                </ng-template>
-              </ngx-datatable-column>
-            </ngx-datatable>
+              <thead *ngFor="let table of tables$ | async">
+                <tr style="text-align: center;">
+                  <th colspan="2" class="text-primary">
+                    <a
+                      [routerLink]="['/home']"
+                      routerLinkActive="router-link-active"
+                      ><ngb-highlight
+                        [result]="table.category"
+                        [term]="advancedService.searchTerm"
+                      ></ngb-highlight
+                    ></a>
+                  </th>
+                </tr>
+                <tr style="text-align: center;">
+                  <td>
+                    <ngb-highlight
+                      [result]="table.programName"
+                      [term]="advancedService.searchTerm"
+                    ></ngb-highlight>
+                  </td>
+                  <td>
+                    <ngb-highlight
+                      [result]="table.viewNumber"
+                      [term]="advancedService.searchTerm"
+                    ></ngb-highlight>
+                  </td>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
           </div>
           <!-- End table -->
+          <div
+            class="row justify-content-md-between align-items-md-center mt-2"
+          >
+            <div class="col-sm-12 col-md-5">
+              <div
+                class="dataTables_info mb-2"
+                id="tickets-table_info"
+                role="status"
+                aria-live="polite"
+              >
+                Showing {{ advancedService.startIndex }} to
+                {{ advancedService.endIndex }} of
+                {{ advancedService.totalRecords }}
+                entries
+              </div>
+            </div>
+            <!-- Pagination -->
+            <div class="col-sm-12 col-md-5">
+              <div class="text-md-right float-md-right pagination-rounded">
+                <ngb-pagination
+                  [collectionSize]="total$ | async"
+                  [(page)]="advancedService.page"
+                  [pageSize]="advancedService.pageSize"
+                >
+                </ngb-pagination>
+              </div>
+            </div>
+            <!-- End Pagination -->
+          </div>
         </div>
       </div>
     </div>

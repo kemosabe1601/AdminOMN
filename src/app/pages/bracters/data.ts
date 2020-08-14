@@ -8,7 +8,7 @@ const tableData = [
     programName: 'How I Met Your Mother',
     viewNumber: 1080
   }, {
-    category: 'thriller',
+    category: 'documentary',
     programName: 'Night At The Museum',
     viewNumber: 3233
   }, {
