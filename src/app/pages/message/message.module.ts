@@ -1,3 +1,4 @@
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
@@ -67,6 +68,7 @@ import { MatInputModule } from '@angular/material/input';
 		MatDatepickerModule,
 		MatFormFieldModule,
 		MatInputModule,
+		MatNativeDateModule,
 	],
 })
 export class MessageModule {}
