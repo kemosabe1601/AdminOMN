@@ -24,14 +24,7 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="validationCustom01">Home set name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="validationCustom01"
-                    formControlName="firstName"
-                    placeholder="Home set name"
-                    [ngClass]="{ 'is-valid': submit && form.firstName.errors }"
-                  />
+                  <input type="text" value="Afternoon" id="example-text-input" class="form-control">
                   <div
                     *ngIf="submit && form.firstName.errors"
                     class="valid-feedback"
@@ -55,7 +48,7 @@
                     <label class="custom-control-label" for="customCheck1">Monday</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="customCheck2" checked="true">
+                    <input type="checkbox" class="custom-control-input" id="customCheck2">
                     <label class="custom-control-label" for="customCheck2">Tuesday</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
@@ -63,7 +56,7 @@
                     <label class="custom-control-label" for="customCheck3">Wednesday</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="customCheck4" checked="true">
+                    <input type="checkbox" class="custom-control-input" id="customCheck4">
                     <label class="custom-control-label" for="customCheck4">Thursday</label>
                   </div>
                 </div>
@@ -78,11 +71,11 @@
                     <label class="custom-control-label" for="customCheck5">Friday</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="customCheck6" checked="true">
+                    <input type="checkbox" class="custom-control-input" id="customCheck6">
                     <label class="custom-control-label" for="customCheck6">Saturday</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="customCheck7" checked="true">
+                    <input type="checkbox" class="custom-control-input" id="customCheck7">
                     <label class="custom-control-label" for="customCheck7">Sunday</label>
                   </div>
                 </div>
@@ -93,15 +86,7 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="validationCustom03">Start time</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    formControlName="city"
-                    placeholder="Ex: 7:00 AM"
-                    type="time"
-                    value="13:45:00"
-                    id="example-time-input"
-                  />
+                  <input type="text" value="8:30 AM" id="example-time-input" class="form-control">
                   <div
                     *ngIf="submit && form.city.errors"
                     class="invalid-feedback"
@@ -115,16 +100,7 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="validationCustom04">End time</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="validationCustom04"
-                    formControlName="state"
-                    placeholder="Ex: 7:00 PM"
-                    type="time"
-                    value="13:45:00"
-                    id="example-time-input"
-                  />
+                  <input type="time" value="19:30:00" id="example-time-input" class="form-control">
                   <div
                     *ngIf="submit && form.state.errors"
                     class="invalid-feedback"
@@ -172,7 +148,7 @@
             >
               <!-- Position Column -->
               <ng-container matColumnDef="position">
-                <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
                 <mat-cell *matCellDef="let element">
                   <mat-icon cdkDragHandle>reorder</mat-icon>
                 </mat-cell>
@@ -208,7 +184,7 @@
 
               <!-- Remove Action Column -->
               <ng-container matColumnDef="remove">
-                <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
                 <mat-cell *matCellDef="let element">
                   <a href="#"><mat-icon>close</mat-icon></a>
                 </mat-cell>

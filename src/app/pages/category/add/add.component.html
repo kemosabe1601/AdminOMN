@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <!-- start page title -->
   <app-page-title
-    title="Config Category Set"
+    title="Create New Category Set"
     [breadcrumbItems]="breadCrumbItems"
   ></app-page-title>
   <!-- end page title -->
@@ -15,9 +15,6 @@
               >Return to list</span
             >
           </a>
-          <!-- <h4 class="card-title">Bootstrap Validation - Normal</h4>
-          <p class="card-title-desc">Provide valuable, actionable feedback to your users with HTML5 form
-            validation–available in all our supported browsers.</p> -->
           <form
             class="needs-validation"
             (ngSubmit)="validSubmit()"
@@ -27,7 +24,14 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="validationCustom01">Category set name</label>
-                  <input type="text" value="Korean Dramas" id="example-text-input" class="form-control">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="validationCustom01"
+                    formControlName="firstName"
+                    placeholder="Category set name"
+                    [ngClass]="{ 'is-valid': submit && form.firstName.errors }"
+                  />
                   <div
                     *ngIf="submit && form.firstName.errors"
                     class="valid-feedback"
@@ -51,36 +55,36 @@
                     <option value="3">Action</option>
                   </select>
                   <!-- <div class="input-group-append">
-                    <button class="btn btn-outline-success" type="button">
-                      Import
-                    </button>
-                  </div> -->
+                      <button class="btn btn-outline-success" type="button">
+                        Import
+                      </button>
+                    </div> -->
                 </div>
               </div>
-			</div>
-			<br/>
-			<br/>
-			<div class="row">
-				<div class="col-md-6" style="display: block;">
-				  <label for="validationCustom01">Add list</label>
-				  <div class="input-group">
-					<select class="custom-select" id="inputGroupSelect04">
-					  <option selected>Choose...</option>
-					  <option value="1">Korean</option>
-					  <option value="2">Comedy</option>
-					  <option value="3">Action</option>
-					</select>
-				  </div>
-				</div>
-			  </div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+              <div class="col-md-6" style="display: block;">
+                <label for="validationCustom01">Add list</label>
+                <div class="input-group">
+                  <select class="custom-select" id="inputGroupSelect04">
+                    <option selected>Choose...</option>
+                    <option value="1">Korean</option>
+                    <option value="2">Comedy</option>
+                    <option value="3">Action</option>
+                  </select>
+                </div>
+              </div>
+            </div>
             <br />
             <br />
             <!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-                <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
-            </div> -->
+                  <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
+              </div> -->
             <!-- <br/>
-            <br/> -->
-            <mat-table
+              <br/> -->
+            <!-- <mat-table
               #table
               [dataSource]="dataSource"
               class="mat-elevation-z8"
@@ -88,15 +92,13 @@
               [cdkDropListData]="dataSource"
               (cdkDropListDropped)="dropTable($event)"
             >
-              <!-- Position Column -->
               <ng-container matColumnDef="position">
-                <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef> </mat-header-cell>
                 <mat-cell *matCellDef="let element">
                   <mat-icon cdkDragHandle>reorder</mat-icon>
                 </mat-cell>
               </ng-container>
 
-              <!-- Name Column -->
               <ng-container matColumnDef="name">
                 <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
                 <mat-cell *matCellDef="let element">
@@ -104,7 +106,6 @@
                 </mat-cell>
               </ng-container>
 
-              <!-- Weight Column -->
               <ng-container matColumnDef="programcount">
                 <mat-header-cell *matHeaderCellDef>
                   Program Count
@@ -114,7 +115,6 @@
                 </mat-cell>
               </ng-container>
 
-              <!-- Symbol Column -->
               <ng-container matColumnDef="createddate">
                 <mat-header-cell *matHeaderCellDef>
                   Created Date
@@ -124,7 +124,6 @@
                 </mat-cell>
               </ng-container>
 
-              <!-- Remove Action Column -->
               <ng-container matColumnDef="remove">
                 <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
                 <mat-cell *matCellDef="let element">
@@ -140,7 +139,7 @@
                 cdkDrag
                 [cdkDragData]="row"
               ></mat-row>
-            </mat-table>
+            </mat-table> -->
 
             <br />
             <br />

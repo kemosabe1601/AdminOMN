@@ -48,10 +48,14 @@ export class ShowComponent implements OnInit, OnDestroy {
 	/**
 	 * fetches the table value
 	 */
-	_fetchData() {
-		this.mockSub = this.mockService.getTableData().subscribe((val:any) => {
-			this.temp = [...val];
-			this.rows = val;
+	_fetchData() {		
+		this.mockSub = this.mockService.getListDataFireBase().subscribe((val:any) => {
+			this.rows = val.map((e) => {
+				return {
+					id: e.payload.doc.id,
+					...e.payload.doc.data(),
+				}
+			});
 		});
 	}
 

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ShowComponent } from './show.component';
 import { ShowconfigComponent } from './showconfig/showconfig.component';
+import { AddComponent } from './add/add.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'show/config',
     component: ShowconfigComponent
+  },
+  {
+    path: 'show/add',
+    component: AddComponent
   }
 ];
 

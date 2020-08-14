@@ -9,25 +9,29 @@
       <div class="card">
         <div class="card-body">
           <h4 class="card-title text-primary">Home set list</h4>
-          <p class="card-sub-title">
-            (Each of the set here will be shown on the homepage).
-          </p>
 
           <div class="row mb-2">
-            <div class="col-sm-4">
-              <!-- <div class="search-box mr-2 mb-2 d-inline-block">
-                <div class="position-relative">
-                  <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="advancedService.searchTerm">
-                  <i class="bx bx-search-alt search-icon"></i>
+            <div class="col-sm-6">
+              <fieldset>
+                <div class="col-md-12">
+                  <input type="radio" class="radio" name="x" value="y" id="y" />
+                  <label for="y">Mon</label>
+                  <input type="radio" class="radio" name="x" value="z" id="z" />
+                  <label for="z">Tue</label>
+                  <input type="radio" class="radio" name="x" value="z" id="z" />
+                  <label for="z">Wed</label>
+                  <input type="radio" class="radio" name="x" value="z" id="z" />
+                  <label for="z">Thurs</label>
+                  <input type="radio" class="radio" name="x" value="z" id="z" />
+                  <label for="z">Fri</label>
+                  <input type="radio" class="radio" name="x" value="z" id="z" />
+                  <label for="z">Sat</label>
+                  <input type="radio" class="radio" name="x" value="z" id="z" />
+                  <label for="z">Sun</label>
                 </div>
-              </div> -->
-              <ng-select
-                [items]="selectValue"
-                placeholder="Filter set"
-                (change)="setFilter($event)"
-              ></ng-select>
+              </fieldset>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-6">
               <div class="text-sm-right">
                 <button
                   type="button"
@@ -68,7 +72,8 @@
 
               <ngx-datatable-column name="Airing Days In Week">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  <span class="airingDays"
+                  <span
+                    class="airingDays"
                     *ngIf="
                       row.air_mon ||
                       row.air_tue ||
@@ -79,13 +84,27 @@
                       row.air_sun
                     "
                   >
-                    <span class="badge badge-primary mr-1">{{ row.air_mon ? "Monday" : "" }}</span>
-                    <span class="badge badge-primary mr-1">{{ row.air_tue ? "Tuesday" : "" }}</span>
-                    <span class="badge badge-primary mr-1">{{ row.air_wed ? "Wednesday" : "" }}</span>
-                    <span class="badge badge-primary mr-1">{{ row.air_thurs ? "Thursday" : "" }}</span>
-                    <span class="badge badge-primary mr-1">{{ row.air_fri ? "Friday" : "" }}</span>
-                    <span class="badge badge-primary mr-1">{{ row.air_sat ? "Saturday" : "" }}</span>
-                    <span class="badge badge-primary mr-1">{{ row.air_sun ? "Sunday" : "" }}</span>
+                    <span class="badge badge-primary mr-1">{{
+                      row.air_mon ? "Mon" : ""
+                    }}</span>
+                    <span class="badge badge-primary mr-1">{{
+                      row.air_tue ? "Tue" : ""
+                    }}</span>
+                    <span class="badge badge-primary mr-1">{{
+                      row.air_wed ? "Wed" : ""
+                    }}</span>
+                    <span class="badge badge-primary mr-1">{{
+                      row.air_thurs ? "Thurs" : ""
+                    }}</span>
+                    <span class="badge badge-primary mr-1">{{
+                      row.air_fri ? "Fri" : ""
+                    }}</span>
+                    <span class="badge badge-primary mr-1">{{
+                      row.air_sat ? "Sat" : ""
+                    }}</span>
+                    <span class="badge badge-primary mr-1">{{
+                      row.air_sun ? "Sun" : ""
+                    }}</span>
                   </span>
                 </ng-template>
               </ngx-datatable-column>
@@ -105,7 +124,11 @@
               <ngx-datatable-column name="Action">
                 <ng-template let-row="row" ngx-datatable-cell-template>
                   <div class="button-items">
-                    <button type="button" class="btn btn-primary" routerLink="config">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      routerLink="config"
+                    >
                       Config
                     </button>
                     <button type="button" class="btn btn-danger">

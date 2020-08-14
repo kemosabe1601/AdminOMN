@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild, EventEmitter, Output, Input, ContentChildren, QueryList, forwardRef } from '@angular/core';
-import { NgbDate, NgbCalendar, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
-import { MustMatch } from './validation.mustmatch';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDragHandle } from '@angular/cdk/drag-drop';
 import { MatTable } from '@angular/material/table';
-import { CrudService } from './../../../services/crud.service';
-
+import { NgbDate, NgbCalendar, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { MustMatch } from './validation.mustmatch';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-add',
@@ -15,19 +15,6 @@ import { CrudService } from './../../../services/crud.service';
   styleUrls: ['./add.component.scss']
 })
 export class AddComponent implements OnInit {
-  home: string;
-  home_set_name: string;
-  start_time: number;
-  end_time: number;
-  category_list: string;
-  air_mon = false;
-  air_tue = false;
-  air_wed = false;
-  air_thurs = false;
-  air_fri = false;
-  air_sat = false;
-  air_sun = false;
-
   validationform: FormGroup; // bootstrap validation form
   tooltipvalidationform: FormGroup; // bootstrap tooltip validation form
   typeValidationForm: FormGroup; // type validation form
@@ -47,12 +34,8 @@ export class AddComponent implements OnInit {
 
   // bread crumb items
   breadCrumbItems: Array<{}>;
-  constructor(private calendar: NgbCalendar, public formBuilder: FormBuilder, crudservice: CrudService) { }
+  constructor(private calendar: NgbCalendar, public formBuilder: FormBuilder) { }
 
-  // name: string;
-  // position: number;
-  // weight: number;
-  // symbol: string;
 
   // Form submition
   submit: boolean;
@@ -79,18 +62,23 @@ export class AddComponent implements OnInit {
   // Select2 Dropdown
   selectValue: string[];
 
+  displayedColumns: string[] = ['programName', 'playedMinutes', 'viewCount', 'category', 'action'];
+  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  programData = new MatTableDataSource<Program>(Movie_DATA);
+
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+
   @Input() fromDate: Date;
   @Input() toDate: Date;
   @Output() dateRangeSelected: EventEmitter<{}> = new EventEmitter();
 
   @ViewChild('dp', { static: true }) datePicker: any;
 
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
-  }
 
   ngOnInit() {
-    this.breadCrumbItems = [{ label: 'Home' }, { label: 'Create New', active: true }];
+    this.breadCrumbItems = [{ label: 'List' }, { label: 'Create New', active: true }];
+    // MatPaginator
+    this.dataSource.paginator = this.paginator;
     // Component color value of color picker
     this.componentcolor = '#3bafda';
     this.presetcolor = '#2889e9';
@@ -162,21 +150,6 @@ export class AddComponent implements OnInit {
     this.formsubmit = false;
     this.typesubmit = false;
     this.rangesubmit = false;
-  }
-
-  createNew() {
-    let data = {};
-    data['home_set_name'] = this.home_set_name
-    data['air_mon'] = this.air_mon
-    data['air_tue'] = this.air_tue
-    data['air_wed'] = this.air_wed
-    data['air_thurs'] = this.air_thurs
-    data['air_fri'] = this.air_fri
-    data['air_sat'] = this.air_sat
-    data['air_sun'] = this.air_sun
-    data['start_time'] = this.start_time
-    data['end_time'] = this.end_time
-    console.log(data);
   }
 
   /**
@@ -291,35 +264,57 @@ export class AddComponent implements OnInit {
   rangeSubmit() {
     this.rangesubmit = true;
   }
-
-  @ViewChild('table') table: MatTable<PeriodicElement>;
-  displayedColumns: string[] = ['position', 'name', 'programcount', 'createddate', 'remove'];
-  dataSource = ELEMENT_DATA;
-  
-  dropTable(event: CdkDragDrop<PeriodicElement[]>) {
-    const prevIndex = this.dataSource.findIndex((d) => d === event.item.data);
-    moveItemInArray(this.dataSource, prevIndex, event.currentIndex);
-    this.table.renderRows();
-  }
 }
 
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  programcount: number;
-  createddate: string;
-  remove: string;
+  programName: string;
+  playedMinutes: number;
+  viewCount: number;
+  category: string;
+  action: string;
+
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Action', programcount: 10, createddate: '2020-03-01', remove: ''},
-  {position: 2, name: 'Drama', programcount: 12, createddate: '2020-03-01', remove: ''},
-  {position: 3, name: 'Thriller', programcount: 15, createddate: '2020-03-01', remove: ''},
-  {position: 4, name: 'Horror', programcount: 17, createddate: '2020-03-01', remove: ''},
-  {position: 5, name: 'Boron', programcount: 20, createddate: '2020-03-01', remove: ''},
-  {position: 6, name: 'Carbon', programcount: 5, createddate: '2020-03-01', remove: ''},
-  {position: 7, name: 'Nitrogen', programcount: 10, createddate: '2020-03-01', remove: ''},
-  {position: 8, name: 'Oxygen', programcount: 16, createddate: '2020-03-01', remove: ''},
-  {position: 9, name: 'Fluorine', programcount: 17, createddate: '2020-03-01', remove: ''},
-  {position: 10, name: 'Neon', programcount: 18, createddate: '2020-03-01', remove: ''},
+  {programName: 'The Old Guard', playedMinutes: 756, viewCount: 1.0079, category: 'action', action:''},
+  {programName: 'The Karate Kid', playedMinutes: 756, viewCount: 4.0026, category: 'action', action:''},
+  {programName: 'Da 5 Bloods', playedMinutes: 756, viewCount: 6.941, category: 'action', action:''},
+  {programName: 'Frida', playedMinutes: 756, viewCount: 9.0122, category: 'thriller', action:''},
+  {programName: 'Airplane!', playedMinutes: 7102, viewCount: 10.811, category: 'triller', action:''},
+  {programName: 'Million Dollar Baby', playedMinutes: 1520, viewCount: 12.0107, category: 'drama', action:''},
+  {programName: 'Schindler’s List', playedMinutes: 1334, viewCount: 14.0067, category: 'drama', action:''},
+  {programName: 'Lady Bird', playedMinutes: 600, viewCount: 15.9994, category: 'fiction', action:''},
+  {programName: 'E.T.: The Extra-Terrestrial', playedMinutes: 777, viewCount: 18.9984, category: 'fiction', action:''},
+  {programName: 'The Silence of the Lambs', playedMinutes: 662, viewCount: 20.1797, category: 'action', action:''},
+  {programName: 'Cloudy With a Chance of Meatballs', playedMinutes: 1500, viewCount: 22.9897, category: 'action', action:''},
+  {programName: 'Uncut Gems', playedMinutes: 1080, viewCount: 24.305, category: 'action', action:''},
+  {programName: 'No Direction Home: Bob Dylan', playedMinutes: 1300, viewCount: 26.9815, category: 'action', action:''},
+  {programName: 'Back to the Future', playedMinutes: 720, viewCount: 28.0855, category: 'drama', action:''},
+  {programName: 'Willy Wonka and the Chocolate Factory', playedMinutes: 1480, viewCount: 30.9738, category: 'drama', action:''},
+  {programName: 'Crip Camp: A Disability Revolution', playedMinutes: 4800, viewCount: 32.065, category: 'drama', action:''},
+  {programName: 'Inglourious Basterds', playedMinutes: 1100, viewCount: 35.453, category: 'drama', action:''},
+  {programName: 'The Social Network', playedMinutes: 8462, viewCount: 39.948, category: 'horror', action:''},
+  {programName: 'The Death and Life of Marsha P. Johnson', playedMinutes: 963, viewCount: 39.0983, category: 'horror', action:''},
+  {programName: 'Scott Pilgrim vs. the World', playedMinutes: 741, viewCount: 40.078, category: 'horror', action:''},
+];
+
+export interface Program {
+  programName: string;
+  playedMinutes: number;
+  viewCount: number;
+  category: string;
+  action: string;
+
+}
+
+const Movie_DATA: Program[] = [
+  {programName: 'Uncut Gems', playedMinutes: 1080, viewCount: 24.305, category: 'action', action:''},
+  {programName: 'No Direction Home: Bob Dylan', playedMinutes: 1300, viewCount: 26.9815, category: 'action', action:''},
+  {programName: 'Back to the Future', playedMinutes: 720, viewCount: 28.0855, category: 'drama', action:''},
+  {programName: 'Willy Wonka and the Chocolate Factory', playedMinutes: 1480, viewCount: 30.9738, category: 'drama', action:''},
+  {programName: 'Crip Camp: A Disability Revolution', playedMinutes: 4800, viewCount: 32.065, category: 'drama', action:''},
+  {programName: 'Inglourious Basterds', playedMinutes: 1100, viewCount: 35.453, category: 'drama', action:''},
+  {programName: 'The Social Network', playedMinutes: 8462, viewCount: 39.948, category: 'horror', action:''},
+  {programName: 'The Death and Life of Marsha P. Johnson', playedMinutes: 963, viewCount: 39.0983, category: 'horror', action:''},
+  {programName: 'Scott Pilgrim vs. the World', playedMinutes: 741, viewCount: 40.078, category: 'horror', action:''},
 ];

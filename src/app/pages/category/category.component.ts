@@ -50,9 +50,13 @@ export class CategoryComponent implements OnInit, OnDestroy {
 	 * fetches the table value
 	 */
 	_fetchData() {
-		this.mockSub = this.mockService.getTableData().subscribe((val:any) => {
-			this.temp = [...val];
-			this.rows = val;
+		this.mockSub = this.mockService.getCategoryDataFireBase().subscribe((val:any) => {
+			this.rows = val.map((e) => {
+				return {
+					id: e.payload.doc.id,
+					...e.payload.doc.data(),
+				}
+			});
 		});
 	}
 
