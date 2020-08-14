@@ -46,17 +46,16 @@
             <!-- end col-->
           </div>
           <!-- Table -->
-          <mat-progress-bar mode="query" *ngIf="!rows"></mat-progress-bar>
-          <div class="table-responsive" *ngIf="rows">
+          <div class="table-responsive">
             <ngx-datatable
               class="material"
               [rows]="rows"
+              [loadingIndicator]="loading"
               [columnMode]="ColumnMode.force"
               [headerHeight]="50"
               [footerHeight]="50"
               rowHeight="auto"
               [limit]="10"
-              [sorts]="[{ prop: 'name', dir: 'acs' }]"
             >
               <ngx-datatable-column name="Home Set Name">
                 <ng-template let-row="row" ngx-datatable-cell-template>

@@ -7,10 +7,8 @@ import { UploadComponent } from "./upload/upload.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { SampleComponent } from "./sample.component";
-
 const routes: Routes = [
-  { path: "", component: SampleComponent },
+  { path: "", redirectTo: "upload" },
   {
     path: "upload",
     component: UploadComponent,

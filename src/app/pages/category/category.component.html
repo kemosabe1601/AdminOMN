@@ -33,17 +33,17 @@
             <!-- end col-->
           </div>
           <!-- Table -->
-          <mat-progress-bar mode="query" *ngIf="!rows"></mat-progress-bar>
-          <div class="table-responsive" *ngIf="rows">
+
+          <div class="table-responsive">
             <ngx-datatable
               class="material"
               [rows]="rows"
+              [loadingIndicator]="loading"
               [columnMode]="ColumnMode.force"
               [headerHeight]="50"
               [footerHeight]="50"
               rowHeight="auto"
               [limit]="10"
-              [sorts]="[{ prop: 'name', dir: 'acs' }]"
             >
               <ngx-datatable-column name="Category">
                 <ng-template let-row="row" ngx-datatable-cell-template>
@@ -66,7 +66,11 @@
               <ngx-datatable-column name="Action">
                 <ng-template let-row="row" ngx-datatable-cell-template>
                   <div class="button-items">
-                    <button type="button" class="btn btn-primary" routerLink="config">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      routerLink="config"
+                    >
                       Config
                     </button>
                     <button type="button" class="btn btn-light">

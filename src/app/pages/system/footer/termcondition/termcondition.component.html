@@ -1,27 +1,29 @@
 <div class="container-fluid">
-	<!-- start page title -->
-	<app-page-title
-		title="Footer Manage"
-		[breadcrumbItems]="breadCrumbItems"
-	></app-page-title>
-	<!-- end page title -->
+  <!-- start page title -->
+  <app-page-title
+    title="Footer Manage"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title>
+  <!-- end page title -->
 
-	<div class="row">
-		<div class="col-12">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Term & Condition</h4>
-					<ckeditor
-						[editor]="Editor"
-						data="<p>Content of the editor.</p>"
-					></ckeditor>
-				</div>
-				<div class="form-group row button">
-					<button type="submit" class="btn btn-primary btn-lg">
-						Save
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Term & Condition</h4>
+          <ckeditor
+            [editor]="Editor"
+            data="<p>Content of the editor.</p>"
+          ></ckeditor>
+        </div>
+        <div class="card-footer button">
+          <div class="row">
+            <button class="btn btn-primary btn-lg">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

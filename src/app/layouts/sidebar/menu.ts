@@ -11,8 +11,7 @@ export const MENU: MenuItem[] = [
     label: "Home",
     icon: "bx-home-circle",
     link: "/home",
-    subItems: [
-    ],
+    subItems: [],
   },
   {
     id: 6,
@@ -79,7 +78,7 @@ export const MENU: MenuItem[] = [
       },
       {
         id: 16,
-        label: "Challenger Program",
+        label: "Upload Program",
         link: "/upload/program",
         parentId: 13,
       },

@@ -12,7 +12,15 @@
 
           <div class="row mb-2">
             <div class="col-sm-4">
-				<div class="search-box mr-2 mb-2 d-inline-block"><div class="position-relative"><input type="text" placeholder="Search..." class="form-control ng-pristine ng-valid ng-touched"><i class="bx bx-search-alt search-icon"></i></div></div>
+              <div class="search-box mr-2 mb-2 d-inline-block">
+                <div class="position-relative">
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    class="form-control ng-pristine ng-valid ng-touched"
+                  /><i class="bx bx-search-alt search-icon"></i>
+                </div>
+              </div>
             </div>
             <div class="col-sm-8">
               <div class="text-sm-right">
@@ -29,11 +37,12 @@
             <!-- end col-->
           </div>
           <!-- Table -->
-          <mat-progress-bar mode="query" *ngIf="!rows"></mat-progress-bar>
-          <div class="table-responsive" *ngIf="rows">
+
+          <div class="table-responsive">
             <ngx-datatable
               class="material"
               [rows]="rows"
+              [loadingIndicator]="loading"
               [columnMode]="ColumnMode.force"
               [headerHeight]="50"
               [footerHeight]="50"
@@ -74,7 +83,11 @@
               <ngx-datatable-column name="Action">
                 <ng-template let-row="row" ngx-datatable-cell-template>
                   <div class="button-items">
-                    <button type="button" class="btn btn-primary" routerLink="config">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      routerLink="config"
+                    >
                       Config
                     </button>
                     <button type="button" class="btn btn-light">

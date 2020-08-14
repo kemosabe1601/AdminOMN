@@ -1,3 +1,4 @@
+import { NgbNavModule } from "@ng-bootstrap/ng-bootstrap";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatNativeDateModule } from "@angular/material/core";
 import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
@@ -18,7 +19,6 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 import { SampleRoutingModule } from "./sample-routing.module";
-import { SampleComponent } from "./sample.component";
 import { UploadComponent } from "./upload/upload.component";
 import { ProductionSPComponent } from "./production-sp/production-sp.component";
 import { SelfProductionComponent } from "./self-production/self-production.component";
@@ -26,6 +26,7 @@ import { DetailComponent } from "./self-production/detail/detail.component";
 import { MatSelectModule } from "@angular/material/select";
 import { MainVideoComponent } from "./main-video/main-video.component";
 import { VideoDetailComponent } from "./main-video/video-detail/video-detail.component";
+import { CarouselModule } from "ngx-owl-carousel-o";
 
 const config: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -35,7 +36,6 @@ const config: DropzoneConfigInterface = {
 
 @NgModule({
   declarations: [
-    SampleComponent,
     UploadComponent,
     ProductionSPComponent,
     SelfProductionComponent,
@@ -61,6 +61,8 @@ const config: DropzoneConfigInterface = {
     MatSelectModule,
     MatNativeDateModule,
     MatCheckboxModule,
+    CarouselModule,
+    NgbNavModule,
   ],
   providers: [
     {
