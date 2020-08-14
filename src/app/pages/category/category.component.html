@@ -1,107 +1,86 @@
 <div class="container-fluid">
-	<app-page-title
-		title="Category Management"
-		[breadcrumbItems]="breadCrumbItems"
-	></app-page-title>
+  <app-page-title
+    title="Category Management"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title>
 
-	<div class="row">
-		<div class="col-12">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title text-primary">Category set list</h4>
-					<p class="card-sub-title">
-						(Each of the category set here will be contained in a home set).
-					</p>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title text-primary">Category set list</h4>
 
-					<div class="row mb-2">
-						<div class="col-sm-4">
-							<!-- <div class="search-box mr-2 mb-2 d-inline-block">
-                <div class="position-relative">
-                  <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="advancedService.searchTerm">
-                  <i class="bx bx-search-alt search-icon"></i>
-                </div>
-              </div> -->
-							<ng-select
-								[items]="selectValue"
-								[multiple]="true"
-								placeholder="Filter set"
-							></ng-select>
-						</div>
-						<div class="col-sm-8">
-							<div class="text-sm-right">
-								<button
-									type="button"
-									class="btn btn-success btn-rounded mb-2 mr-2"
-									target="_blank"
-									routerLink="config"
-								>
-									<i class="mdi mdi-plus mr-1"></i> Create New
-								</button>
-							</div>
-						</div>
-						<!-- end col-->
-					</div>
-					<!-- Table -->
-					<mat-progress-bar mode="query" *ngIf="!rows"></mat-progress-bar>
-					<div class="table-responsive" *ngIf="rows">
-						<ngx-datatable
-							class="material"
-							[rows]="rows"
-							[columnMode]="ColumnMode.force"
-							[headerHeight]="50"
-							[footerHeight]="50"
-							rowHeight="auto"
-							[limit]="10"
-							[sorts]="[{ prop: 'name', dir: 'acs' }]"
-						>
-							<ngx-datatable-column name="Challenger Set Name">
-								<ng-template let-row="row" ngx-datatable-cell-template>
-									{{ row.name }}
-								</ng-template>
-							</ngx-datatable-column>
+          <div class="row mb-2">
+            <div class="col-sm-4" style="visibility: hidden;">
+              <ng-select
+                [items]="selectValue"
+                [multiple]="true"
+                placeholder="Filter set"
+              ></ng-select>
+            </div>
+            <div class="col-sm-8">
+              <div class="text-sm-right">
+                <button
+                  type="button"
+                  class="btn btn-success btn-rounded mb-2 mr-2"
+                  target="_blank"
+                  routerLink="add"
+                >
+                  <i class="mdi mdi-plus mr-1"></i> Create New
+                </button>
+              </div>
+            </div>
+            <!-- end col-->
+          </div>
+          <!-- Table -->
+          <mat-progress-bar mode="query" *ngIf="!rows"></mat-progress-bar>
+          <div class="table-responsive" *ngIf="rows">
+            <ngx-datatable
+              class="material"
+              [rows]="rows"
+              [columnMode]="ColumnMode.force"
+              [headerHeight]="50"
+              [footerHeight]="50"
+              rowHeight="auto"
+              [limit]="10"
+              [sorts]="[{ prop: 'name', dir: 'acs' }]"
+            >
+              <ngx-datatable-column name="Category">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.contained_list }}
+                </ng-template>
+              </ngx-datatable-column>
 
-							<ngx-datatable-column name="List Count">
-								<ng-template let-row="row" ngx-datatable-cell-template>
-									{{ row.listCount }}
-								</ng-template>
-							</ngx-datatable-column>
+              <ngx-datatable-column name="Type">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.category_set_name }}
+                </ng-template>
+              </ngx-datatable-column>
 
-							<ngx-datatable-column name="Airing days in week">
-								<ng-template let-row="row" ngx-datatable-cell-template>
-									{{ row.days }}
-								</ng-template>
-							</ngx-datatable-column>
+              <ngx-datatable-column name="List Count">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.list_count }}
+                </ng-template>
+              </ngx-datatable-column>
 
-							<ngx-datatable-column name="Start Time">
-								<ng-template let-row="row" ngx-datatable-cell-template>
-									{{ localeDate(row.startTime) | date: 'shortTime' }}
-								</ng-template>
-							</ngx-datatable-column>
-
-							<ngx-datatable-column name="End Time">
-								<ng-template let-row="row" ngx-datatable-cell-template>
-									{{ localeDate(row.endTime) | date: 'shortTime' }}
-								</ng-template>
-							</ngx-datatable-column>
-
-							<ngx-datatable-column name="Action">
-								<ng-template let-row="row" ngx-datatable-cell-template>
-									<div class="button-items">
-										<button type="button" class="btn btn-primary">
-											Config
-										</button>
-										<button type="button" class="btn btn-light">
-											Delete
-										</button>
-									</div>
-								</ng-template>
-							</ngx-datatable-column>
-						</ngx-datatable>
-					</div>
-					<!-- End table -->
-				</div>
-			</div>
-		</div>
-	</div>
+              <ngx-datatable-column name="Action">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  <div class="button-items">
+                    <button type="button" class="btn btn-primary" routerLink="config">
+                      Config
+                    </button>
+                    <button type="button" class="btn btn-light">
+                      Delete
+                    </button>
+                  </div>
+                </ng-template>
+              </ngx-datatable-column>
+            </ngx-datatable>
+          </div>
+          <!-- End table -->
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- container-fluid -->

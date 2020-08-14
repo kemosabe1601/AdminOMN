@@ -74,7 +74,7 @@ export class CategoryconfigComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.breadCrumbItems = [{ label: 'Category' }, { label: 'Create New', active: true }];
+    this.breadCrumbItems = [{ label: 'Category' }, { label: 'Config', active: true }];
     // Component color value of color picker
     this.componentcolor = '#3bafda';
     this.presetcolor = '#2889e9';

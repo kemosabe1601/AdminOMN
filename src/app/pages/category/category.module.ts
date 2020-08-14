@@ -28,9 +28,10 @@ import {
 	NgbNavModule,
 	NgbDatepickerModule,
 } from '@ng-bootstrap/ng-bootstrap';
+import { AddComponent } from './add/add.component';
 
 @NgModule({
-	declarations: [CategoryComponent, CategoryconfigComponent],
+	declarations: [CategoryComponent, CategoryconfigComponent, AddComponent],
 	imports: [
 		CommonModule,
 		CategoryRoutingModule,

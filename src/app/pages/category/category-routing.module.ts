@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CategoryComponent } from './category.component';
 import { CategoryconfigComponent } from './categoryconfig/categoryconfig.component';
+import { AddComponent } from './add/add.component';
 
 const routes: Routes = [
 	{
@@ -12,6 +13,10 @@ const routes: Routes = [
 	{
 		path: 'category/config',
 		component: CategoryconfigComponent,
+	},
+	{
+		path: 'category/add',
+		component: AddComponent,
 	},
 ];
 

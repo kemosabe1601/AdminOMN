@@ -33,6 +33,7 @@ import { MessageRoutingModule } from './message-routing.module';
 import { MessageComponent } from './message.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
 	declarations: [MessageComponent],
@@ -67,6 +68,7 @@ import { MatInputModule } from '@angular/material/input';
 		MatDatepickerModule,
 		MatFormFieldModule,
 		MatInputModule,
+		MatNativeDateModule
 	],
 })
 export class MessageModule {}

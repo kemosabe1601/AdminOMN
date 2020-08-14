@@ -62,7 +62,7 @@ export class ShowconfigComponent implements OnInit {
   // Select2 Dropdown
   selectValue: string[];
 
-  displayedColumns: string[] = ['programName', 'playedMinutes', 'viewCount', 'category', 'action'];
+  displayedColumns: string[] = ['programName', 'playedMinutes', 'viewCount', 'category', 'specific', 'listName', 'action'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   programData = new MatTableDataSource<Program>(Movie_DATA);
 
@@ -76,7 +76,7 @@ export class ShowconfigComponent implements OnInit {
 
 
   ngOnInit() {
-    this.breadCrumbItems = [{ label: 'List' }, { label: 'Create New', active: true }];
+    this.breadCrumbItems = [{ label: 'List' }, { label: 'Config', active: true }];
     // MatPaginator
     this.dataSource.paginator = this.paginator;
     // Component color value of color picker
@@ -273,30 +273,31 @@ export interface PeriodicElement {
   viewCount: number;
   category: string;
   action: string;
-
+  specific: string;
+  listName: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {programName: 'The Old Guard', playedMinutes: 756, viewCount: 1.0079, category: 'action', action:''},
-  {programName: 'The Karate Kid', playedMinutes: 756, viewCount: 4.0026, category: 'action', action:''},
-  {programName: 'Da 5 Bloods', playedMinutes: 756, viewCount: 6.941, category: 'action', action:''},
-  {programName: 'Frida', playedMinutes: 756, viewCount: 9.0122, category: 'thriller', action:''},
-  {programName: 'Airplane!', playedMinutes: 7102, viewCount: 10.811, category: 'triller', action:''},
-  {programName: 'Million Dollar Baby', playedMinutes: 1520, viewCount: 12.0107, category: 'drama', action:''},
-  {programName: 'Schindler’s List', playedMinutes: 1334, viewCount: 14.0067, category: 'drama', action:''},
-  {programName: 'Lady Bird', playedMinutes: 600, viewCount: 15.9994, category: 'fiction', action:''},
-  {programName: 'E.T.: The Extra-Terrestrial', playedMinutes: 777, viewCount: 18.9984, category: 'fiction', action:''},
-  {programName: 'The Silence of the Lambs', playedMinutes: 662, viewCount: 20.1797, category: 'action', action:''},
-  {programName: 'Cloudy With a Chance of Meatballs', playedMinutes: 1500, viewCount: 22.9897, category: 'action', action:''},
-  {programName: 'Uncut Gems', playedMinutes: 1080, viewCount: 24.305, category: 'action', action:''},
-  {programName: 'No Direction Home: Bob Dylan', playedMinutes: 1300, viewCount: 26.9815, category: 'action', action:''},
-  {programName: 'Back to the Future', playedMinutes: 720, viewCount: 28.0855, category: 'drama', action:''},
-  {programName: 'Willy Wonka and the Chocolate Factory', playedMinutes: 1480, viewCount: 30.9738, category: 'drama', action:''},
-  {programName: 'Crip Camp: A Disability Revolution', playedMinutes: 4800, viewCount: 32.065, category: 'drama', action:''},
-  {programName: 'Inglourious Basterds', playedMinutes: 1100, viewCount: 35.453, category: 'drama', action:''},
-  {programName: 'The Social Network', playedMinutes: 8462, viewCount: 39.948, category: 'horror', action:''},
-  {programName: 'The Death and Life of Marsha P. Johnson', playedMinutes: 963, viewCount: 39.0983, category: 'horror', action:''},
-  {programName: 'Scott Pilgrim vs. the World', playedMinutes: 741, viewCount: 40.078, category: 'horror', action:''},
+  {programName: 'The Old Guard', playedMinutes: 756, viewCount: 1.0079, category: 'action', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'The Karate Kid', playedMinutes: 756, viewCount: 4.0026, category: 'action', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Da 5 Bloods', playedMinutes: 756, viewCount: 6.941, category: 'action', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Frida', playedMinutes: 756, viewCount: 9.0122, category: 'thriller', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Airplane!', playedMinutes: 7102, viewCount: 10.811, category: 'triller', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Million Dollar Baby', playedMinutes: 1520, viewCount: 12.0107, category: 'drama', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Schindler’s List', playedMinutes: 1334, viewCount: 14.0067, category: 'drama', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Lady Bird', playedMinutes: 600, viewCount: 15.9994, category: 'fiction', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'E.T.: The Extra-Terrestrial', playedMinutes: 777, viewCount: 18.9984, category: 'fiction', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'The Silence of the Lambs', playedMinutes: 662, viewCount: 20.1797, category: 'action', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Cloudy With a Chance of Meatballs', playedMinutes: 1500, viewCount: 22.9897, category: 'action', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Uncut Gems', playedMinutes: 1080, viewCount: 24.305, category: 'action', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'No Direction Home: Bob Dylan', playedMinutes: 1300, viewCount: 26.9815, category: 'action', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Back to the Future', playedMinutes: 720, viewCount: 28.0855, category: 'drama', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Willy Wonka and the Chocolate Factory', playedMinutes: 1480, viewCount: 30.9738, category: 'drama', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Crip Camp: A Disability Revolution', playedMinutes: 4800, viewCount: 32.065, category: 'drama', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Inglourious Basterds', playedMinutes: 1100, viewCount: 35.453, category: 'drama', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'The Social Network', playedMinutes: 8462, viewCount: 39.948, category: 'horror', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'The Death and Life of Marsha P. Johnson', playedMinutes: 963, viewCount: 39.0983, category: 'horror', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Scott Pilgrim vs. the World', playedMinutes: 741, viewCount: 40.078, category: 'horror', action:'', specific:'zombie, US', listName:'zombie'},
 ];
 
 export interface Program {
@@ -305,18 +306,19 @@ export interface Program {
   viewCount: number;
   category: string;
   action: string;
-
+  specific: string;
+  listName: string;
 }
 
 const Movie_DATA: Program[] = [
-  {programName: 'Uncut Gems', playedMinutes: 1080, viewCount: 24.305, category: 'action', action:''},
-  {programName: 'No Direction Home: Bob Dylan', playedMinutes: 1300, viewCount: 26.9815, category: 'action', action:''},
-  {programName: 'Back to the Future', playedMinutes: 720, viewCount: 28.0855, category: 'drama', action:''},
-  {programName: 'Willy Wonka and the Chocolate Factory', playedMinutes: 1480, viewCount: 30.9738, category: 'drama', action:''},
-  {programName: 'Crip Camp: A Disability Revolution', playedMinutes: 4800, viewCount: 32.065, category: 'drama', action:''},
-  {programName: 'Inglourious Basterds', playedMinutes: 1100, viewCount: 35.453, category: 'drama', action:''},
-  {programName: 'The Social Network', playedMinutes: 8462, viewCount: 39.948, category: 'horror', action:''},
-  {programName: 'The Death and Life of Marsha P. Johnson', playedMinutes: 963, viewCount: 39.0983, category: 'horror', action:''},
-  {programName: 'Scott Pilgrim vs. the World', playedMinutes: 741, viewCount: 40.078, category: 'horror', action:''},
+  {programName: 'Uncut Gems', playedMinutes: 1080, viewCount: 24.305, category: 'action', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'No Direction Home: Bob Dylan', playedMinutes: 1300, viewCount: 26.9815, category: 'action', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Back to the Future', playedMinutes: 720, viewCount: 28.0855, category: 'drama', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Willy Wonka and the Chocolate Factory', playedMinutes: 1480, viewCount: 30.9738, category: 'drama', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Crip Camp: A Disability Revolution', playedMinutes: 4800, viewCount: 32.065, category: 'drama', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Inglourious Basterds', playedMinutes: 1100, viewCount: 35.453, category: 'drama', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'The Social Network', playedMinutes: 8462, viewCount: 39.948, category: 'horror', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'The Death and Life of Marsha P. Johnson', playedMinutes: 963, viewCount: 39.0983, category: 'horror', action:'', specific:'zombie, US', listName:'zombie'},
+  {programName: 'Scott Pilgrim vs. the World', playedMinutes: 741, viewCount: 40.078, category: 'horror', action:'', specific:'zombie, US', listName:'zombie'},
 ];
 

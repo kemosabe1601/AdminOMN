@@ -30,9 +30,10 @@ import {
 	NgbDatepickerModule,
 	NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
+import { AddComponent } from './add/add.component';
 
 @NgModule({
-	declarations: [ShowComponent, ShowconfigComponent],
+	declarations: [ShowComponent, ShowconfigComponent, AddComponent],
 	imports: [
 		CommonModule,
 		ShowRoutingModule,

@@ -25,18 +25,15 @@ export class MockApiService {
 
   getHomeDataFireBase() {
     return this.fireStore.collection("home").snapshotChanges();
-    // return this.fireStore.collection('home', ref => ref.where('air_mon', '==', true)
-    //                                 .where('air_tue', '==', true)
-    //                                 .where('air_wed', '==', true)
-    //                                 .where('air_thurs', '==', true)
-    //                                 .where('air_fri', '==', true)
-    //                                 .where('air_sat', '==', true)
-    //                                 .where('air_sun', '==', true)).snapshotChanges();
   }
 
-  // getAiringDaysInHome(id: string) {
-  // 	return this.fireStore.collection('home').doc(id).collection('airing_days').snapshotChanges();
-  // }
+  getCategoryDataFireBase() {
+    return this.fireStore.collection("category").snapshotChanges();
+  }
+
+  getListDataFireBase() {
+    return this.fireStore.collection("list").snapshotChanges();
+  }
 
   getTableData() {
     const header = new HttpHeaders({
