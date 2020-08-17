@@ -48,7 +48,7 @@ export class AddComponent implements OnInit {
 
   // bread crumb items
   breadCrumbItems: Array<{}>;
-  constructor(private calendar: NgbCalendar, public formBuilder: FormBuilder, crudservice: CrudService) { }
+  constructor(private calendar: NgbCalendar, public formBuilder: FormBuilder, public crudservice: CrudService) { }
 
   // name: string;
   // position: number;
@@ -115,7 +115,7 @@ export class AddComponent implements OnInit {
       city: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
       state: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
       zip: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
-    }); 
+    });
 
     // Home Set Form
     this.homeSetForm = this.formBuilder.group({
@@ -180,20 +180,27 @@ export class AddComponent implements OnInit {
   }
 
   createNew() {
-    // let data = {};
-    // data['home_set_name'] = this.home_set_name
-    // data['air_mon'] = this.air_mon
-    // data['air_tue'] = this.air_tue
-    // data['air_wed'] = this.air_wed
-    // data['air_thurs'] = this.air_thurs
-    // data['air_fri'] = this.air_fri
-    // data['air_sat'] = this.air_sat
-    // data['air_sun'] = this.air_sun
-    // data['start_time'] = this.start_time
-    // data['end_time'] = this.end_time
-    // console.log(data);
     console.log(this.homeSetForm.value);
-    
+    let homeData = {};
+    homeData = this.homeSetForm.value
+
+    this.crudservice.createHomeSet(homeData).then(res => {
+      this.home_set_name = "";
+      this.air_mon = false;
+      this.air_tue = false;
+      this.air_wed = false;
+      this.air_thurs = false;
+      this.air_fri = false;
+      this.air_sat = false;
+      this.air_sun = false;
+      this.start_time = undefined;
+      this.end_time = undefined;
+      this.category_list = "";
+
+      console.log("POST Data:", res);
+    }).catch(error => {
+      console.log(error);
+    });
   }
 
   /**
@@ -312,7 +319,7 @@ export class AddComponent implements OnInit {
   @ViewChild('table') table: MatTable<PeriodicElement>;
   displayedColumns: string[] = ['position', 'name', 'programcount', 'createddate', 'remove'];
   dataSource = ELEMENT_DATA;
-  
+
   dropTable(event: CdkDragDrop<PeriodicElement[]>) {
     const prevIndex = this.dataSource.findIndex((d) => d === event.item.data);
     moveItemInArray(this.dataSource, prevIndex, event.currentIndex);
@@ -329,14 +336,14 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Action', programcount: 10, createddate: '2020-03-01', remove: ''},
-  {position: 2, name: 'Drama', programcount: 12, createddate: '2020-03-01', remove: ''},
-  {position: 3, name: 'Thriller', programcount: 15, createddate: '2020-03-01', remove: ''},
-  {position: 4, name: 'Horror', programcount: 17, createddate: '2020-03-01', remove: ''},
-  {position: 5, name: 'Boron', programcount: 20, createddate: '2020-03-01', remove: ''},
-  {position: 6, name: 'Carbon', programcount: 5, createddate: '2020-03-01', remove: ''},
-  {position: 7, name: 'Nitrogen', programcount: 10, createddate: '2020-03-01', remove: ''},
-  {position: 8, name: 'Oxygen', programcount: 16, createddate: '2020-03-01', remove: ''},
-  {position: 9, name: 'Fluorine', programcount: 17, createddate: '2020-03-01', remove: ''},
-  {position: 10, name: 'Neon', programcount: 18, createddate: '2020-03-01', remove: ''},
+  { position: 1, name: 'Action', programcount: 10, createddate: '2020-03-01', remove: '' },
+  { position: 2, name: 'Drama', programcount: 12, createddate: '2020-03-01', remove: '' },
+  { position: 3, name: 'Thriller', programcount: 15, createddate: '2020-03-01', remove: '' },
+  { position: 4, name: 'Horror', programcount: 17, createddate: '2020-03-01', remove: '' },
+  { position: 5, name: 'Boron', programcount: 20, createddate: '2020-03-01', remove: '' },
+  { position: 6, name: 'Carbon', programcount: 5, createddate: '2020-03-01', remove: '' },
+  { position: 7, name: 'Nitrogen', programcount: 10, createddate: '2020-03-01', remove: '' },
+  { position: 8, name: 'Oxygen', programcount: 16, createddate: '2020-03-01', remove: '' },
+  { position: 9, name: 'Fluorine', programcount: 17, createddate: '2020-03-01', remove: '' },
+  { position: 10, name: 'Neon', programcount: 18, createddate: '2020-03-01', remove: '' },
 ];

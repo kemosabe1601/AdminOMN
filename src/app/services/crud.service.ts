@@ -6,9 +6,9 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class CrudService {
 
-  constructor(fireservice: AngularFirestore) { }
+  constructor(public fireservice: AngularFirestore) { }
 
-  createHomeSet() {
-
+  createHomeSet(homeData) {
+    return this.fireservice.collection('home').add(homeData);
   }
 }
