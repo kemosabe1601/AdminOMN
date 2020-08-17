@@ -16,8 +16,8 @@
             >
           </a>
           <form
+            [formGroup]="homeSetForm"
             class="needs-validation"
-            (ngSubmit)="validSubmit()"
           >
             <div class="row">
               <div class="col-md-6">
@@ -27,10 +27,9 @@
                     type="text"
                     class="form-control"
                     id="validationCustom01"
-                    [(ngModel)]="home_set_name"
+                    formControlName="home_set_name"
                     placeholder="Home set name"
                     [ngClass]="{ 'is-valid': submit && form.firstName.errors }"
-                    [ngModelOptions]="{standalone: true}"
                   />
                   <div
                     *ngIf="submit && form.firstName.errors"
@@ -56,8 +55,7 @@
                       class="custom-control-input"
                       id="customCheck1"
                       checked="true"
-                      [(ngModel)]="air_mon"
-                      [ngModelOptions]="{standalone: true}"
+                      formControlName="air_mon"
                     />
                     <label class="custom-control-label" for="customCheck1"
                       >Monday</label
@@ -69,8 +67,7 @@
                       class="custom-control-input"
                       id="customCheck2"
                       checked="true"
-                      [(ngModel)]="air_tue"
-                      [ngModelOptions]="{standalone: true}"
+                      formControlName="air_tue"
                     />
                     <label class="custom-control-label" for="customCheck2"
                       >Tuesday</label
@@ -82,8 +79,7 @@
                       class="custom-control-input"
                       id="customCheck3"
                       checked="true"
-                      [(ngModel)]="air_wed"
-                      [ngModelOptions]="{standalone: true}"
+                      formControlName="air_wed"
                     />
                     <label class="custom-control-label" for="customCheck3"
                       >Wednesday</label
@@ -95,8 +91,7 @@
                       class="custom-control-input"
                       id="customCheck4"
                       checked="true"
-                      [(ngModel)]="air_thurs"
-                      [ngModelOptions]="{standalone: true}"
+                      formControlName="air_thurs"
                     />
                     <label class="custom-control-label" for="customCheck4"
                       >Thursday</label
@@ -115,8 +110,7 @@
                       class="custom-control-input"
                       id="customCheck5"
                       checked="true"
-                      [(ngModel)]="air_fri"
-                      [ngModelOptions]="{standalone: true}"
+                      formControlName="air_fri"
                     />
                     <label class="custom-control-label" for="customCheck5"
                       >Friday</label
@@ -128,8 +122,7 @@
                       class="custom-control-input"
                       id="customCheck6"
                       checked="true"
-                      [(ngModel)]="air_sat"
-                      [ngModelOptions]="{standalone: true}"
+                      formControlName="air_sat"
                     />
                     <label class="custom-control-label" for="customCheck6"
                       >Saturday</label
@@ -141,8 +134,7 @@
                       class="custom-control-input"
                       id="customCheck7"
                       checked="true"
-                      [(ngModel)]="air_sun"
-                      [ngModelOptions]="{standalone: true}"
+                      formControlName="air_sun"
                     />
                     <label class="custom-control-label" for="customCheck7"
                       >Sunday</label
@@ -163,8 +155,7 @@
                     type="time"
                     value="13:45:00"
                     id="example-time-input"
-                    [(ngModel)]="start_time"
-                    [ngModelOptions]="{standalone: true}"
+                    formControlName="start_time"
                   />
                   <div
                     *ngIf="submit && form.city.errors"
@@ -187,8 +178,7 @@
                     type="time"
                     value="13:45:00"
                     id="example-time-input"
-                    [(ngModel)]="end_time"
-                    [ngModelOptions]="{standalone: true}"
+                    formControlName="end_time"
                   />
                   <div
                     *ngIf="submit && form.state.errors"
@@ -206,11 +196,11 @@
               <div class="col-md-6">
                 <label for="validationCustom01">Import category list</label>
                 <div class="input-group">
-                  <select class="custom-select" id="inputGroupSelect04">
+                  <select class="custom-select" id="inputGroupSelect04" formControlName="category_list">
                     <option selected>Choose...</option>
-                    <option value="1">Korean Drama</option>
-                    <option value="2">Comedy</option>
-                    <option value="3">Action</option>
+                    <option value="Science">Science</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Thriller">Thriller</option>
                   </select>
                   <div class="input-group-append">
                     <button class="btn btn-outline-success" type="button">
@@ -270,7 +260,7 @@
                 <button
                   type="submit"
                   class="btn btn-primary mr-1"
-                  [disabled]="!home_set_name || !start_time || !end_time"
+                  [disabled]="!homeSetForm.valid"
                   (click)="createNew()"
                 >
                   Submit

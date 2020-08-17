@@ -32,6 +32,7 @@ export class AddComponent implements OnInit {
   tooltipvalidationform: FormGroup; // bootstrap tooltip validation form
   typeValidationForm: FormGroup; // type validation form
   rangeValidationForm: FormGroup; // range validation form
+  homeSetForm: FormGroup;
 
   movies = [
     'Episode I - The Phantom Menace',
@@ -114,8 +115,22 @@ export class AddComponent implements OnInit {
       city: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
       state: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
       zip: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
-    });
+    }); 
 
+    // Home Set Form
+    this.homeSetForm = this.formBuilder.group({
+      home_set_name: [''],
+      air_mon: [false],
+      air_tue: [false],
+      air_wed: [false],
+      air_thurs: [false],
+      air_fri: [false],
+      air_sat: [false],
+      air_sun: [false],
+      start_time: [''],
+      end_time: [''],
+      category_list: ['']
+    });
     /**
      * Bootstrap tooltip validation form data
      */
@@ -165,18 +180,20 @@ export class AddComponent implements OnInit {
   }
 
   createNew() {
-    let data = {};
-    data['home_set_name'] = this.home_set_name
-    data['air_mon'] = this.air_mon
-    data['air_tue'] = this.air_tue
-    data['air_wed'] = this.air_wed
-    data['air_thurs'] = this.air_thurs
-    data['air_fri'] = this.air_fri
-    data['air_sat'] = this.air_sat
-    data['air_sun'] = this.air_sun
-    data['start_time'] = this.start_time
-    data['end_time'] = this.end_time
-    console.log(data);
+    // let data = {};
+    // data['home_set_name'] = this.home_set_name
+    // data['air_mon'] = this.air_mon
+    // data['air_tue'] = this.air_tue
+    // data['air_wed'] = this.air_wed
+    // data['air_thurs'] = this.air_thurs
+    // data['air_fri'] = this.air_fri
+    // data['air_sat'] = this.air_sat
+    // data['air_sun'] = this.air_sun
+    // data['start_time'] = this.start_time
+    // data['end_time'] = this.end_time
+    // console.log(data);
+    console.log(this.homeSetForm.value);
+    
   }
 
   /**
