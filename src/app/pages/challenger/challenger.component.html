@@ -128,45 +128,38 @@
               [limit]="10"
               [sorts]="[{ prop: 'name', dir: 'acs' }]"
             >
-              <ngx-datatable-column name="Challenger Set Name">
+              <ngx-datatable-column name="Status">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.name }}
-                </ng-template>
-              </ngx-datatable-column>
-              <<<<<<< HEAD =======
-
-              <ngx-datatable-column name="List Count">
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.listCount }}
-                </ng-template>
-              </ngx-datatable-column>
-              >>>>>>> b8983b1df44f1b219ec9213f1bf13bbdecf922a9
-
-              <ngx-datatable-column name="List Count">
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.listCount }}
+                  {{ row.challenger_status }}
                 </ng-template>
               </ngx-datatable-column>
 
-              <ngx-datatable-column name="Airing days in week">
+              <ngx-datatable-column name="Program Name">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.days }}
+                  {{ row.program_name }}
                 </ng-template>
               </ngx-datatable-column>
 
-              <ngx-datatable-column name="Start Time">
+              <ngx-datatable-column name="Name">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ localeDate(row.startTime) | date: "shortTime" }}
+                  {{ row.uploader_name }}
                 </ng-template>
               </ngx-datatable-column>
 
-              <ngx-datatable-column name="End Time">
+              <ngx-datatable-column name="ID">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ localeDate(row.endTime) | date: "shortTime" }}
+                  {{ row.id }}
                 </ng-template>
               </ngx-datatable-column>
 
-              <ngx-datatable-column name="Action">
+              <ngx-datatable-column name="Upload Date">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  <!-- {{ localeDate(row.startTime) | date: "shortTime" }} -->
+                  {{ row.upload_date }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Approval/Deinal Letter">
                 <ng-template let-row="row" ngx-datatable-cell-template>
                   <div class="button-items">
                     <button
@@ -174,11 +167,11 @@
                       class="btn btn-primary"
                       routerLink="detail"
                     >
-                      Config
+                      View Letter
                     </button>
-                    <button type="button" class="btn btn-light">
+                    <!-- <button type="button" class="btn btn-light">
                       Delete
-                    </button>
+                    </button> -->
                   </div>
                 </ng-template>
               </ngx-datatable-column>

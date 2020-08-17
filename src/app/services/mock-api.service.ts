@@ -35,6 +35,18 @@ export class MockApiService {
     return this.fireStore.collection("list").snapshotChanges();
   }
 
+  getUploadDataFireBase() {
+    return this.fireStore.collection("upload").snapshotChanges();
+  }
+
+  getChallengerDataFireBase() {
+    return this.fireStore.collection("challenger").snapshotChanges();
+  }
+
+  getDeletedRequestDataFireBase() {
+    return this.fireStore.collection("deleted-request").snapshotChanges();
+  }
+
   getTableData() {
     const header = new HttpHeaders({
       "Access-Control-Allow-Origin": "*",

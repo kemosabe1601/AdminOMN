@@ -79,10 +79,19 @@ export class DeletedComponent implements OnInit, OnDestroy {
    * fetches the table value
    */
   _fetchData() {
-    this.mockService.getTableData().subscribe((val: any) => {
-      this.temp = [...val];
-      this.rows = val;
-    });
+    // this.mockService.getTableData().subscribe((val: any) => {
+    //   this.temp = [...val];
+    //   this.rows = val;
+    // });
+
+    this.mockSub = this.mockService.getDeletedRequestDataFireBase().subscribe((val:any) => {
+			this.rows = val.map((e) => {
+				return {
+					id: e.payload.doc.id,
+					...e.payload.doc.data(),
+				}
+			});
+		});
   }
 
   updateFilter(event) {

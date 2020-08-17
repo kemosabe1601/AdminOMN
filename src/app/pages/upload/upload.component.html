@@ -133,33 +133,33 @@
               [limit]="10"
               [sorts]="[{ prop: 'name', dir: 'acs' }]"
             >
-              <ngx-datatable-column name="Upload Set Name">
+              <ngx-datatable-column name="Status">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.name }}
+                  {{ row.upload_status }}
                 </ng-template>
               </ngx-datatable-column>
 
-              <ngx-datatable-column name="List Count">
+              <ngx-datatable-column name="Program Name">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.listCount }}
+                  {{ row.program_name }}
                 </ng-template>
               </ngx-datatable-column>
 
-              <ngx-datatable-column name="Airing days in week">
+              <ngx-datatable-column name="Name">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.days }}
+                  {{ row.uploader_name }}
                 </ng-template>
               </ngx-datatable-column>
 
-              <ngx-datatable-column name="Start Time">
+              <ngx-datatable-column name="ID">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ localeDate(row.startTime) | date: "shortTime" }}
+                  {{ row.id }}
                 </ng-template>
               </ngx-datatable-column>
 
-              <ngx-datatable-column name="End Time">
+              <ngx-datatable-column name="Upload Date">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ localeDate(row.endTime) | date: "shortTime" }}
+                  {{ row.upload_date }}
                 </ng-template>
               </ngx-datatable-column>
 
@@ -171,11 +171,11 @@
                       class="btn btn-primary"
                       routerLink="detail"
                     >
-                      Config
+                      View Letter
                     </button>
-                    <button type="button" class="btn btn-light">
+                    <!-- <button type="button" class="btn btn-light">
                       Delete
-                    </button>
+                    </button> -->
                   </div>
                 </ng-template>
               </ngx-datatable-column>
