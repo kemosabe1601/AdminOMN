@@ -45,16 +45,24 @@ export class ProgramComponent implements OnInit, OnDestroy {
     this._fetchData();
   }
 
-  /**
-   * fetches the table value
-   */
-  _fetchData() {
-    this.mockSub = this.mockService.getTableData().subscribe((val: any) => {
-      this.temp = [...val];
-      this.rows = val;
-      this.loading = false;
-    });
-  }
+	/**
+	 * fetches the table value
+	 */
+	_fetchData() {
+		// this.mockSub = this.mockService.getTableData().subscribe((val:any) => {
+		// 	this.temp = [...val];
+		// 	this.rows = val;
+		// });
+
+		this.mockSub = this.mockService.getUploadDataFireBase().subscribe((val:any) => {
+			this.rows = val.map((e) => {
+				return {
+					id: e.payload.doc.id,
+					...e.payload.doc.data(),
+				}
+			});
+		});
+	}
 
   updateFilter(event) {
     const val = event.target.value.toLowerCase();

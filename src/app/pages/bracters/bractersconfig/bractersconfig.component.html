@@ -1,24 +1,40 @@
 <div class="container-fluid">
-
   <!-- start page title -->
-  <app-page-title title="Bracter Settings" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <app-page-title
+    title="Bracter Settings"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title>
   <!-- end page title -->
   <div class="row">
     <div class="col-lg-6">
       <div class="card">
         <div class="card-body">
           <a class="backButton">
-            <mat-icon>arrow_back_ios</mat-icon><span class="text-primary" routerLink="/bracters"
-              style="font-size: 14px; padding-top: 1px;">Return to list</span>
+            <mat-icon>arrow_back_ios</mat-icon
+            ><span
+              class="text-primary"
+              routerLink="/bracters"
+              style="font-size: 14px; padding-top: 1px;"
+              >Return to list</span
+            >
           </a>
-          <form class="needs-validation" (ngSubmit)="validSubmit()" [formGroup]="validationform">
+          <form
+            class="needs-validation"
+            (ngSubmit)="validSubmit()"
+            [formGroup]="validationform"
+          >
             <br />
             <form>
               <div class="form-row">
                 <div class="col-md-6 mb-3">
                   <label for="validationDefault03">Program Name</label>
-                  <input type="text" class="form-control" id="validationDefault03" placeholder="Enter program name"
-                    required>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="validationDefault03"
+                    placeholder="Enter program name"
+                    required
+                  />
                 </div>
                 <div class="col-md-3 mb-3">
                   <label for="example-date-input">From Date</label>
@@ -70,33 +86,46 @@
             </ngb-alert>
             <div class="mat-elevation-z8">
               <mat-table [dataSource]="dataSource">
-
-
                 <ng-container matColumnDef="programName">
-                  <mat-header-cell *matHeaderCellDef> Program Name </mat-header-cell>
-                  <mat-cell *matCellDef="let element"> {{element.programName}} </mat-cell>
+                  <mat-header-cell *matHeaderCellDef>
+                    Program Name
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    {{ element.programName }}
+                  </mat-cell>
                 </ng-container>
-
 
                 <ng-container matColumnDef="playedMinutes">
-                  <mat-header-cell *matHeaderCellDef> Played Minutes </mat-header-cell>
-                  <mat-cell *matCellDef="let element"> {{element.playedMinutes}} </mat-cell>
+                  <mat-header-cell *matHeaderCellDef>
+                    Played Minutes
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    {{ element.playedMinutes }}
+                  </mat-cell>
                 </ng-container>
-
 
                 <ng-container matColumnDef="viewCount">
-                  <mat-header-cell *matHeaderCellDef> View Count </mat-header-cell>
-                  <mat-cell *matCellDef="let element"> {{element.viewCount}} </mat-cell>
+                  <mat-header-cell *matHeaderCellDef>
+                    View Count
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    {{ element.viewCount }}
+                  </mat-cell>
                 </ng-container>
 
-
                 <ng-container matColumnDef="category">
-                  <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
-                  <mat-cell *matCellDef="let element"> {{element.category}} </mat-cell>
+                  <mat-header-cell *matHeaderCellDef>
+                    Category
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    {{ element.category }}
+                  </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="action">
-                  <mat-header-cell *matHeaderCellDef> Import to bracter</mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef>
+                    Import to bracter</mat-header-cell
+                  >
                   <mat-cell *matCellDef="let element">
                     <a href="javascript:void(0);">
                       <mat-icon>archive</mat-icon>
@@ -104,14 +133,21 @@
                   </mat-cell>
                 </ng-container>
 
-                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                <mat-header-row
+                  *matHeaderRowDef="displayedColumns"
+                ></mat-header-row>
+                <mat-row
+                  *matRowDef="let row; columns: displayedColumns"
+                ></mat-row>
               </mat-table>
 
-              <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+              <mat-paginator
+                [pageSizeOptions]="[5, 10, 20]"
+                showFirstLastButtons
+              ></mat-paginator>
             </div>
             <br />
-            <hr style="border-top:1pt solid #69E781;" />
+            <hr style="border-top: 1pt solid #69e781;" />
             <div id="cateInBracter" *ngIf="!isShow">
               <ngb-alert [dismissible]="false" type="info">
                 Categories in Bracter:
@@ -119,54 +155,81 @@
               <div class="row mb-2">
                 <div class="col-sm-12">
                   <div class="text-sm-right">
-                    <button type="button" class="btn btn-outline-success btn-rounded mb-2 mr-2" target="_blank"
-                      (click)="addCategory()"><i class="mdi mdi-plus mr-1"></i>
-                      Add category </button>
+                    <button
+                      type="button"
+                      class="btn btn-outline-success btn-rounded mb-2 mr-2"
+                      target="_blank"
+                      (click)="addCategory()"
+                    >
+                      <i class="mdi mdi-plus mr-1"></i> Add category
+                    </button>
                   </div>
-                </div><!-- end col-->
+                </div>
+                <!-- end col-->
               </div>
               <!-- Table -->
               <div class="table-responsive">
-                <table id="basic-datatable"
-                  class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline">
+                <table
+                  id="basic-datatable"
+                  class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline"
+                >
                   <thead *ngFor="let table of tables$ | async">
                     <tr style="text-align: center;">
                       <th colspan="2" class="text-primary">
-                        <a [routerLink]="['/home']" routerLinkActive="router-link-active">
-                          <ngb-highlight [result]="table.category" [term]="advancedService.searchTerm"></ngb-highlight>
-                        </a>
-                        <a>
-                          <i class="bx bx-x mr-1" style="float: right; font-size: 1rem;"></i>
-                        </a>
+                        <a
+                          [routerLink]="['/home']"
+                          routerLinkActive="router-link-active"
+                          ><ngb-highlight
+                            [result]="table.category"
+                            [term]="advancedService.searchTerm"
+                          ></ngb-highlight
+                        ></a>
+                        <i class="mdi mdi-close-thick remove-category"></i>
                       </th>
                     </tr>
                     <tr style="text-align: center;">
                       <td>
-                        <ngb-highlight [result]="table.programName" [term]="advancedService.searchTerm"></ngb-highlight>
+                        <ngb-highlight
+                          [result]="table.programName"
+                          [term]="advancedService.searchTerm"
+                        ></ngb-highlight>
                       </td>
                       <td>
-                        <ngb-highlight [result]="table.viewNumber" [term]="advancedService.searchTerm"></ngb-highlight>
+                        <ngb-highlight
+                          [result]="table.viewNumber"
+                          [term]="advancedService.searchTerm"
+                        ></ngb-highlight>
                       </td>
                     </tr>
                   </thead>
-                  <tbody>
-                  </tbody>
+                  <tbody></tbody>
                 </table>
               </div>
               <!-- End table -->
-              <div class="row justify-content-md-between align-items-md-center mt-2">
+              <div
+                class="row justify-content-md-between align-items-md-center mt-2"
+              >
                 <div class="col-sm-12 col-md-5">
-                  <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">Showing
-                    {{advancedService.startIndex}} to
-                    {{advancedService.endIndex}} of {{advancedService.totalRecords}}
+                  <div
+                    class="dataTables_info mb-2"
+                    id="tickets-table_info"
+                    role="status"
+                    aria-live="polite"
+                  >
+                    Showing {{ advancedService.startIndex }} to
+                    {{ advancedService.endIndex }} of
+                    {{ advancedService.totalRecords }}
                     entries
                   </div>
                 </div>
                 <!-- Pagination -->
                 <div class="col-sm-12 col-md-5">
                   <div class="text-md-right float-md-right pagination-rounded">
-                    <ngb-pagination [collectionSize]="total$ | async" [(page)]="advancedService.page"
-                      [pageSize]="advancedService.pageSize">
+                    <ngb-pagination
+                      [collectionSize]="total$ | async"
+                      [(page)]="advancedService.page"
+                      [pageSize]="advancedService.pageSize"
+                    >
                     </ngb-pagination>
                   </div>
                 </div>
@@ -177,11 +240,17 @@
               <div class="row mb-2">
                 <div class="col-sm-12">
                   <div class="text-sm-right">
-                    <button type="button" class="btn btn-outline-danger btn-rounded mb-2 mr-2" target="_blank"
-                      (click)="addCategory()"><i class="mdi mdi-close-thick"></i>
-                      Cancel </button>
+                    <button
+                      type="button"
+                      class="btn btn-outline-danger btn-rounded mb-2 mr-2"
+                      target="_blank"
+                      (click)="addCategory()"
+                    >
+                      <i class="mdi mdi-close-thick"></i> Cancel
+                    </button>
                   </div>
-                </div><!-- end col-->
+                </div>
+                <!-- end col-->
               </div>
               <aw-wizard [navBarLayout]="'large-empty-symbols'">
                 <aw-wizard-step stepTitle="Browse Category">
@@ -189,41 +258,61 @@
                   <br />
                   <br />
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Input category name"
-                      aria-label="Input category name" aria-describedby="basic-addon2">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Input category name"
+                      aria-label="Input category name"
+                      aria-describedby="basic-addon2"
+                    />
                     <div class="input-group-append">
-                      <button class="btn btn-outline-primary" type="button">Search</button>
+                      <button class="btn btn-outline-primary" type="button">
+                        Search
+                      </button>
                     </div>
                   </div>
                   <div class="mat-elevation-z8">
                     <mat-table [dataSource]="dataSource">
-
-
                       <ng-container matColumnDef="programName">
-                        <mat-header-cell *matHeaderCellDef> Program Name </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> {{element.programName}} </mat-cell>
+                        <mat-header-cell *matHeaderCellDef>
+                          Program Name
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                          {{ element.programName }}
+                        </mat-cell>
                       </ng-container>
-
 
                       <ng-container matColumnDef="playedMinutes">
-                        <mat-header-cell *matHeaderCellDef> Played Minutes </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> {{element.playedMinutes}} </mat-cell>
+                        <mat-header-cell *matHeaderCellDef>
+                          Played Minutes
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                          {{ element.playedMinutes }}
+                        </mat-cell>
                       </ng-container>
-
 
                       <ng-container matColumnDef="viewCount">
-                        <mat-header-cell *matHeaderCellDef> View Count </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> {{element.viewCount}} </mat-cell>
+                        <mat-header-cell *matHeaderCellDef>
+                          View Count
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                          {{ element.viewCount }}
+                        </mat-cell>
                       </ng-container>
 
-
                       <ng-container matColumnDef="category">
-                        <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> {{element.category}} </mat-cell>
+                        <mat-header-cell *matHeaderCellDef>
+                          Category
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                          {{ element.category }}
+                        </mat-cell>
                       </ng-container>
 
                       <ng-container matColumnDef="action">
-                        <mat-header-cell *matHeaderCellDef> Import to bracter</mat-header-cell>
+                        <mat-header-cell *matHeaderCellDef>
+                          Import to bracter</mat-header-cell
+                        >
                         <mat-cell *matCellDef="let element">
                           <a href="javascript:void(0);">
                             <mat-icon>archive</mat-icon>
@@ -231,17 +320,24 @@
                         </mat-cell>
                       </ng-container>
 
-                      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                      <mat-header-row
+                        *matHeaderRowDef="displayedColumns"
+                      ></mat-header-row>
+                      <mat-row
+                        *matRowDef="let row; columns: displayedColumns"
+                      ></mat-row>
                     </mat-table>
 
-                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                    <mat-paginator
+                      [pageSizeOptions]="[5, 10, 20]"
+                      showFirstLastButtons
+                    ></mat-paginator>
                   </div>
                   <br />
                   <br />
                   <ul class="list-inline wizard mb-0">
-                    <li class="next list-inline-item float-right"><button class="btn btn-primary"
-                        awNextStep>Next</button>
+                    <li class="next list-inline-item float-right">
+                      <button class="btn btn-primary" awNextStep>Next</button>
                     </li>
                   </ul>
                 </aw-wizard-step>
@@ -249,13 +345,27 @@
                 <aw-wizard-step stepTitle="Category Config">
                   <ng-template awWizardStepSymbol>2</ng-template>
 
-                  <div class="row mt-5" style="justify-content: center !important;">
+                  <div
+                    class="row mt-5"
+                    style="justify-content: center !important;"
+                  >
                     <div class="col-9">
                       <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="maximumProgram">Maximum program/movie</label>
+                        <label
+                          class="col-md-3 col-form-label"
+                          for="maximumProgram"
+                          >Maximum program/movie</label
+                        >
                         <div class="col-md-9">
-                          <select id="maximumProgram" name="maximumProgram" class="form-control">
-                            <option value="">--Choose maximum number of program/movie to show in bracter--</option>
+                          <select
+                            id="maximumProgram"
+                            name="maximumProgram"
+                            class="form-control"
+                          >
+                            <option value=""
+                              >--Choose maximum number of program/movie to show
+                              in bracter--</option
+                            >
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -274,11 +384,13 @@
                   <br />
                   <br />
                   <ul class="list-inline wizard mb-0">
-                    <li class="previous list-inline-item"><button class="btn btn-primary"
-                        awPreviousStep>Previous</button>
+                    <li class="previous list-inline-item">
+                      <button class="btn btn-primary" awPreviousStep>
+                        Previous
+                      </button>
                     </li>
-                    <li class="next list-inline-item float-right"><button class="btn btn-primary"
-                        awNextStep>Next</button>
+                    <li class="next list-inline-item float-right">
+                      <button class="btn btn-primary" awNextStep>Next</button>
                     </li>
                   </ul>
                 </aw-wizard-step>
@@ -291,8 +403,16 @@
                     </div>
                   </div>
                   <div class="row" style="justify-content: center;">
-                    <button class="btn btn-primary" awPreviousStep>No, go back</button>&nbsp;&nbsp;
-                    <button class="btn btn-success" awPreviousStep (click)="addCategory()">Save</button>
+                    <button class="btn btn-primary" awPreviousStep>
+                      No, go back</button
+                    >&nbsp;&nbsp;
+                    <button
+                      class="btn btn-success"
+                      awPreviousStep
+                      (click)="addCategory()"
+                    >
+                      Save
+                    </button>
                   </div>
                 </aw-wizard-step>
               </aw-wizard>
@@ -304,8 +424,8 @@
         </div>
       </div>
       <!-- end card -->
-    </div> <!-- end col -->
-
+    </div>
+    <!-- end col -->
   </div>
   <!-- end row -->
 </div>
