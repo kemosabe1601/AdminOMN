@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./status.component.scss']
 })
 export class StatusComponent implements OnInit {
+  breadCrumbItems: Array<{}>;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.breadCrumbItems = [
+			{ label: 'Upload' },
+			{ label: 'Status', active: true },
+		];
   }
 
 }

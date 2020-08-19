@@ -4,11 +4,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { UploadComponent } from './upload.component';
 import { DeletedComponent } from './deleted/deleted.component';
 import { DetailComponent } from './detail/detail.component';
+import { StatusComponent } from './status/status.component';
 
 const routes: Routes = [
   { 
     path: 'list', 
     component: UploadComponent 
+  },
+  { 
+    path: 'status', 
+    component: StatusComponent 
   },
   {
     path: 'list/detail',

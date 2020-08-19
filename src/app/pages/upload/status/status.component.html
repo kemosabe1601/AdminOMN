@@ -1,1 +1,205 @@
-<p>status works!</p>
+<div class="container-fluid">
+  <app-page-title title="Upload Status" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group position-relative">
+                  <label>Select Date</label>
+                  <div class="input-group">
+                    <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
+                      #dp="ngbDatepicker" />
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary bx bx-calendar" (click)="dp.toggle()"
+                        type="button"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="text-sm-right">
+              <button class="btn btn-primary" type="submit">Search</button>
+            </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="font-family: Google Sans;">
+    <div class="col-xl-12 col-sm-12">
+      <div class="card">
+        <div class="row">
+          <div class="col-xl-1">
+            <div class="text-center p-4 border-right" style="margin-top: 15px;">
+              <h3 class="text-primary upright-text upload">Upload</h3>
+            </div>
+          </div>
+
+          <div class="col-xl-11">
+            <div class="p-4 text-center text-xl-left">
+              <div class="row">
+                <div class="col-md-2" style="margin-top: 50px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Upload Request</p>
+                    <h5>15</h5>
+                  </div>
+                </div>
+                <div class="col-md-1" style="margin-top: 50px; text-align: center;">
+                  <div>
+                    <p class="text-primary">OMN</p>
+                    <h5>24</h5>
+                  </div>
+                </div>
+                <div class="col-md-2" style="margin-top: 50px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Edit Request</p>
+                    <h5>24</h5>
+                  </div>
+                </div>
+                <div class="col-md-2" style="margin-top: 50px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Approval</p>
+                    <h5>24</h5>
+                  </div>
+                </div>
+                <div class="col-md-1" style="margin-top: 50px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Denial</p>
+                    <h5>24</h5>
+                  </div>
+                </div>
+                <div class="col-md-2" style="margin-top: 50px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Pending</p>
+                    <h5>24</h5>
+                  </div>
+                </div>
+                <div class="col-md-1" style="margin-top: 50px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Deleted</p>
+                    <h5>24</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="font-family: Google Sans;">
+    <div class="col-xl-12 col-sm-12">
+      <div class="card">
+        <div class="row">
+          <div class="col-xl-1">
+            <div class="text-center p-4 border-right" style="margin-top: 15px;">
+              <h3 class="text-primary upright-text program">Program</h3>
+            </div>
+          </div>
+
+          <div class="col-xl-11">
+            <div class="p-4 text-center text-xl-left">
+              <div class="row">
+                <div class="col-md-2" style="margin-top: 68px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Upload Request</p>
+                    <h5>170</h5>
+                  </div>
+                </div>
+                <div class="col-md-2" style="margin-top: 68px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Edit Request</p>
+                    <h5>20</h5>
+                  </div>
+                </div>
+                <div class="col-md-2" style="margin-top: 68px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Approval</p>
+                    <h5>50</h5>
+                  </div>
+                </div>
+                <div class="col-md-2" style="margin-top: 68px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Denial</p>
+                    <h5>2</h5>
+                  </div>
+                </div>
+                <div class="col-md-2" style="margin-top: 68px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Pending</p>
+                    <h5>2</h5>
+                  </div>
+                </div>
+                <div class="col-md-2" style="margin-top: 68px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Deleted</p>
+                    <h5>2</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="font-family: Google Sans;">
+    <div class="col-xl-12 col-sm-12">
+      <div class="card">
+        <div class="row">
+          <div class="col-xl-1">
+            <div class="text-center p-4 border-right" style="margin-top: 15px;">
+              <h3 class="text-primary upright-text original">Original</h3>
+            </div>
+          </div>
+
+          <div class="col-xl-11">
+            <div class="p-4 text-center text-xl-left">
+              <div class="row">
+                <div class="col-md-2" style="margin-top: 68px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Self Production</p>
+                    <h5>170</h5>
+                  </div>
+                </div>
+                <div class="col-md-2" style="margin-top: 68px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Production Support</p>
+                    <h5>20</h5>
+                  </div>
+                </div>
+                <div class="col-md-3" style="margin-top: 68px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Approval</p>
+                    <h5>50</h5>
+                  </div>
+                </div>
+                <div class="col-md-2" style="margin-top: 68px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Feedback Request</p>
+                    <h5>24</h5>
+                  </div>
+                </div>
+                <div class="col-md-2" style="margin-top: 68px; text-align: center;">
+                  <div>
+                    <p class="text-primary">Feedback Completed</p>
+                    <h5>24</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- container-fluid -->
