@@ -1,10 +1,11 @@
 <div class="container-fluid">
     <!-- start page title -->
     <app-page-title
-      title="Deleted Upload Request's Detail"
+      title="Challenger Deleted Request's Detail"
       [breadcrumbItems]="breadCrumbItems"
     ></app-page-title>
     <!-- end page title -->
+
     <div class="row">
       <div class="col-xl-8">
         <div class="card">
@@ -17,8 +18,8 @@
                 <input
                   class="form-control"
                   type="text"
-                  value="Edit Request"
-                  id="example-text-input"
+                  value="Deleted Request"
+                  id="currentStatus"
                   readonly="true"
                 />
               </div>
@@ -32,23 +33,22 @@
                   class="form-control"
                   type="search"
                   value="alex@gmail.com"
-                  id="example-search-input"
-                  [readonly]="true"
+                  id="inputId"
+                  readonly="true"
                 />
               </div>
             </div>
-            <br />
             <div class="form-group row">
               <label class="col-md-2 col-form-label">Title</label>
               <div class="col-md-10 row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="validationCustom01">Poster Image</label>
+                    <label for="validationCustom01">Title Image</label>
                     <dropzone class="dropzone"></dropzone>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <label for="validationCustom01">Title Image</label>
+                  <label for="validationCustom01">Poster Image</label>
                   <dropzone class="dropzone"></dropzone>
                 </div>
               </div>
@@ -62,8 +62,8 @@
                   class="form-control"
                   type="search"
                   value="Subtitle Details"
-                  id="example-url-input"
-                  [readonly]="true"
+                  id="subtitle"
+                  readonly="true"
                 />
               </div>
             </div>
@@ -76,8 +76,8 @@
                   class="form-control"
                   type="search"
                   value="Summary Details"
-                  id="example-tel-input"
-                  [readonly]="true"
+                  id="summary"
+                  readonly="true"
                 />
               </div>
             </div>
@@ -90,8 +90,8 @@
                   class="form-control"
                   type="search"
                   value="Movie/Action"
-                  id="example-password-input"
-                  [readonly]="true"
+                  id="category"
+                  readonly="true"
                 />
               </div>
             </div>
@@ -228,200 +228,36 @@
                 </div>
               </div>
             </div>
-            <br />
             <div class="form-group row">
-              <label class="col-md-2 col-form-label">Element</label>
+              <label class="col-md-2 col-form-label">Music info</label>
               <div class="col-md-10 row">
-                <div class="col-md-3">
+                <div class="col-md-6">
                   <div class="form-group">
                     <input
                       type="text"
                       class="form-control"
                       id="validationCustom01"
-                      placeholder="Violence"
-                      readonly="true"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="validationCustom01"
-                      placeholder="Sexuality"
-                      readonly="true"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="validationCustom01"
-                      placeholder="Language"
-                      readonly="true"
+                      placeholder="Title"
                     />
                   </div>
                 </div>
-                <div class="" style="padding-left: 4px;">
-                  <div class="form-group">
-                    <button type="button" class="btn btn-outline-primary">
-                      None
-                    </button>
-                  </div>
-                  <div class="form-group">
-                    <button type="button" class="btn btn-outline-primary">
-                      None
-                    </button>
-                  </div>
-                  <div class="form-group">
-                    <button type="button" class="btn btn-outline-primary">
-                      None
-                    </button>
-                  </div>
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="validationCustom01"
+                    placeholder="Artist"
+                  />
                 </div>
-                <div class="" style="padding-left: 4px;">
-                  <div class="form-group">
-                    <button type="button" class="btn btn-outline-warning">
-                      Little
-                    </button>
-                  </div>
-                  <div class="form-group">
-                    <button type="button" class="btn btn-outline-warning">
-                      Little
-                    </button>
-                  </div>
-                  <div class="form-group">
-                    <button type="button" class="btn btn-outline-warning">
-                      Little
-                    </button>
-                  </div>
-                </div>
-                <div class="" style="padding-left: 4px;">
-                  <div class="form-group">
-                    <button type="button" class="btn btn-outline-danger">
-                      Many
-                    </button>
-                  </div>
-                  <div class="form-group">
-                    <button type="button" class="btn btn-outline-danger">
-                      Many
-                    </button>
-                  </div>
-                  <div class="form-group">
-                    <button type="button" class="btn btn-outline-danger">
-                      Many
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-md-2 col-form-label">Element</label>
-              <div class="col-md-10 row">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="validationCustom01"
-                      placeholder="Age restrict"
-                      readonly="true"
-                    />
-                  </div>
-                </div>
-                <div class="" style="padding-left: 4px;">
-                  <div class="form-group">
-                    <button type="button" class="btn btn-outline-primary">
-                      Entire
-                    </button>
-                  </div>
-                </div>
-                <div class="" style="padding-left: 4px;" style="padding-left: 4px;">
-                  <div class="form-group">
-                    <div class="form-group">
-                      <button type="button" class="btn btn-outline-primary">
-                        12 years old
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="" style="padding-left: 4px;">
-                  <div class="form-group">
-                    <div class="form-group">
-                      <button type="button" class="btn btn-outline-primary">
-                        15 years old
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="" style="padding-left: 4px;">
-                  <div class="form-group">
-                    <div class="form-group">
-                      <button type="button" class="btn btn-outline-primary">
-                        19 years old
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="example-month-input" class="col-md-2 col-form-label"
-                >Intro ending</label
-              >
-              <div class="col-md-10">
-                <input
-                  class="form-control"
-                  type="search"
-                  id="example-month-input"
-                  [readonly]="true"
-                />
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="example-month-input" class="col-md-2 col-form-label"
-                >Outtro starting</label
-              >
-              <div class="col-md-10">
-                <input
-                  class="form-control"
-                  type="search"
-                  id="example-month-input"
-                  [readonly]="true"
-                />
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-md-2 col-form-label">Approve/Deny</label>
-              <div class="col-md-10 row">
-                <div class="col-md-4">
-                  <select class="custom-select">
-                    <option selected disabled>Choose letter type</option>
-                    <option value="1">Season</option>
-                    <option value="2">Standalone</option>
-                  </select>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <button type="button" class="btn btn-primary">
-                      Write letter
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="example-month-input" class="col-md-2 col-form-label"
-                >Appropriacy chart</label
-              >
-              <div class="col-md-10">
-                <dropzone class="dropzone"></dropzone>
               </div>
             </div>
             <br />
             <br />
             <div class="form-group row button">
               <div>
-                <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/upload/deleted/list">Done</button>
+                <button type="submit" class="btn btn-primary mr-1" routerLink="/challengers/deleted/list">
+                  Done
+                </button>
               </div>
             </div>
           </div>
