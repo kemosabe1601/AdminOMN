@@ -54,7 +54,16 @@ _fetchData() {
   // 	this.rows = val;
   // });
 
-  this.mockSub = this.mockService.getChallengerDataFireBase().subscribe((val:any) => {
+  // this.mockSub = this.mockService.getChallengerDataFireBase().subscribe((val:any) => {
+  //   this.rows = val.map((e) => {
+  //     return {
+  //       id: e.payload.doc.id,
+  //       ...e.payload.doc.data(),
+  //     }
+  //   });
+  // });
+
+  this.mockSub = this.mockService.getDeletedRequestDataFireBase().subscribe((val:any) => {
     this.rows = val.map((e) => {
       return {
         id: e.payload.doc.id,
