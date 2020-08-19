@@ -31,9 +31,10 @@ import { UploadComponent } from './upload.component';
 import { DeletedComponent } from './deleted/deleted.component';
 import { DetailComponent } from './detail/detail.component';
 import { StatusComponent } from './status/status.component';
+import { DeletedetailComponent } from './deletedetail/deletedetail.component';
 
 @NgModule({
-  declarations: [UploadComponent, DeletedComponent, DetailComponent, StatusComponent],
+  declarations: [UploadComponent, DeletedComponent, DetailComponent, StatusComponent, DeletedetailComponent],
   imports: [
     CommonModule,
     UploadRoutingModule,

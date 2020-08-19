@@ -5,6 +5,8 @@ import { UploadComponent } from './upload.component';
 import { DeletedComponent } from './deleted/deleted.component';
 import { DetailComponent } from './detail/detail.component';
 import { StatusComponent } from './status/status.component';
+import { DeletedetailComponent } from './deletedetail/deletedetail.component';
+
 
 const routes: Routes = [
   { 
@@ -22,6 +24,10 @@ const routes: Routes = [
   {
     path: 'deleted',
     component: DeletedComponent
+  },
+  {
+    path: 'deleted/detail',
+    component: DeletedetailComponent
   }, 
   { 
     path: 'program', 
