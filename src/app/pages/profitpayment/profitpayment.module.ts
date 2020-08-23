@@ -31,6 +31,7 @@ import { ProfitpaymentComponent } from './profitpayment.component';
 import { DetailComponent } from './detail/detail.component';
 import { CompleteComponent } from './complete/complete.component';
 import { DeletedComponent } from './deleted/deleted.component';
+import { ViewingfeeComponent } from './viewingfee/viewingfee.component';
 
 @NgModule({
 	declarations: [
@@ -38,6 +39,7 @@ import { DeletedComponent } from './deleted/deleted.component';
 		DetailComponent,
 		CompleteComponent,
 		DeletedComponent,
+		ViewingfeeComponent,
 	],
 	imports: [
 		CommonModule,

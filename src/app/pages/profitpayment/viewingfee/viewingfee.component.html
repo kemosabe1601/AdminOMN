@@ -1,0 +1,106 @@
+<div class="container-fluid">
+  <app-page-title
+    title="Profit Payment Management"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title text-primary">Viewing fee by min</h4>
+          <!-- Table -->
+          <ngb-alert
+            role="alert"
+            type="info"
+            class="alert alert-info"
+            ng-reflect-type="info"
+            ng-reflect-dismissible="false"
+          >
+            Viewing Fee Data:</ngb-alert
+          >
+          <mat-progress-bar mode="query" *ngIf="!rows"></mat-progress-bar>
+          <div class="table-responsive" *ngIf="rows">
+            <ngx-datatable
+              class="material"
+              [rows]="rows"
+              [columnMode]="ColumnMode.force"
+              [headerHeight]="50"
+              [footerHeight]="50"
+              rowHeight="auto"
+              [limit]="10"
+              [sorts]="[{ prop: 'name', dir: 'acs' }]"
+            >
+              <ngx-datatable-column name="Order">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.order }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Details">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.details }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Name">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.fee_per_min }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Action">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  <div class="button-items">
+                    <button class="btn btn-primary" (click)="open(content)">
+                      Config
+                    </button>
+                  </div>
+                </ng-template>
+              </ngx-datatable-column>
+            </ngx-datatable>
+          </div>
+          <!-- End table -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- container-fluid -->
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Config viewing fee by min</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <div class="form-group">
+          <label for="productname">Fee Details</label>
+          <h4>Upload</h4>
+        </div>
+        <div class="form-group">
+          <label for="manufacturername">Viewing fee by min</label>
+          <input type="text" class="form-control" value="0.2"/>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close('Close click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>
