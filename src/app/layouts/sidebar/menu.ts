@@ -1,5 +1,4 @@
 import { MenuItem } from "./menu.model";
-
 export const MENU: MenuItem[] = [
   {
     id: 1,
@@ -117,154 +116,160 @@ export const MENU: MenuItem[] = [
       // },
     ],
   },
-  // {
-  //   id: 18,
-  //   label: "Profit Payment",
-  //   icon: "bx bx-won",
-  //   subItems: [
-  //     {
-  //       id: 19,
-  //       label: "List",
-  //       link: "/profitpayment",
-  //       parentId: 18,
-  //     },
-  //     {
-  //       id: 20,
-  //       label: "Completed",
-  //       link: "/profitpayment/complete",
-  //       parentId: 18,
-  //     },
-  //     {
-  //       id: 21,
-  //       label: "Deleted",
-  //       link: "/profitpayment/deleted",
-  //       parentId: 18,
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: 22,
-  //   label: "Customer Manage",
-  //   icon: "bx bx-user",
-  //   subItems: [
-  //     {
-  //       id: 23,
-  //       label: "Live Chat",
-  //       link: "/customer",
-  //       parentId: 22,
-  //     },
-  //     {
-  //       id: 24,
-  //       label: "Chat Detail",
-  //       link: "/customer/chat-detail",
-  //       parentId: 22,
-  //     },
-  //     {
-  //       id: 25,
-  //       label: "Inquiry's Details",
-  //       link: "/customer/inquiry",
-  //       parentId: 22,
-  //     },
-  //     {
-  //       id: 26,
-  //       label: "Problem",
-  //       link: "/customer/problems",
-  //       parentId: 22,
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: 27,
-  //   label: "Message",
-  //   link: "/message",
-  //   icon: "bx bx-message-square-dots",
-  // },
-  // {
-  //   id: 28,
-  //   label: "Systems Manage",
-  //   icon: "dripicons-gear",
-  //   subItems: [
-  //     {
-  //       id: 29,
-  //       label: "Message Manage",
-  //       link: "/system/message",
-  //       parentId: 28,
-  //     },
-  //     {
-  //       id: 30,
-  //       label: "Membership Manage",
-  //       link: "/system/membership",
-  //       parentId: 28,
-  //     },
-  //     {
-  //       id: 31,
-  //       label: "Employee Manage",
-  //       link: "/system/employee",
-  //       parentId: 28,
-  //     },
-  //     {
-  //       id: 32,
-  //       label: "Footer Manage",
-  //       link: "/system/footer",
-  //       parentId: 28,
-  //       subItems: [
-  //         {
-  //           id: 33,
-  //           label: "Terms & Conditions",
-  //           link: "/system/footer/terms&conditions",
-  //           parentId: 32,
-  //         },
-  //         {
-  //           id: 34,
-  //           label: "Privacy Policy",
-  //           link: "/system/footer/privacy",
-  //           parentId: 32,
-  //         },
-  //         {
-  //           id: 35,
-  //           label: "Video Manage",
-  //           link: "/system/footer/video-manage",
-  //           parentId: 32,
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       id: 36,
-  //       label: "Access Manage",
-  //       link: "/system/access",
-  //       parentId: 28,
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: 37,
-  //   label: "Sample Manage",
-  //   icon: "dripicons-document-edit",
-  //   subItems: [
-  //     {
-  //       id: 38,
-  //       label: "Upload Sample",
-  //       link: "/sample/upload",
-  //       parentId: 37,
-  //     },
-  //     {
-  //       id: 39,
-  //       label: "Production Support Sample",
-  //       link: "/sample/production-support",
-  //       parentId: 37,
-  //     },
-  //     {
-  //       id: 40,
-  //       label: "Self-Production Sample",
-  //       link: "/sample/self-production",
-  //       parentId: 37,
-  //     },
-  //     {
-  //       id: 41,
-  //       label: "Main Video Sample",
-  //       link: "/sample/main-video",
-  //       parentId: 37,
-  //     },
-  //   ],
-  // },
+  {
+    id: 18,
+    label: "Profit Payment",
+    icon: "bx bx-won",
+    subItems: [
+      {
+        id: 19,
+        label: "List",
+        link: "/profitpayment/list",
+        parentId: 18,
+      },
+      {
+        id: 20,
+        label: "Completed",
+        link: "/profitpayment/complete",
+        parentId: 18,
+      },
+      {
+        id: 21,
+        label: "Deleted",
+        link: "/profitpayment/deleted",
+        parentId: 18,
+      },
+      {
+        id: 22,
+        label: "Viewing fee per min",
+        link: "/profitpayment/viewingfeepermin",
+        parentId: 18,
+      },
+    ],
+  },
+  {
+    id: 23,
+    label: "Customer Manage",
+    icon: "bx bx-user",
+    subItems: [
+      {
+        id: 24,
+        label: "Live Chat",
+        link: "/customer",
+        parentId: 23,
+      },
+      {
+        id: 25,
+        label: "Chat Detail",
+        link: "/customer/chat-detail",
+        parentId: 23,
+      },
+      {
+        id: 26,
+        label: "Inquiry's Details",
+        link: "/customer/inquiry",
+        parentId: 23,
+      },
+      {
+        id: 27,
+        label: "Problem",
+        link: "/customer/problems",
+        parentId: 23,
+      },
+    ],
+  },
+  {
+    id: 28,
+    label: "Message",
+    link: "/message",
+    icon: "bx bx-message-square-dots",
+  },
+  {
+    id: 29,
+    label: "Systems Manage",
+    icon: "dripicons-gear",
+    subItems: [
+      {
+        id: 30,
+        label: "Message Manage",
+        link: "/system/message",
+        parentId: 29,
+      },
+      {
+        id: 31,
+        label: "Membership Manage",
+        link: "/system/membership",
+        parentId: 29,
+      },
+      {
+        id: 32,
+        label: "Employee Manage",
+        link: "/system/employee",
+        parentId: 29,
+      },
+      {
+        id: 33,
+        label: "Footer Manage",
+        link: "/system/footer",
+        parentId: 28,
+        subItems: [
+          {
+            id: 34,
+            label: "Terms & Conditions",
+            link: "/system/footer/terms&conditions",
+            parentId: 33,
+          },
+          {
+            id: 35,
+            label: "Privacy Policy",
+            link: "/system/footer/privacy",
+            parentId: 33,
+          },
+          {
+            id: 36,
+            label: "Video Manage",
+            link: "/system/footer/video-manage",
+            parentId: 33,
+          },
+        ],
+      },
+      {
+        id: 37,
+        label: "Access Manage",
+        link: "/system/access",
+        parentId: 29,
+      },
+    ],
+  },
+  {
+    id: 38,
+    label: "Sample Manage",
+    icon: "dripicons-document-edit",
+    subItems: [
+      {
+        id: 39,
+        label: "Upload Sample",
+        link: "/sample/upload",
+        parentId: 38,
+      },
+      {
+        id: 40,
+        label: "Production Support Sample",
+        link: "/sample/production-support",
+        parentId: 38,
+      },
+      {
+        id: 41,
+        label: "Self-Production Sample",
+        link: "/sample/self-production",
+        parentId: 38,
+      },
+      {
+        id: 42,
+        label: "Main Video Sample",
+        link: "/sample/main-video",
+        parentId: 38,
+      },
+    ],
+  },
 ];

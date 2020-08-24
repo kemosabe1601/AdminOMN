@@ -47,6 +47,14 @@ export class MockApiService {
     return this.fireStore.collection("deleted-request").snapshotChanges();
   }
 
+  getViewingFeePerMinDataFireBase() {
+    return this.fireStore.collection("viewingfeepermin").snapshotChanges();
+  }
+
+  getPaymentRequestDataFireBase() {
+    return this.fireStore.collection("payment-request").snapshotChanges();
+  }
+
   getTableData() {
     const header = new HttpHeaders({
       "Access-Control-Allow-Origin": "*",
