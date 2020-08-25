@@ -5,6 +5,7 @@ import { ProfitpaymentComponent } from './profitpayment.component';
 import { CompleteComponent } from './complete/complete.component';
 import { DeletedComponent } from './deleted/deleted.component';
 import { DetailComponent } from './detail/detail.component';
+import { ViewingfeeComponent } from './viewingfee/viewingfee.component';
 
 const routes: Routes = [
 	{
@@ -22,6 +23,10 @@ const routes: Routes = [
 	{
 		path: 'deleted',
 		component: DeletedComponent,
+	},
+	{
+		path: 'viewingfeepermin',
+		component: ViewingfeeComponent,
 	},
 ];
 
