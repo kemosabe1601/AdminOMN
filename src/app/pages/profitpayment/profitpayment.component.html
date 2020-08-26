@@ -90,33 +90,21 @@
               [limit]="10"
               [sorts]="[{ prop: 'name', dir: 'acs' }]"
             >
-              <ngx-datatable-column name="Payment Request Name">
+              <ngx-datatable-column name="Creator Name">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.name }}
+                  {{ row.creator_name }}
                 </ng-template>
               </ngx-datatable-column>
 
-              <ngx-datatable-column name="List Count">
+              <ngx-datatable-column name="Confirmed Amount">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.listCount }}
+                  {{ row.confirmed_amount }}
                 </ng-template>
               </ngx-datatable-column>
 
-              <ngx-datatable-column name="Airing days in week">
+              <ngx-datatable-column name="Request Date">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.days }}
-                </ng-template>
-              </ngx-datatable-column>
-
-              <ngx-datatable-column name="Start Time">
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ localeDate(row.startTime) | date: "shortTime" }}
-                </ng-template>
-              </ngx-datatable-column>
-
-              <ngx-datatable-column name="End Time">
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ localeDate(row.endTime) | date: "shortTime" }}
+                  {{ row.request_date }}
                 </ng-template>
               </ngx-datatable-column>
 

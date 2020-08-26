@@ -47,19 +47,19 @@
             >
               <ngx-datatable-column name="Category">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.contained_list }}
+                  {{ row.category_list_name }}
                 </ng-template>
               </ngx-datatable-column>
 
               <ngx-datatable-column name="Type">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.category_set_name }}
+                  {{ row.created_date }}
                 </ng-template>
               </ngx-datatable-column>
 
               <ngx-datatable-column name="List Count">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.list_count }}
+                  {{ row.program_count }}
                 </ng-template>
               </ngx-datatable-column>
 

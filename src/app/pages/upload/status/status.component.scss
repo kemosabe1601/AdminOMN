@@ -1,0 +1,57 @@
+.letter {
+  // border: dashed 1pt;
+  font-family: "Google Sans";
+  display: flex;
+  justify-content: flex-start;
+  letter-spacing: 9px;
+  float: left;
+  -webkit-transform: rotate(90deg);
+  & span {
+    float: left;
+    margin: 0 3px;
+    -webkit-transform: rotate(-90deg);
+  }
+}
+
+.letterProgram {
+  font-family: "Google Sans";
+  display: flex;
+  justify-content: flex-start;
+  letter-spacing: 9px;
+  float: left;
+  -webkit-transform: rotate(90deg);
+  & span {
+    float: left;
+    margin: 0 3px;
+    -webkit-transform: rotate(-90deg);
+  }
+}
+
+.upload {
+  // background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  background: black;
+  letter-spacing: 5px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.program {
+  background: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.original {
+  background: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.status-list {
+  margin-top: 25px;
+}
+
+.upright-text {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
