@@ -52,7 +52,15 @@ export class MockApiService {
   }
 
   getPaymentRequestDataFireBase() {
-    return this.fireStore.collection("payment-request").snapshotChanges();
+    return this.fireStore.collection("payment-request", ref => ref.where('status', '==', 'Progress')).snapshotChanges();
+  }
+
+  getPaymentRequestCompletedDataFireBase() {
+    return this.fireStore.collection("payment-request", ref => ref.where('status', '==', 'Completed')).snapshotChanges();
+  }
+
+  getPaymentRequestDeletedDataFireBase() {
+    return this.fireStore.collection("payment-request", ref => ref.where('status', '==', 'Deleted')).snapshotChanges();
   }
 
   getTableData() {

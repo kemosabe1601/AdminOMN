@@ -30,9 +30,11 @@ import {
 	NgbDatepickerModule,
 	NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
+import { AddComponent } from './add/add.component';
+
 
 @NgModule({
-	declarations: [BractersComponent, BractersconfigComponent],
+	declarations: [BractersComponent, BractersconfigComponent, AddComponent],
 	imports: [
 		CommonModule,
 		BractersRoutingModule,

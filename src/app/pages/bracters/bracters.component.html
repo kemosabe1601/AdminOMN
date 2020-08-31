@@ -36,7 +36,7 @@
                   type="button"
                   class="btn btn-success btn-rounded mb-2 mr-2"
                   target="_blank"
-                  routerLink="config"
+                  routerLink="add"
                 >
                   <i class="mdi mdi-plus mr-1"></i> Create New
                 </button>
@@ -45,22 +45,26 @@
             <!-- end col-->
           </div>
           <!-- Table -->
-          <div class="table-responsive">
+          <div class="">
             <table
               id="basic-datatable"
               class="table table-bordered dt-responsive nowrap datatables no-footer dtr-inline"
+              style="border: none;"
             >
-              <thead *ngFor="let table of tables$ | async">
-                <tr style="text-align: center;">
+            <div class="row">
+              <thead *ngFor="let table of tables$ | async" class="col-lg-3">
+                <tr style="text-align: center; width: 100%;">
                   <th colspan="2" class="text-primary">
                     <a
-                      [routerLink]="['/home']"
                       routerLinkActive="router-link-active"
                       ><ngb-highlight
                         [result]="table.category"
                         [term]="advancedService.searchTerm"
                       ></ngb-highlight
                     ></a>
+                    <a [routerLink]="['config']">
+                      <i class="bx bxs-edit-alt edit-category"></i>
+                    </a>
                   </th>
                 </tr>
                 <tr style="text-align: center;">
@@ -78,6 +82,8 @@
                   </td>
                 </tr>
               </thead>
+            </div>
+              
               <tbody></tbody>
             </table>
           </div>

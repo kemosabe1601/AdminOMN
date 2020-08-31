@@ -16,3 +16,16 @@ thead {
 .bx-calendar:before {
   font-size: 18px;
 }
+
+.edit-category {
+  float: right;
+  margin-top: 5px;
+}
+
+.datatables thead tr th:after {
+  content: unset;
+}
+
+.datatables thead tr th:before {
+  content: unset;
+}

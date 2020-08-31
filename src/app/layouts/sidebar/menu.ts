@@ -108,12 +108,12 @@ export const MENU: MenuItem[] = [
           },
         ],
       },
-      // {
-      //   id: 17,
-      //   label: "Program",
-      //   link: "/upload/program",
-      //   parentId: 13,
-      // },
+      {
+        id: 17,
+        label: "Program",
+        link: "/upload/program",
+        parentId: 13,
+      },
     ],
   },
   {
@@ -152,12 +152,12 @@ export const MENU: MenuItem[] = [
     label: "Customer Manage",
     icon: "bx bx-user",
     subItems: [
-      {
-        id: 24,
-        label: "Live Chat",
-        link: "/customer",
-        parentId: 23,
-      },
+      // {
+      //   id: 24,
+      //   label: "Live Chat",
+      //   link: "/customer",
+      //   parentId: 23,
+      // },
       {
         id: 25,
         label: "Chat Detail",

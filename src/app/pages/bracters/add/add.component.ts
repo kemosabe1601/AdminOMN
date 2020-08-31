@@ -16,12 +16,12 @@ import { AdvancedSortableDirective, SortEvent } from './advanced-sortable.direct
 import { tableData } from './data';
 
 @Component({
-  selector: 'app-bractersconfig',
-  templateUrl: './bractersconfig.component.html',
-  styleUrls: ['./bractersconfig.component.scss'],
+  selector: 'app-add',
+  templateUrl: './add.component.html',
+  styleUrls: ['./add.component.scss'],
   providers: [AdvancedService, DecimalPipe]
 })
-export class BractersconfigComponent implements OnInit {
+export class AddComponent implements OnInit {
   validationform: FormGroup; // bootstrap validation form
   tooltipvalidationform: FormGroup; // bootstrap tooltip validation form
   typeValidationForm: FormGroup; // type validation form
@@ -95,7 +95,7 @@ export class BractersconfigComponent implements OnInit {
 
 
   ngOnInit() {
-    this.breadCrumbItems = [{ label: 'Bracters' }, { label: 'Config', active: true }];
+    this.breadCrumbItems = [{ label: 'Bracters' }, { label: 'Create New', active: true }];
     // MatPaginator
     this.dataSource.paginator = this.paginator;
     // Component color value of color picker

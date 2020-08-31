@@ -90,33 +90,27 @@
               [limit]="10"
               [sorts]="[{ prop: 'name', dir: 'acs' }]"
             >
-              <ngx-datatable-column name="Payment Request">
+              <ngx-datatable-column name="Status">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.name }}
+                  {{ row.status }}
                 </ng-template>
               </ngx-datatable-column>
 
-              <ngx-datatable-column name="List Count">
+              <ngx-datatable-column name="Creator Name">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.listCount }}
+                  {{ row.creator_name }}
                 </ng-template>
               </ngx-datatable-column>
 
-              <ngx-datatable-column name="Airing days in week">
+              <ngx-datatable-column name="Confirmed Amount">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ row.days }}
+                  {{ row.confirmed_amount }}
                 </ng-template>
               </ngx-datatable-column>
 
-              <ngx-datatable-column name="Start Time">
+              <ngx-datatable-column name="Request Date">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ localeDate(row.startTime) | date: "shortTime" }}
-                </ng-template>
-              </ngx-datatable-column>
-
-              <ngx-datatable-column name="End Time">
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                  {{ localeDate(row.endTime) | date: "shortTime" }}
+                  {{ row.request_date }}
                 </ng-template>
               </ngx-datatable-column>
 
@@ -128,8 +122,9 @@
                       class="btn btn-primary"
                       routerLink="detail"
                     >
-                      Result letter
+                      Detail
                     </button>
+                    <button type="button" class="btn btn-light">Delete</button>
                   </div>
                 </ng-template>
               </ngx-datatable-column>

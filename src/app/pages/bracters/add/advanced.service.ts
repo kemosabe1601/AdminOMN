@@ -69,13 +69,13 @@ export class AdvancedService {
 
     // tslint:disable-next-line: variable-name
     private _state: State = {
-        page: 0,
-        pageSize: 0,
+        page: 2,
+        pageSize: 5,
         searchTerm: '',
         sortColumn: '',
         sortDirection: '',
         startIndex: 0,
-        endIndex: 100,
+        endIndex: 10,
         totalRecords: 0
     };
 

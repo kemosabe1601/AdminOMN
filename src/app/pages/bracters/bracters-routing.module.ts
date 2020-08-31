@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { BractersComponent } from './bracters.component';
 import { BractersconfigComponent } from './bractersconfig/bractersconfig.component';
+import { AddComponent } from './add/add.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'bracters/config',
     component: BractersconfigComponent
+  },
+  {
+    path: 'bracters/add',
+    component: AddComponent
   }
 ];
 
