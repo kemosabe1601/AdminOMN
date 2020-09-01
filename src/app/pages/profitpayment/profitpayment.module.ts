@@ -32,6 +32,8 @@ import { DetailComponent } from './detail/detail.component';
 import { CompleteComponent } from './complete/complete.component';
 import { DeletedComponent } from './deleted/deleted.component';
 import { ViewingfeeComponent } from './viewingfee/viewingfee.component';
+import { CancelpaymentComponent } from './cancelpayment/cancelpayment.component';
+import { IdsuspensionComponent } from './idsuspension/idsuspension.component';
 
 @NgModule({
 	declarations: [
@@ -40,6 +42,8 @@ import { ViewingfeeComponent } from './viewingfee/viewingfee.component';
 		CompleteComponent,
 		DeletedComponent,
 		ViewingfeeComponent,
+		CancelpaymentComponent,
+		IdsuspensionComponent,
 	],
 	imports: [
 		CommonModule,

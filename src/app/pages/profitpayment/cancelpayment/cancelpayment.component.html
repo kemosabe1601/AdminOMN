@@ -1,0 +1,173 @@
+<div class="container-fluid">
+    <app-page-title
+      title="Cancelled Payment"
+      [breadcrumbItems]="breadCrumbItems"
+    ></app-page-title>
+  
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <form>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group position-relative">
+                    <label>Select Date</label>
+                    <div class="input-group">
+                      <input
+                        id="dateOfBirth"
+                        class="form-control"
+                        placeholder="yyyy-mm-dd"
+                        name="dp"
+                        ngbDatepicker
+                        #dp="ngbDatepicker"
+                      />
+                      <div class="input-group-append">
+                        <button
+                          class="btn btn-outline-secondary bx bx-calendar"
+                          (click)="dp.toggle()"
+                          type="button"
+                        ></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group position-relative">
+                    <label>ID</label>
+                    <input type="text" class="form-control" placeholder="" />
+                  </div>
+                </div>
+              </div>
+              <div class="text-sm-left">
+                <button class="btn btn-primary" type="submit">Search</button>
+              </div>
+            </form>
+            <br />
+            <hr />
+            <br />
+            <!-- Table -->
+            <ngb-alert
+              role="alert"
+              type="info"
+              class="alert alert-info"
+              ng-reflect-type="info"
+              ng-reflect-dismissible="false"
+            >
+              Cancelled Payment Data:</ngb-alert
+            >
+            <mat-progress-bar mode="query" *ngIf="!rows"></mat-progress-bar>
+            <div class="table-responsive" *ngIf="rows">
+              <ngx-datatable
+                class="material"
+                [rows]="rows"
+                [columnMode]="ColumnMode.force"
+                [headerHeight]="50"
+                [footerHeight]="50"
+                rowHeight="auto"
+                [limit]="10"
+                [sorts]="[{ prop: 'name', dir: 'acs' }]"
+              >
+                <ngx-datatable-column name="ID">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{ row.id }}
+                  </ng-template>
+                </ngx-datatable-column>
+  
+                <ngx-datatable-column name="Amount">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{ row.amount }}
+                  </ng-template>
+                </ngx-datatable-column>
+  
+                <ngx-datatable-column name="Cancelled Date">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{ row.cancel_date }}
+                  </ng-template>
+                </ngx-datatable-column>
+  
+                <ngx-datatable-column name="Request Date">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{ row.request_date }}
+                  </ng-template>
+                </ngx-datatable-column>
+  
+                <ngx-datatable-column name="Action">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <div class="button-items">
+                      <button class="btn btn-primary" (click)="open(content)">
+                        Details
+                      </button>
+                    </div>
+                  </ng-template>
+                </ngx-datatable-column>
+              </ngx-datatable>
+            </div>
+            <!-- End table -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- container-fluid -->
+  
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Result letter</h4>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <div class="form-group">
+            <label for="productname">Upload ID</label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="manufacturername">Program Name</label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Select Date</label>
+            <div class="input-group">
+              <input
+                id="dateOfBirth"
+                class="form-control"
+                placeholder="yyyy-mm-dd"
+                name="dp"
+                ngbDatepicker
+                #dp="ngbDatepicker"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-outline-secondary bx bx-calendar"
+                  (click)="dp.toggle()"
+                  type="button"
+                ></button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="price">Duration</label>
+            <textarea class="form-control" rows="5"></textarea>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-outline-dark"
+        (click)="modal.close('Close click')"
+      >
+        Save
+      </button>
+    </div>
+  </ng-template>

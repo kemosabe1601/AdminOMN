@@ -6,6 +6,8 @@ import { CompleteComponent } from './complete/complete.component';
 import { DeletedComponent } from './deleted/deleted.component';
 import { DetailComponent } from './detail/detail.component';
 import { ViewingfeeComponent } from './viewingfee/viewingfee.component';
+import { IdsuspensionComponent } from './idsuspension/idsuspension.component';
+import { CancelpaymentComponent } from './cancelpayment/cancelpayment.component';
 
 const routes: Routes = [
 	{
@@ -28,6 +30,14 @@ const routes: Routes = [
 		path: 'viewingfeepermin',
 		component: ViewingfeeComponent,
 	},
+	{
+		path: 'cancelpayment',
+		component: CancelpaymentComponent,
+	},
+	{
+		path: 'idsuspension',
+		component: IdsuspensionComponent,
+	}
 ];
 
 @NgModule({
