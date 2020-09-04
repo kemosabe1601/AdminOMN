@@ -1,35 +1,43 @@
 import { MockApiService } from "src/app/services/mock-api.service";
-import { ColumnMode, DatatableComponent } from "@swimlane/ngx-datatable";
-import { DecimalPipe } from "@angular/common";
+import { delay } from "rxjs/operators";
 import { Observable, Subscription } from "rxjs";
 import { Component, OnInit, ViewChild, OnDestroy } from "@angular/core";
+import { ColumnMode, DatatableComponent } from "@swimlane/ngx-datatable";
+import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
-  selector: "app-deleteprogram",
-  templateUrl: "./deleteprogram.component.html",
-  styleUrls: ["./deleteprogram.component.scss"],
-  providers: [DecimalPipe],
+  selector: "app-delete",
+  templateUrl: "./delete.component.html",
+  styleUrls: ["./delete.component.scss"],
 })
-export class DeleteprogramComponent implements OnInit, OnDestroy {
+export class DeleteComponent implements OnInit, OnDestroy {
+  closeResult = "";
+
   breadCrumbItems: Array<{}>;
 
   mockSub: Subscription;
+
+  selectValue: string[];
 
   // Table data
   rows: any[];
   temp: any[];
 
-  selectValue: string[];
   ColumnMode = ColumnMode;
 
   @ViewChild(DatatableComponent) table: DatatableComponent;
 
-  constructor(public mockService: MockApiService) {}
-  ngOnInit() {
+  constructor(
+    public mockService: MockApiService,
+    private modalService: NgbModal
+  ) {}
+
+  ngOnInit(): void {
     this.breadCrumbItems = [
-      { label: "Deleted Request" },
-      { label: "Program", active: true },
+      { label: "Upload" },
+      { label: "Deleted", active: true },
     ];
+
     this.selectValue = [
       "Monday",
       "Tuesday",
@@ -43,24 +51,33 @@ export class DeleteprogramComponent implements OnInit, OnDestroy {
     this._fetchData();
   }
 
+  open(content) {
+    this.modalService
+      .open(content, { ariaLabelledBy: "modal-basic-title" })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return "by pressing ESC";
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return "by clicking on a backdrop";
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
   /**
    * fetches the table value
    */
   _fetchData() {
-    // this.mockSub = this.mockService.getTableData().subscribe((val:any) => {
-    // 	this.temp = [...val];
-    // 	this.rows = val;
-    // });
-
-    // this.mockSub = this.mockService.getChallengerDataFireBase().subscribe((val:any) => {
-    //   this.rows = val.map((e) => {
-    //     return {
-    //       id: e.payload.doc.id,
-    //       ...e.payload.doc.data(),
-    //     }
-    //   });
-    // });
-
     this.mockSub = this.mockService
       .getDeletedRequestDataFireBase()
       .subscribe((val: any) => {
@@ -77,7 +94,7 @@ export class DeleteprogramComponent implements OnInit, OnDestroy {
     const val = event.target.value.toLowerCase();
 
     // filter our data
-    const temp = this.temp.filter((d) => {
+    const temp = this.temp.filter(function (d) {
       return d.name.toLowerCase().indexOf(val) !== -1 || !val;
     });
 
@@ -90,7 +107,7 @@ export class DeleteprogramComponent implements OnInit, OnDestroy {
   setFilter(event) {
     const val = event;
     // filter our data
-    const temp = this.temp.filter((d) => {
+    const temp = this.temp.filter(function (d) {
       return d.days.indexOf(val) !== -1 || !val;
     });
     // update the rows

@@ -1,16 +1,15 @@
 import { MockApiService } from "src/app/services/mock-api.service";
 import { ColumnMode, DatatableComponent } from "@swimlane/ngx-datatable";
-import { DecimalPipe } from "@angular/common";
 import { Observable, Subscription } from "rxjs";
 import { Component, OnInit, ViewChild, OnDestroy } from "@angular/core";
 
 @Component({
-  selector: "app-deleteprogram",
-  templateUrl: "./deleteprogram.component.html",
-  styleUrls: ["./deleteprogram.component.scss"],
-  providers: [DecimalPipe],
+  selector: "app-originals",
+  templateUrl: "./originals.component.html",
+  styleUrls: ["./originals.component.scss"],
 })
-export class DeleteprogramComponent implements OnInit, OnDestroy {
+export class OriginalsComponent implements OnInit, OnDestroy {
+  // bread crum data
   breadCrumbItems: Array<{}>;
 
   mockSub: Subscription;
@@ -27,8 +26,8 @@ export class DeleteprogramComponent implements OnInit, OnDestroy {
   constructor(public mockService: MockApiService) {}
   ngOnInit() {
     this.breadCrumbItems = [
-      { label: "Deleted Request" },
-      { label: "Program", active: true },
+      { label: "OMN Originals" },
+      { label: "List", active: true },
     ];
     this.selectValue = [
       "Monday",
@@ -47,22 +46,8 @@ export class DeleteprogramComponent implements OnInit, OnDestroy {
    * fetches the table value
    */
   _fetchData() {
-    // this.mockSub = this.mockService.getTableData().subscribe((val:any) => {
-    // 	this.temp = [...val];
-    // 	this.rows = val;
-    // });
-
-    // this.mockSub = this.mockService.getChallengerDataFireBase().subscribe((val:any) => {
-    //   this.rows = val.map((e) => {
-    //     return {
-    //       id: e.payload.doc.id,
-    //       ...e.payload.doc.data(),
-    //     }
-    //   });
-    // });
-
     this.mockSub = this.mockService
-      .getDeletedRequestDataFireBase()
+      .getChallengerDataFireBase()
       .subscribe((val: any) => {
         this.rows = val.map((e) => {
           return {

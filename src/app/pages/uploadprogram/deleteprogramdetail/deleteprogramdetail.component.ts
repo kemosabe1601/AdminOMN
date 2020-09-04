@@ -1,18 +1,18 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-deletedetail",
-  templateUrl: "./deletedetail.component.html",
-  styleUrls: ["./deletedetail.component.scss"],
+  selector: 'app-deleteprogramdetail',
+  templateUrl: './deleteprogramdetail.component.html',
+  styleUrls: ['./deleteprogramdetail.component.scss']
 })
-export class DeletedetailComponent implements OnInit {
+export class DeleteprogramdetailComponent implements OnInit {
   breadCrumbItems: Array<{}>;
 
   constructor() {}
 
   ngOnInit(): void {
     this.breadCrumbItems = [
-      { label: "Deleted Request" },
+      { label: "Deleted Upload Program" },
       { label: "Detail", active: true },
     ];
   }

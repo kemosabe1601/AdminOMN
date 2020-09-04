@@ -1,0 +1,219 @@
+<div class="container-fluid">
+    <!-- start page title -->
+    <app-page-title title="Challenger Program Deleted Request's Detail" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+    <!-- end page title -->
+  
+    <div class="row">
+      <div class="col-xl-8">
+        <div class="card">
+          <div class="card-body">
+            <div class="form-group row">
+              <label for="example-text-input" class="col-md-2 col-form-label">Current status</label>
+              <div class="col-md-10">
+                <input class="form-control" type="text" value="Deleted Request" id="currentStatus" readonly="true" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-search-input" class="col-md-2 col-form-label">ID</label>
+              <div class="col-md-10">
+                <input class="form-control" type="search" value="alex@gmail.com" id="inputId" readonly="true" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-2 col-form-label">Title</label>
+              <div class="col-md-10 row">
+                <div class="col-md-5">
+                    <label for="validationCustom02" class="text-truncate text-muted">Title Image</label>
+                    <img class="rounded mr-2" alt="200x200" width="200" src="assets/images/small/img-4.jpg"
+                    data-holder-rendered="true">
+                </div>
+                <div class="col-md-5">
+                    <label for="validationCustom02" class="text-truncate text-muted">Poster Image</label>
+                    <img class="rounded mr-2" alt="200x200" width="200" src="assets/images/small/img-4.jpg"
+                    data-holder-rendered="true">
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-url-input" class="col-md-2 col-form-label">Subtitle</label>
+              <div class="col-md-10">
+                <input class="form-control" type="search" value="Subtitle Details" id="subtitle" readonly="true" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-tel-input" class="col-md-2 col-form-label">Summary</label>
+              <div class="col-md-10">
+                <input class="form-control" type="search" value="Summary Details" id="summary" readonly="true" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-password-input" class="col-md-2 col-form-label">Category</label>
+              <div class="col-md-10">
+                <input class="form-control" type="search" value="Movie/Action" id="category" readonly="true" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-2 col-form-label">Participants</label>
+              <div class="col-md-10 row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="Director"
+                      readonly="true" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="Main Actor"
+                      readonly="true" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="Creater"
+                      readonly="true" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-2 col-form-label">Type</label>
+              <div class="col-md-10 row">
+                <div class="col-md-4">
+                  <select class="custom-select">
+                    <option selected disabled>Open this select menu</option>
+                    <option value="1">Season</option>
+                    <option value="2">Standalone</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="Season"
+                      readonly="true" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="Episode"
+                      readonly="true" />
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-2 col-form-label">Content</label>
+              <div class="col-md-10 row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="validationCustom01">Video</label>
+                    <div class="embed-responsive embed-responsive-16by9" style="border-radius: 20px;">
+                      <iframe src="https://www.youtube.com/embed/1y_kfWUCFDQ" class="embed-responsive-item"></iframe>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="validationCustom01">Thumbnail</label>
+                  <dropzone class="dropzone"></dropzone>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-2 col-form-label">Music info</label>
+              <div class="col-md-10 row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="Title" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" id="validationCustom01" placeholder="Artist" />
+                </div>
+              </div>
+            </div>
+            <br />
+            <br />
+            <div class="form-group row button">
+              <div>
+                <button type="submit" class="btn btn-primary mr-1" routerLink="/challengerprogram/deleted/list">
+                  Done
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-xl-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="text-muted text-center">
+              <h4>Action History</h4>
+              <div class="table-responsive mt-4">
+                <table class="table table-centered mb-0">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <h5 class="font-size-14 mb-1">Manager A</h5>
+                        <button type="button" class="btn btn-outline-primary">
+                          Result letter
+                        </button>
+                      </td>
+  
+                      <td></td>
+  
+                      <td>
+                        <p class="text-muted mb-1">22/02/20</p>
+                        <h5 class="text-danger">Denial</h5>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <h5 class="font-size-14 mb-1">Manager B</h5>
+                        <button type="button" class="btn btn-outline-primary">
+                          Result letter
+                        </button>
+                      </td>
+  
+                      <td></td>
+  
+                      <td>
+                        <p class="text-muted mb-1">22/02/20</p>
+                        <h5 class="text-success">Approval</h5>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <h5 class="font-size-14 mb-1">Manager C</h5>
+                        <button type="button" class="btn btn-outline-primary">
+                          Result letter
+                        </button>
+                      </td>
+  
+                      <td></td>
+                      <td>
+                        <p class="text-muted mb-1">22/02/20</p>
+                        <h5 class="text-success">Approval</h5>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end row -->
+  </div>

@@ -57,6 +57,21 @@ const routes: Routes = [
     loadChildren: () =>
       import("./sample/sample.module").then((m) => m.SampleModule),
   },
+  {
+    path: "challengerprogram",
+    loadChildren: () =>
+      import("./challengerprogram/challengerprogram.module").then(
+        (m) => m.ChallengerprogramModule
+      ),
+  },
+  {
+    path: "uploadprogram",
+    loadChildren: () =>
+      import("./uploadprogram/uploadprogram.module").then(
+        (m) => m.UploadprogramModule
+      ),
+  },
+  { path: 'original', loadChildren: () => import('./originals/originals.module').then(m => m.OriginalsModule) },
 ];
 
 @NgModule({

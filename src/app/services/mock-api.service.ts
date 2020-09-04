@@ -63,6 +63,14 @@ export class MockApiService {
     return this.fireStore.collection("payment-request", ref => ref.where('status', '==', 'Deleted')).snapshotChanges();
   }
 
+  getCancelledPaymentDataFireBase() {
+    return this.fireStore.collection("cancelledpayment").snapshotChanges();
+  }
+
+  getSuspendedIdDataFireBase() {
+    return this.fireStore.collection("idsuspension").snapshotChanges();
+  }
+
   getTableData() {
     const header = new HttpHeaders({
       "Access-Control-Allow-Origin": "*",

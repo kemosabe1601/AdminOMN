@@ -1,0 +1,151 @@
+<div class="container-fluid">
+    <app-page-title
+      title="Upload Program Management"
+      [breadcrumbItems]="breadCrumbItems"
+    ></app-page-title>
+  
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title text-primary">Upload list</h4>
+  
+            <form>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group position-relative">
+                    <label>Select Date</label>
+                    <div class="input-group">
+                      <input
+                        id="dateOfBirth"
+                        class="form-control"
+                        placeholder="yyyy-mm-dd"
+                        name="dp"
+                        ngbDatepicker
+                        #dp="ngbDatepicker"
+                      />
+                      <div class="input-group-append">
+                        <button
+                          class="btn btn-outline-secondary bx bx-calendar"
+                          (click)="dp.toggle()"
+                          type="button"
+                        ></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group position-relative">
+                    <label>ID</label>
+                    <input type="text" class="form-control" placeholder="" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group position-relative">
+                    <label>Program Name</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                      </div>
+                      <input type="text" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group position-relative">
+                    <label>Status</label>
+                    <select class="custom-select">
+                      <option selected>Choose...</option>
+                      <option value="1">Upload Request</option>
+                      <option value="2">Edit Request</option>
+                      <option value="3">Request</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="text-sm-right">
+                <button class="btn btn-primary" type="submit">Search</button>
+              </div>
+            </form>
+            <br />
+            <hr />
+            <br />
+            <!-- Table -->
+            <ngb-alert
+              role="alert"
+              type="info"
+              class="alert alert-info"
+              ng-reflect-type="info"
+              ng-reflect-dismissible="false"
+              >Upload Data:</ngb-alert
+            >
+            <mat-progress-bar mode="query" *ngIf="!rows"></mat-progress-bar>
+            <div class="table-responsive" *ngIf="rows">
+              <ngx-datatable
+                class="material"
+                [rows]="rows"
+                [columnMode]="ColumnMode.force"
+                [headerHeight]="50"
+                [footerHeight]="50"
+                rowHeight="auto"
+                [limit]="10"
+                [sorts]="[{ prop: 'name', dir: 'acs' }]"
+              >
+                <ngx-datatable-column name="Status">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{ row.upload_status }}
+                  </ng-template>
+                </ngx-datatable-column>
+  
+                <ngx-datatable-column name="Program Name">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{ row.program_name }}
+                  </ng-template>
+                </ngx-datatable-column>
+  
+                <ngx-datatable-column name="Name">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{ row.uploader_name }}
+                  </ng-template>
+                </ngx-datatable-column>
+  
+                <ngx-datatable-column name="ID">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{ row.id }}
+                  </ng-template>
+                </ngx-datatable-column>
+  
+                <ngx-datatable-column name="Upload Date">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{ row.upload_date }}
+                  </ng-template>
+                </ngx-datatable-column>
+  
+                <ngx-datatable-column name="Action">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <div class="button-items">
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        routerLink="detail"
+                      >
+                        View Letter
+                      </button>
+                      <!-- <button type="button" class="btn btn-light">
+                        Delete
+                      </button> -->
+                    </div>
+                  </ng-template>
+                </ngx-datatable-column>
+              </ngx-datatable>
+            </div>
+            <!-- End table -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- container-fluid -->
+  

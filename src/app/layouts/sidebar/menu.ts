@@ -34,6 +34,12 @@ export const MENU: MenuItem[] = [
     subItems: [],
   },
   {
+    id: 53,
+    label: "Originals",
+    icon: "bx bx-barcode",
+    link: "/omnoriginal",
+  },
+  {
     id: 9,
     label: "Challengers",
     icon: "dripicons-heart",
@@ -44,12 +50,12 @@ export const MENU: MenuItem[] = [
         link: "/challengers/list",
         parentId: 9,
       },
-      {
-        id: 11,
-        label: "Challenger Program",
-        link: "/challengers/program",
-        parentId: 9,
-      },
+      // {
+      //   id: 11,
+      //   label: "Challenger Program",
+      //   link: "/challengers/program",
+      //   parentId: 9,
+      // },
       {
         id: 12,
         label: "Deleted Requested",
@@ -66,6 +72,38 @@ export const MENU: MenuItem[] = [
             label: "Program",
             link: "/challengers/deleted/program",
             parentId: 12,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 43,
+    label: "Challenger Program",
+    icon: "bx bx-trophy",
+    subItems: [
+      {
+        id: 44,
+        label: "List",
+        link: "/challengerprogram/list",
+        parentId: 43,
+      },
+      {
+        id: 45,
+        label: "Deleted Requested",
+        parentId: 9,
+        subItems: [
+          {
+            id: 46,
+            label: "List",
+            link: "/challengerprogram/deleted/list",
+            parentId: 45,
+          },
+          {
+            id: 47,
+            label: "Program",
+            link: "/challengerprogram/deleted/program",
+            parentId: 45,
           },
         ],
       },
@@ -108,11 +146,43 @@ export const MENU: MenuItem[] = [
           },
         ],
       },
+      // {
+      //   id: 17,
+      //   label: "Program",
+      //   link: "/upload/program",
+      //   parentId: 13,
+      // },
+    ],
+  },
+  {
+    id: 48,
+    label: "Upload Program",
+    icon: "bx bx-crown",
+    subItems: [
       {
-        id: 17,
-        label: "Program",
-        link: "/upload/program",
-        parentId: 13,
+        id: 49,
+        label: "List",
+        link: "/uploadprogram/list",
+        parentId: 48,
+      },
+      {
+        id: 50,
+        label: "Deleted Requested",
+        parentId: 9,
+        subItems: [
+          {
+            id: 51,
+            label: "List",
+            link: "/uploadprogram/deleted/list",
+            parentId: 50,
+          },
+          {
+            id: 52,
+            label: "Program",
+            link: "/uploadprogram/deleted/program",
+            parentId: 50,
+          },
+        ],
       },
     ],
   },
@@ -143,6 +213,18 @@ export const MENU: MenuItem[] = [
         id: 22,
         label: "Viewing fee per min",
         link: "/profitpayment/viewingfeepermin",
+        parentId: 18,
+      },
+      {
+        id: 54,
+        label: "Cancelled Payment",
+        link: "/profitpayment/cancelpayment",
+        parentId: 18,
+      },
+      {
+        id: 53,
+        label: "ID Suspension",
+        link: "/profitpayment/idsuspension",
         parentId: 18,
       },
     ],

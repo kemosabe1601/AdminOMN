@@ -1,0 +1,99 @@
+<div class="container-fluid">
+  <app-page-title
+    title="OMN Originals Management"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title text-primary">Original Programs list</h4>
+
+          <div class="row mb-2">
+            <div class="col-sm-4">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter originals program name"
+                  aria-label="Enter originals program name"
+                  aria-describedby="basic-addon2"
+                />
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button">
+                    Search
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <div class="text-sm-right">
+                <button
+                  type="button"
+                  class="btn btn-success btn-rounded mb-2 mr-2"
+                  target="_blank"
+                  routerLink="add"
+                >
+                  <i class="mdi mdi-plus mr-1"></i> Add Program
+                </button>
+              </div>
+            </div>
+            <!-- end col-->
+          </div>
+          <!-- Table -->
+          <mat-progress-bar mode="query" *ngIf="!rows"></mat-progress-bar>
+          <div class="table-responsive" *ngIf="rows">
+            <ngx-datatable
+              class="material"
+              [rows]="rows"
+              [columnMode]="ColumnMode.force"
+              [headerHeight]="50"
+              [footerHeight]="50"
+              rowHeight="auto"
+              [limit]="10"
+              [sorts]="[{ prop: 'name', dir: 'acs' }]"
+            >
+              <ngx-datatable-column name="Program Name">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.program_name }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Genre">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.genre }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Duration">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.duration }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Uploaded Date">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.upload_date }}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Action">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  <div class="button-items">
+                    <button type="button" class="btn btn-primary">
+                      Config
+                    </button>
+                    <button type="button" class="btn btn-light">Delete</button>
+                  </div>
+                </ng-template>
+              </ngx-datatable-column>
+            </ngx-datatable>
+          </div>
+          <!-- End table -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- container-fluid -->

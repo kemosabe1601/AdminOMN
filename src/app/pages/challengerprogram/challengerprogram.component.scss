@@ -1,0 +1,44 @@
+.inline {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  
+    & > .search-box {
+      width: 60%;
+    }
+  
+    & > .set-filter {
+      width: 100%;
+    }
+  }
+  
+  .bx-calendar:before {
+    font-size: 18px;
+  }
+  
+  .letter {
+    // border: dashed 1pt;
+    font-family: "Google Sans";
+    display: flex;
+    justify-content: flex-start;
+    letter-spacing: 9px;
+    float: left;
+    -webkit-transform: rotate(90deg);
+    & span {
+      float: left;
+      margin: 0 3px;
+      -webkit-transform: rotate(-90deg);
+    }
+  }
+  
+  .customText {
+    font-size: 15px;
+    // background: -webkit-linear-gradient(#eee, #333);
+    background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .status-list {
+    margin-top: 25px;
+  }
