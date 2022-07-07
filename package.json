@@ -46,7 +46,7 @@
     "echarts": "^4.8.0",
     "firebase": "^7.17.2",
     "metismenujs": "^1.2.1",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "ng-apexcharts": "^1.5.1",
     "ng-chartist": "^4.1.0",
     "ng-click-outside": "^5.1.1",
